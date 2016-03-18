@@ -14,7 +14,7 @@
         <language tag="es-ES">es-ES.com_pvpollingplaces.ini</language>
     </languages>
     <administration>
-        <menu link="option=com_pvpollingplaces">Machine Inspectors</menu>
+        <menu link="option=com_pvpollingplaces">Polling Places</menu>
         <files folder="admin">
             <filename>index.html</filename>
             <filename>pvpollingplaces.php</filename>
