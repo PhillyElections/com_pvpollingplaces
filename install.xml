@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+    <name>PVMachineInspectors</name>
+    <creationDate>2016-03-14</creationDate>
+    <author>Matthew Murphy</author>
+    <authorEmail>matthew.e.murphy@phila.gov</authorEmail>
+    <authorUrl>http://www.philadelphiavotes.com</authorUrl>
+    <copyright>(C) 2016 City of Philadelphia</copyright>
+    <license>GPL</license>
+    <version>1.01</version>
+    <description>Polling Places management.</description>
+    <languages folder="language/">
+        <language tag="en-GB">en-GB.com_pvpollingplaces.ini</language>
+        <language tag="es-ES">es-ES.com_pvpollingplaces.ini</language>
+    </languages>
+    <administration>
+        <menu link="option=com_pvpollingplaces">Machine Inspectors</menu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>pvpollingplaces.php</filename>
+            <filename>controller.php</filename>
+            <folder>controllers/</folder>
+            <folder>models/</folder>
+            <folder>tables/</folder>
+            <folder>views/</folder>
+        </files>
+    </administration>
+</install>
