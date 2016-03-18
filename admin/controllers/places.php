@@ -16,7 +16,7 @@ defined('_JEXEC') or die('Restricted access');
  * @package    Philadelphia.Votes
  * @subpackage Components
  */
-class PvpollingplacesControllerApplicants extends PvpollingplacesController
+class PvpollingplacesControllerPlaces extends PvpollingplacesController
 {
     public function display()
     {
