@@ -9,6 +9,18 @@
     <license>GPL</license>
     <version>1.01</version>
     <description>Polling Places management.</description>
+    <install>
+        <sql>
+            <file driver="mysqli" charset="utf8">sql/install.sql</file>
+            <file driver="mysqli">sql/install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysqli" charset="utf8">sql/uninstall.sql</file>
+            <file driver="mysqli">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
     <languages folder="language/">
         <language tag="en-GB">en-GB.com_pvpollingplaces.ini</language>
         <language tag="es-ES">es-ES.com_pvpollingplaces.ini</language>
