@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install type="component" version="1.5.0">
-    <name>PVMachineInspectors</name>
+    <name>PVPollingplaces</name>
     <creationDate>2016-03-14</creationDate>
     <author>Matthew Murphy</author>
     <authorEmail>matthew.e.murphy@phila.gov</authorEmail>
