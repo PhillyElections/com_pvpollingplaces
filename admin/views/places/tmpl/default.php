@@ -63,7 +63,7 @@ $k = 1 - $k;
 ?>
             <tfoot>
             <tr>
-                <td <?php // colspan="" ;;;?>><?php echo $this->pagination->getListFooter(); ?></td>
+                <td colspan="14"><?php echo $this->pagination->getListFooter(); ?></td>
             </tr>
             </tfoot>
         </table>
