@@ -37,6 +37,15 @@ class PvpollingplacesViewPlaces extends JView
         // Get data from the model
 
         d($this, $this->getModel('Places'), $this->getModel('Divisions'), $this->getModel('Wards'));
+
+        if (JRequest::getVar('ward')) {
+            d($this->getModel('Wards'));
+        }
+
+        if (JRequest::getVar('d_id')) {
+            d($this->getModel('Divisions'));
+        }
+
         $items = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
