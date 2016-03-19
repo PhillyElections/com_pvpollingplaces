@@ -68,9 +68,10 @@ $k = 1 - $k;
         </table>
     </div>
     <?=JHTML::_('form.token');?>
+<input type="hidden" name="option" value="com_ballotboxapp" />
     <input type="hidden" name="task" value="" />
     <input type="hidden" name="boxchecked" value="0" />
-    <input type="hidden" name="controller" value="place" />
+    <input type="hidden" name="controller" value="places" />
     <input type="hidden" name="view" value="places" />
     <?=JHTML::_('form.token');?>
 </form>
