@@ -1,6 +1,6 @@
 <?php
 /**
- * Place View for Pvmachineinspectors Component
+ * Place View for Pvpollingplaces Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
@@ -18,7 +18,7 @@ jimport('joomla.application.component.view');
  * @package    Philadelphia.Votes
  * @subpackage Components
  */
-class PvmachineinspectorsViewPlace extends JView
+class PvpollingplacesViewPlace extends JView
 {
     /**
      * display method of Place view
