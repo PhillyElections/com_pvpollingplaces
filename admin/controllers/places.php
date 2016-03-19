@@ -23,4 +23,16 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
         JRequest::setVar('view', 'places');
         parent::display();
     }
+
+    public function publish()
+    {
+        JRequest::checkToken() or jexit('Invalid Token');
+        $cid = JRequest::getVar('cid');
+
+        foreach ($cid as $id) {
+            $row = JTable::getInstance('Place', 'Table');
+            $row->load($id);
+            $row->publish($id, 1);
+        }
+    }
 }
