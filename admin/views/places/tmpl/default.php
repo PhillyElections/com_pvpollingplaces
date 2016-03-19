@@ -43,7 +43,8 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                 <?=JHTML::_('grid.id', $i, $row->id);?>
             </td>
             <td>
-                <?=JHTML::_('grid.published', $row, $i);?>
+                <?=JHTML::_('grid.published', $row, $row->id);?>
+
             </td>
                 <td><?=$row->ward;?></td>
                 <td><?=$row->division;?></td>
