@@ -38,11 +38,11 @@ class PvpollingplacesViewPlaces extends JView
 
         d($this, $this->getModel('Places'), $this->getModel('Divisions'), $this->getModel('Wards'));
 
-        if (JRequest::getVar('ward')) {
+        if (JRequest::getVar('ward', false)) {
             d($this->getModel('Wards'));
         }
 
-        if (JRequest::getVar('d_id')) {
+        if (JRequest::getVar('d_id', false)) {
             d($this->getModel('Divisions'));
         }
 
