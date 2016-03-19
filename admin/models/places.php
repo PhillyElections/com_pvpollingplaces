@@ -109,7 +109,6 @@ class PvpollingplacesModelPlaces extends JModel
 
         foreach ($cid as $id) {
             $row = JTable::getInstance('Place', 'Table');
-            dd($row, $id);
             $row->load($id);
             $row->publish($id, 1);
         }
@@ -122,7 +121,6 @@ class PvpollingplacesModelPlaces extends JModel
 
         foreach ($cid as $id) {
             $row = JTable::getInstance('Place', 'Table');
-            dd($row, $id);
             $row->load($id);
             $row->publish($id, 0);
         }
