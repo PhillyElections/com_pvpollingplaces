@@ -44,7 +44,7 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
         foreach ($cid as $id) {
             $row = JTable::getInstance('Place', 'Table');
             $row->load($id);
-            $row->publish($id, 1);
+            $row->publish($id, 0);
         }
     }
 }
