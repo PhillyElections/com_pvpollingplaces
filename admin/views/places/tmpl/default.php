@@ -1,6 +1,5 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
-
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm">
     <div id="editcell">
@@ -13,6 +12,20 @@ $pagination = &$this->pagination;
                     <th width="5">
                         <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($this->items);?>);" />
                     </th>
+                    <th width="5">
+                        P
+                    </th>
+                    <th><?=JText::_('Ward');?></th>
+                    <th><?=JText::_('Division');?></th>
+                    <th><?=JText::_('Pin');?></th>
+                    <th><?=JText::_('Display');?></th>
+                    <th><?=JText::_('Name');?></th>
+                    <th><?=JText::_('Location');?></th>
+                    <th><?=JText::_('Entrance');?></th>
+                    <th><?=JText::_('Accessiblility');?></th>
+                    <th><?=JText::_('Published');?></th>
+                    <th><?=JText::_('Created');?></th>
+                    <th><?=JText::_('Updated');?></th>
                 </tr>
             </thead>
             <?php
@@ -26,9 +39,23 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                 <td>
                     <?=$row->id;?>
                 </td>
-                <td>
-                    <?=$checked;?>
-                </td>
+            <td>
+                <?=JHTML::_('grid.id', $i, $row->id);?>
+            </td>
+            <td>
+                <?=JHTML::_('grid.published', $row, $i);?>
+            </td>
+                <td><?=$row->ward;?></td>
+                <td><?=$row->division;?></td>
+                <td><?=$row->pin_address;?></td>
+                <td><?=$row->display_address;?></td>
+                <td><?=$row->name;?></td>
+                <td><?=$row->location;?></td>
+                <td><?=$row->entrance;?></td>
+                <td><?=$row->accessiblility;?></td>
+                <td><?=$row->published;?></td>
+                <td><?=$row->created;?></td>
+                <td><?=$row->updated;?></td>
             </tr>
             <?php
 $k = 1 - $k;
@@ -36,7 +63,7 @@ $k = 1 - $k;
 ?>
             <tfoot>
             <tr>
-                <td <?php // colspan="" ;?>><?php echo $this->pagination->getListFooter(); ?></td>
+                <td <?php // colspan="" ;;;;;?>><?php echo $this->pagination->getListFooter(); ?></td>
             </tr>
             </tfoot>
         </table>
