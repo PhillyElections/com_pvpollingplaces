@@ -40,7 +40,7 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                     <?=$row->id;?>
                 </td>
             <td>
-                <?=JHTML::_('grid.id', $i, $row->id);?>
+                <?=JHTML::_('grid.id', $row->id, $row->id);?>
             </td>
             <td>
                 <?=JHTML::_('grid.published', $row, $row->id);?>
