@@ -32,7 +32,6 @@ $pagination = &$this->pagination;
 $k = 0;
 for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $row = &$this->items[$i];
-    $checked = JHTML::_('grid.id', $i, $row->id);
     $link = JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $row->id);
     ?>
             <tr class="<?="row$k";?>">
@@ -40,11 +39,10 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                     <?=$row->id;?>
                 </td>
             <td>
-                <?=JHTML::_('grid.id', $row->id, $row->id);?>
+                <?=JHTML::_('grid.id', $i, $row->id);?>
             </td>
             <td>
-                <?=JHTML::_('grid.published', $row, $row->id);?>
-
+                <?=JHTML::_('grid.published', $row, $i);?>
             </td>
                 <td><?=$row->ward;?></td>
                 <td><?=$row->division;?></td>
