@@ -62,8 +62,14 @@ class PvpollingplacesModelPlaces extends JModel
      */
     public function _buildQuery()
     {
-
+        $where = '';
         $query = ' SELECT * FROM #__pollingplaces ';
+
+        if (JRequest('d_id')) {
+            $where = 'where division_id=' . $this->_db->quoteName(JRequest('d_id'));
+        } elseif (JRequest('ward')) {
+            $where = 'where TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quoteName(JRequest('ward'));
+        }
 
         return $query;
     }
