@@ -28,11 +28,13 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
     {
         $model = $this->getModel('places');
         $model->publish();
+        $this->display();
     }
 
     public function unpublish()
     {
         $model = $this->getModel('places');
         $model->unpublish();
+        $this->display();
     }
 }
