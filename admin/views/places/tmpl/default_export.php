@@ -27,7 +27,26 @@ ob_end_flush();
 JResponse::sendHeaders();
 $output = fopen('php://output', 'w');
 fputcsv($output,
-    array('id',
+    array(
+        'id',
+        'division_id',
+        'ward',
+        'division',
+        'pin_address',
+        'display_address',
+        'zip_code',
+        'location',
+        'building',
+        'parking',
+        'lat',
+        'lng',
+        'elat',
+        'elng',
+        'alat',
+        'alng',
+        'published',
+        'created',
+        'updated',
     )
 );
 
@@ -35,7 +54,26 @@ $k = 0;
 for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $row = &$this->items[$i];
     fputcsv($output,
-        array($row->id,
+        array(
+            $row->id,
+            $row->division_id,
+            $row->ward,
+            $row->division,
+            $row->pin_address,
+            $row->display_address,
+            $row->zip_code,
+            $row->location,
+            $row->building,
+            $row->parking,
+            $row->lat,
+            $row->lng,
+            $row->elat,
+            $row->elng,
+            $row->alat,
+            $row->alng,
+            $row->published,
+            $row->created,
+            $row->updated,
         )
     );
     $k = 1 - $k;
