@@ -47,7 +47,7 @@ class PvpollingplacesModelDivisions extends JModel
     {
         $where = '';
         if (JRequest('ward')) {
-            $where = 'where ward=' . $this->_db->quoteName(JRequest('ward'));
+            $where = 'where ward=' . $this->_db->quote(JRequest('ward'));
         }
 
         $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where;
