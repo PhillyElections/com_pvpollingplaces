@@ -26,7 +26,6 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 
     public function publish()
     {
-        dd('publish');
         JRequest::checkToken() or jexit('Invalid Token');
         $cid = JRequest::getVar('cid');
 
@@ -39,7 +38,6 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 
     public function unpublish()
     {
-        dd('unpublish');
         JRequest::checkToken() or jexit('Invalid Token');
         $cid = JRequest::getVar('cid');
 
