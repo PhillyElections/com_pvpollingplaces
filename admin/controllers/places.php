@@ -20,8 +20,20 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 {
     public function display()
     {
-        JRequest::setVar('view', 'places');
-        parent::display();
+        $view = $this->getView('places');
+        $view->setModel($this->getModel('Places'), true);
+
+        if (JRequest::getVar('ward')) {
+            $view->setModel($this->getModal('Wards'), false);
+        }
+
+        if (JRequest::getVar('d_id')) {
+            $view->setModel($this->getModal('Divisions'), false);
+        }
+
+        $view->display();
+//        JRequest::setVar('view', 'places');
+        //        parent::display();
     }
 
     public function publish()
