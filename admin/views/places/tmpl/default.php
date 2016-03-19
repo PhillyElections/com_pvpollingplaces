@@ -6,13 +6,13 @@ $pagination = &$this->pagination;
         <table class="adminlist">
             <thead>
                 <tr>
-                    <th width="5">
+                    <th width="5px">
                         <?=JText::_('ID');?>
                     </th>
-                    <th width="5">
+                    <th width="5px">
                         <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($this->items);?>);" />
                     </th>
-                    <th width="5">
+                    <th width="5px">
                         P
                     </th>
                     <th><?=JText::_('Ward');?></th>
@@ -63,7 +63,7 @@ $k = 1 - $k;
 ?>
             <tfoot>
             <tr>
-                <td <?php // colspan="" ;;?>><?php echo $this->pagination->getListFooter(); ?></td>
+                <td <?php // colspan="" ;;;?>><?php echo $this->pagination->getListFooter(); ?></td>
             </tr>
             </tfoot>
         </table>
