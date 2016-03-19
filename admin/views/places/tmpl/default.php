@@ -48,7 +48,7 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                 <td><?=$row->division;?></td>
                 <td><?=$row->pin_address;?></td>
                 <td><?=$row->display_address;?></td>
-                <td><?=$row->location;?></td>
+                <td><a href="<?=$link;?>"><?=$row->location;?></a></td>
                 <td><?=$row->lat;?>,<?=$row->lng;?></td>
                 <td><?=$row->elat;?>,<?=$row->elng;?></td>
                 <td><?=$row->alat;?>,<?=$row->alng;?></td>
