@@ -14,12 +14,12 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- * Pvpollingplaces View
+ * Places raw View
  *
  * @package    Joomla.Tutorials
  * @subpackage Components
  */
-class PvpollingplacesViewList extends JView
+class PvpollingplacesViewPlaces extends JView
 {
     /**
      * Pvpollingplaces view display method
