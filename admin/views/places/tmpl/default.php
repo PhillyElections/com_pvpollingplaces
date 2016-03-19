@@ -50,9 +50,9 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
                 <td><?=$row->pin_address;?></td>
                 <td><?=$row->display_address;?></td>
                 <td><?=$row->name;?></td>
-                <td><?=$row->location;?></td>
-                <td><?=$row->entrance;?></td>
-                <td><?=$row->accessiblility;?></td>
+                <td><?=$row->lat;?>,<?=$row->lng;?></td>
+                <td><?=$row->elat;?>,<?=$row->elng;?></td>
+                <td><?=$row->alat;?>,<?=$row->alng;?></td>
                 <td><?=$row->published;?></td>
                 <td><?=$row->created;?></td>
                 <td><?=$row->updated;?></td>
@@ -63,7 +63,7 @@ $k = 1 - $k;
 ?>
             <tfoot>
             <tr>
-                <td <?php // colspan="" ;;;;;?>><?php echo $this->pagination->getListFooter(); ?></td>
+                <td <?php // colspan="" ;;?>><?php echo $this->pagination->getListFooter(); ?></td>
             </tr>
             </tfoot>
         </table>
