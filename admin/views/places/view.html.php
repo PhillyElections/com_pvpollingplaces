@@ -36,7 +36,7 @@ class PvpollingplacesViewPlaces extends JView
         $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvpollingplaces&controller=places&format=raw');
         // Get data from the model
 
-        d($this->getModel('PvpollingplacesModelWards'), $this);
+        d(JTable::getInstance('Places', 'Table'));
         $items = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
