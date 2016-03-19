@@ -30,6 +30,8 @@ class PvpollingplacesViewPlaces extends JView
         JToolBarHelper::deleteList();
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();
+        JToolBarHelper::publish();
+        JToolBarHelper::unpublish();
         $t = &JToolbar::getInstance('toolbar');
         $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvpollingplaces&controller=places&format=raw');
         // Get data from the model
