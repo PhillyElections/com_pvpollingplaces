@@ -26,27 +26,13 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 
     public function publish()
     {
-        JRequest::checkToken() or jexit('Invalid Token');
-        $cid = JRequest::getVar('cid');
-
-        foreach ($cid as $id) {
-            $row = JTable::getInstance('Place', 'Table');
-            dd($row, $id);
-            $row->load($id);
-            $row->publish($id, 1);
-        }
+        $model = $this->getModel('places');
+        $model->publish();
     }
 
     public function unpublish()
     {
-        JRequest::checkToken() or jexit('Invalid Token');
-        $cid = JRequest::getVar('cid');
-
-        foreach ($cid as $id) {
-            $row = JTable::getInstance('Place', 'Table');
-            dd($row, $id);
-            $row->load($id);
-            $row->publish($id, 0);
-        }
+        $model = $this->getModel('places');
+        $model->unpublish();
     }
 }
