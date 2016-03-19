@@ -36,15 +36,12 @@ class PvpollingplacesViewPlaces extends JView
         $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvpollingplaces&controller=places&format=raw');
         // Get data from the model
 
-        d($this, $this->getModel('Places'), $this->getModel('Divisions'), $this->getModel('Wards'));
-
-        if (JRequest::getVar('ward', false)) {
-
+        if (JRequest::getVar('ward', false) && !JRequest::getVar('format', false)) {
             $wards = $this->getModel('Wards')->getData();
             $this->assignRef('wards', $wards);
         }
 
-        if (JRequest::getVar('d_id', false)) {
+        if (JRequest::getVar('d_id', false) && !JRequest::getVar('format', false)) {
             $divisions = $this->getModel('Divisions')->getData();
             $this->assignRef('divisions', $divisions);
         }
