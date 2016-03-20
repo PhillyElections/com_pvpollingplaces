@@ -65,9 +65,9 @@ class PvpollingplacesModelPlaces extends JModel
         $where = '';
         $query = ' SELECT * FROM #__pollingplaces ';
 
-        if (JRequest::getInt('ward')) {
+        if (JRequest::getInteger('d_id')) {
             $where = 'where division_id=' . $this->_db->quote(JRequest::getInt('d_id'));
-        } elseif (JRequest::getInt('ward')) {
+        } elseif (JRequest::getInteger('ward')) {
             $where = 'where TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quote(JRequest::getInt('ward'));
         }
         d($query);
