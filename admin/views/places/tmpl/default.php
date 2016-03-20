@@ -1,10 +1,9 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
-d($this, JRequest::getVar('ward'));
-jimport("pvcombo.PVCombo");
 
+jimport("pvcombo.PVCombo");
 ?>
-<form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm">
+<form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
         <table class="adminlist">
             <thead>
