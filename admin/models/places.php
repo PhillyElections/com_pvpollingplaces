@@ -70,8 +70,8 @@ class PvpollingplacesModelPlaces extends JModel
         } elseif (JRequest::getVar('ward', false)) {
             $where = 'where TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quote((int) JRequest::getVar('ward'));
         }
-        d($query);
-        return $query;
+        d($query . $where);
+        return $query . $where;
     }
 
     /**
