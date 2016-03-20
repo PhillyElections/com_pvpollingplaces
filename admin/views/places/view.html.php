@@ -26,14 +26,14 @@ class PvpollingplacesViewPlaces extends JView
      **/
     public function display($tpl = null)
     {
+        $divlink = $wardlink = '';
         JToolBarHelper::title(JText::_('Pvpollingplaces Manager'), 'generic.png');
         JToolBarHelper::deleteList();
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();
         JToolBarHelper::publish();
         JToolBarHelper::unpublish();
-        $t = &JToolbar::getInstance('toolbar');
-        $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvpollingplaces&controller=places&format=raw');
+
         // Get data from the model
 
         $model = $this->getModel('Wards');
@@ -41,10 +41,17 @@ class PvpollingplacesViewPlaces extends JView
         $this->assignRef('wards', $wards);
 
         if (JRequest::getVar('ward', false) && !JRequest::getVar('format', false)) {
+            if (JRequest::getVar('d_id', false)) {
+                $divlink = "&d_id=" . JRequest::getVar('d_id');
+            }
+            $wardlink = "&ward=" . JRequest::getVar('ward');
             $model = $this->getModel('Divisions');
             $divisions = $model->getData();
             $this->assignRef('divisions', $divisions);
         }
+
+        $t = &JToolbar::getInstance('toolbar');
+        $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvpollingplaces&controller=places&format=raw' . $wardlink . $divlink);
 
         $items = &$this->get('Data');
         $pagination = &$this->get('Pagination');

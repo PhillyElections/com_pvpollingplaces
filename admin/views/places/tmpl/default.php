@@ -19,25 +19,9 @@ jimport("pvcombo.PVCombo");
                         P
                     </th>
                     <th>
-                    <?=JHTML::_('select.genericlist',
-    PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')),
-    'ward',
-    '',
-    'idx',
-    'value',
-    (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''),
-    'ward');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
                     </th>
-                    <th><?=(isset($this->divisions) && count($this->divisions) ?
-    JHTML::_('select.genericlist',
-        PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')),
-        'd_id',
-        '',
-        'idx',
-        'value',
-        (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''),
-        'd_id')
-    : JText::_('Division'));?></th>
+                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', 'data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
@@ -89,8 +73,6 @@ $k = 1 - $k;
         </table>
     </div>
     <?=JHTML::_('form.token');?>
-    <input type="hidden" name="ward" value="<?=JRequest::getVar('ward', '');?>" />
-    <input type="hidden" name="d_id" value="<?=JRequest::getVar('d_id', '');?>" />
     <input type="hidden" name="option" value="com_pvpollingplaces" />
     <input type="hidden" name="task" value="" />
     <input type="hidden" name="boxchecked" value="0" />
