@@ -36,6 +36,8 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 
     public function publish()
     {
+        JRequest::checkToken() or jexit('Invalid Token');
+
         $model = $this->getModel('places');
         $model->publish();
         $this->display();
@@ -43,6 +45,8 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 
     public function unpublish()
     {
+        JRequest::checkToken() or jexit('Invalid Token');
+
         $model = $this->getModel('places');
         $model->unpublish();
         $this->display();

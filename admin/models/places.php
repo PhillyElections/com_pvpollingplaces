@@ -126,7 +126,6 @@ class PvpollingplacesModelPlaces extends JModel
      */
     public function publish()
     {
-        JRequest::checkToken() or jexit('Invalid Token');
         $cid = JRequest::getVar('cid');
 
         foreach ($cid as $id) {
@@ -143,7 +142,6 @@ class PvpollingplacesModelPlaces extends JModel
      */
     public function unpublish()
     {
-        JRequest::checkToken() or jexit('Invalid Token');
         $cid = JRequest::getVar('cid');
 
         foreach ($cid as $id) {
