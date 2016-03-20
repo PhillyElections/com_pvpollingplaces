@@ -88,5 +88,8 @@ var AC = (function() {
   return outer;
 })();
 window.addEvent('domready', function() {
-  document.querySelectorAll('[data-action="submits"]').addEventListener('onchange', function() {document.getElementById('adminForm').submit();});
+  var combos = document.querySelectorAll('[data-action="submits"]');
+  for (var i=0; i<combos.length; i++) {
+    combos[i].addEventListener('onchange', function() {document.getElementById('adminForm').submit();});    
+  }
 });
