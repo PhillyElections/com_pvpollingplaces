@@ -2,6 +2,8 @@
 $pagination = &$this->pagination;
 
 jimport("pvcombo.PVCombo");
+
+$document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
