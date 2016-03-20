@@ -88,5 +88,5 @@ var AC = (function() {
   return outer;
 })();
 window.addEvent('domready', function() {
-  document.querySelectAll('#ward,#d_id').addListener('change', function() {document.getElementById('adminForm').submit();});
+  document.querySelectorAll('#ward,#d_id').addListener('change', function() {document.getElementById('adminForm').submit();});
 });
