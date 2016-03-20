@@ -1,6 +1,7 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
 d($this);
+jimport('pvcombo.pvcombo');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm">
     <div id="editcell">
