@@ -88,5 +88,5 @@ var AC = (function() {
   return outer;
 })();
 window.addEvent('domready', function() {
-  document.querySelectorAll('[data-action="submits"]').addListener('change', function() {document.getElementById('adminForm').submit();});
+  document.querySelectorAll('[data-action="submits"]').addListener('onchange', function() {document.getElementById('adminForm').submit();});
 });
