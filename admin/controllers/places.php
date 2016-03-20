@@ -30,8 +30,6 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
         }
 
         $view->display();
-//        JRequest::setVar('view', 'places');
-        //        parent::display();
     }
 
     public function publish()
