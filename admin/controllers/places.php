@@ -20,6 +20,7 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
 {
     public function display()
     {
+        // if 'raw' isn't explicit, set to 'html'
         $view = $this->getView('places', JRequest::getWord('format', 'html'));
         $view->setModel($this->getModel('Places'), true);
 
