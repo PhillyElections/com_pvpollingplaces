@@ -1,5 +1,6 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
+d($this);
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm">
     <div id="editcell">
