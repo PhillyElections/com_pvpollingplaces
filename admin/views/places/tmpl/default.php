@@ -21,7 +21,7 @@ jimport("pvcombo.PVCombo");
                     <th>
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'id', 'ward', JText::_('Ward')), 'ward', '', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
                     </th>
-                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'id', 'division_id', JText::_('Division')), 'd_id', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'idx', 'value', '', 'd_id') : JText::_('Division'));?></th>
+                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'idx', 'value', '', 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
