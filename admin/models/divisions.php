@@ -50,7 +50,7 @@ class PvpollingplacesModelDivisions extends JModel
             $where = 'where ward=' . $this->_db->quote(JRequest::getInt('ward'));
         }
 
-        $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where;
+        $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where . ' order by division asc ';
 
         return $query;
     }
