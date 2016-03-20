@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
-d($this, JRequest::get('post'));
+d($this, JRequest::getVar('ward'));
 jimport("pvcombo.PVCombo");
 
 ?>
@@ -19,7 +19,7 @@ jimport("pvcombo.PVCombo");
                         P
                     </th>
                     <th>
-                        <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'id', 'ward', JText::_('Ward')), 'ward', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'idx', 'value', '', 'ward');?>
+                        <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'id', 'ward', JText::_('Ward')), 'ward', '', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
                     </th>
                     <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'id', 'division_id', JText::_('Division')), 'd_id', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'idx', 'value', '', 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
