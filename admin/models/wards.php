@@ -46,7 +46,7 @@ class PvpollingplacesModelWards extends JModel
     public function _buildQuery()
     {
 
-        $query = ' SELECT distinct ward as id, ward FROM #__divisions order by lpad(ward,\'0\',2) ';
+        $query = ' SELECT distinct ward as id, ward FROM #__divisions ';
 
         return $query;
     }
