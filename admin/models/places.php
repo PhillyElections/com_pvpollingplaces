@@ -76,6 +76,7 @@ class PvpollingplacesModelPlaces extends JModel
 
     /**
      * Retrieves the Pvpollingplace data
+     *
      * @return array Array of objects containing the data from the database
      */
     public function getData()
@@ -88,6 +89,11 @@ class PvpollingplacesModelPlaces extends JModel
         return $this->_data;
     }
 
+    /**
+     * Set results count as $this->_total and return
+     *
+     * @return mixed
+     */
     public function getTotal()
     {
         // Load the content if it doesn't already exist
@@ -98,6 +104,11 @@ class PvpollingplacesModelPlaces extends JModel
         return $this->_total;
     }
 
+    /**
+     * create pagination , set to $this->_pagination and return
+     *
+     * @return mixed
+     */
     public function getPagination()
     {
         // Load the content if it doesn't already exist
@@ -108,6 +119,11 @@ class PvpollingplacesModelPlaces extends JModel
         return $this->_pagination;
     }
 
+    /**
+     * publish items
+     *
+     * @return void
+     */
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
@@ -120,6 +136,11 @@ class PvpollingplacesModelPlaces extends JModel
         }
     }
 
+    /**
+     * unpublish items
+     *
+     * @return void
+     */
     public function unpublish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
