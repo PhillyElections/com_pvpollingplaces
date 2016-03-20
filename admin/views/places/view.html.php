@@ -37,7 +37,7 @@ class PvpollingplacesViewPlaces extends JView
         // Get data from the model
 
         $model = $this->getModel('Wards');
-        d($model);
+        d($this, $model);
         $wards = $model->getData();
         $this->assignRef('wards', $wards);
         if (JRequest::getVar('ward', false) && !JRequest::getVar('format', false)) {
