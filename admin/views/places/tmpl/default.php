@@ -16,7 +16,9 @@ d($this);
                     <th width="5px">
                         P
                     </th>
-                    <th><?=JText::_('Ward');?></th>
+                    <th>
+<?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'id', 'ward', array('' => JText::_('Ward'))), 'ward', '', 'idx', 'value', '', 'ward');?>
+                    </th>
                     <th><?=JText::_('Division');?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
