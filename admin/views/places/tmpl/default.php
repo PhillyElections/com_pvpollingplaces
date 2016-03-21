@@ -20,10 +20,11 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
                     <th width="5px">
                         P
                     </th>
-                    <th>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
+                    <th><?=JText::_('Ward');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
                     </th>
-                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', 'data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
+                    <th><?=JText::_('Division');?>
+                    <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
