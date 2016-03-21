@@ -3,7 +3,7 @@ $pagination = &$this->pagination;
 
 jimport("pvcombo.PVCombo");
 JHTML::_('behavior.combobox');
-$document = &JFactory::getDocument();
+//$document = &JFactory::getDocument();
 //$document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
@@ -21,9 +21,9 @@ $document = &JFactory::getDocument();
                         P
                     </th>
                     <th>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'class="combobox" data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
                     </th>
-                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', 'data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
+                    <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', 'class="combobox" data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
