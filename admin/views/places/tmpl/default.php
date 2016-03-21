@@ -24,12 +24,12 @@ JHTML::_('behavior.combobox');
                     <input class="combobox" type="text" name="ward" id="ward" value="<?=JText::_('Ward');?>" />
   <ul id="combobox-ward" style="display:none;">
    <?php
-for ($i = 0, $n = count($this->wards); $i < $n; $i++) {
-    echo '<li>' . $this->wards[$i] . '</li>';
-}
+for ($i = 0, $n = count($this->wards); $i < $n; $i++):
+    echo '<li>' . $this->wards[$i]->ward . '</li>';
+endfor;
 ?>
    </ul>
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'class="combobox" data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;?>
+                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward', JText::_('Ward')), 'ward', 'class="combobox" data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;?>
                     </th>
                     <th><?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division', JText::_('Division')), 'd_id', 'class="combobox" data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                     <th><?=JText::_('Pin');?></th>
