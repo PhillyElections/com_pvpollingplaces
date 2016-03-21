@@ -65,10 +65,23 @@ class PvpollingplacesModelPlaces extends JModel
         $where = '';
         $query = ' SELECT * FROM #__pollingplaces ';
 
-        if (JRequest::getVar('d_id', false) && JRequest::getVar('ward', false)) {
-            $where = ' where TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quote((int) JRequest::getVar('ward')) . ' and TRIM(LEADING \'0\' FROM division)=' . $this->_db->quote((int) JRequest::getVar('d_id')) . ' ';
-        } elseif (JRequest::getVar('ward', false)) {
-            $where = 'where TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quote((int) JRequest::getVar('ward'));
+        $wards = JRequest::getVar('ward', false);
+        $divisions = JRequest::getVar('d_id', false);
+
+        foreach ($wards as $ward) {
+            $wards_list[] = $this->_db->quote((int) $ward);
+        }
+
+        foreach ($divisions as $division) {
+            $divisions_list[] = $this->_db->quote((int) $division);
+        }
+
+        if ($divisions && $wards) {
+            $where = ' where ';
+            $where .= 'TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') and ';
+            $where .= 'TRIM(LEADING \'0\' FROM division) in (' . implode(", ", $divisions_list) . ') ';
+        } elseif ($wards) {
+            $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $ward_list) . ') ';
         }
 
         return $query . $where;
