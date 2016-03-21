@@ -21,12 +21,12 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
                         P
                     </th>
                     <th><?=JText::_('Ward');?>
-<input type="checkbox" value="1" <?=JRequest::getVar('ward', false) && in_array('1', JRequest::getVar('ward')) ? 'checked' : '';?> \>
-<input type="checkbox" value="2" <?=JRequest::getVar('ward', false) && in_array('2', JRequest::getVar('ward')) ? 'checked' : '';?> \>
-<input type="checkbox" value="11" <?=JRequest::getVar('ward', false) && in_array('11', JRequest::getVar('ward')) ? 'checked' : '';?> \>
-<input type="checkbox" value="12" <?=JRequest::getVar('ward', false) && in_array('12', JRequest::getVar('ward')) ? 'checked' : '';?> \>
+<input name="ward" type="checkbox" value="1" <?=JRequest::getVar('ward', false) && in_array('1', JRequest::getVar('ward')) ? 'checked' : '';?> \>
+<input name="ward" type="checkbox" value="2" <?=JRequest::getVar('ward', false) && in_array('2', JRequest::getVar('ward')) ? 'checked' : '';?> \>
+<input name="ward" type="checkbox" value="11" <?=JRequest::getVar('ward', false) && in_array('11', JRequest::getVar('ward')) ? 'checked' : '';?> \>
+<input name="ward" type="checkbox" value="12" <?=JRequest::getVar('ward', false) && in_array('12', JRequest::getVar('ward')) ? 'checked' : '';?> \>
 
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;?>
+                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;?>
                     </th>
                     <th><?=JText::_('Division');?>
                     <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
