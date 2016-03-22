@@ -5,12 +5,9 @@ var Places = (function () {
 })();
 window.addEvent('domready', function() {
   Places.init();
-/*  var combos = document.querySelectorAll('[data-action="submits"]');
-  for (var i=0; i<combos.length; i++) {
-    combos[i].addEventListener('blur', function() {document.getElementById('adminForm').submit();});    
-  }*/
 });
-(function() {
+// let's late-load jQuery
+/*(function() {
     function async_load(){
         var s = document.createElement('script');
         s.type = 'text/javascript';
@@ -24,4 +21,4 @@ window.addEvent('domready', function() {
         window.attachEvent('onload', async_load);
     else
         window.addEventListener('load', async_load, false);
-})();
+})();*/
