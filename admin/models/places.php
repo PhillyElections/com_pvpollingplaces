@@ -70,12 +70,12 @@ class PvpollingplacesModelPlaces extends JModel
 
         if ($wards) {
             foreach ($wards as $ward) {
-                $wards_list[] = $this->_db->quote((int) $ward->ward);
+                $wards_list[] = $this->_db->quote((int) $ward);
             }
         }
         if ($divisions) {
             foreach ($divisions as $division) {
-                $divisions_list[] = $this->_db->quote((int) $division->division);
+                $divisions_list[] = $this->_db->quote((int) $division);
             }
         }
         if ($divisions && $wards) {
