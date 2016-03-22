@@ -84,7 +84,7 @@ class PvpollingplacesModelPlaces extends JModel
             $where .= 'TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') and ';
             $where .= 'TRIM(LEADING \'0\' FROM division) in (' . implode(", ", $divisions_list) . ') ';
         } elseif ($wards_list) {
-            $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $ward_list) . ') ';
+            $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
         }
         d($query . $where, $wards, $division, $wards_list, $divisions_list, JRequest::getVar('ward', false), JRequest::getVar('d_id', false));
         return $query . $where;
