@@ -1,0 +1,16 @@
+//toggle open /close button
+.mcs-open {
+}
+
+//container wrap for menu
+.mcs-container {
+        overflow:hidden;            
+        display:none;                    
+}
+
+//menu items / option replacements
+.mcs-item {
+    width: 5em;
+    heigh: 2em;
+    border: .25em;
+}
