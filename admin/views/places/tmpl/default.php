@@ -5,7 +5,7 @@ jimport("pvcombo.PVCombo");
 d(JRequest::get('REQUEST'));
 $document = &JFactory::getDocument();
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js" async defer></script>');
-$document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" async defer></script>');
+$document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" async defer></script>');
 //$document->addCustomTag('<script src="/public_html/media/bootstrap/dist/js/bootstrap.min.js" async defer></script>');
 //$document->addCustomTag('<script src="/public_html/media/bootstrap/dist/js/bootstrap.min.js" async defer></script>');
 ?>
