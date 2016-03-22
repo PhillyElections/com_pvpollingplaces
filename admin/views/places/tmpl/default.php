@@ -13,20 +13,20 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
                 <tr>
                     <th colspan="14" id="filterWard" class="hiding">
 <?php
-for ($i = 0; $i < count($this->wards); $i++):
-?><label><?=str_pad($this->wards[$i], 2, "0");?><input name="ward[]" type="checkbox" value="<?=$this->wards[$i];?>" <?=JRequest::getVar('ward', false) && in_array($i, JRequest::getVar('ward')) ? 'checked' : '';?> \></label>
+foreach ($this->wards as $ward):
+?><label><?=str_pad($ward, 2, "0");?><input name="ward[]" type="checkbox" value="<?=$ward;?>" <?=JRequest::getVar('ward', false) && in_array($i, JRequest::getVar('ward')) ? 'checked' : '';?> \></label>
 <?php
-endfor;
+endforeach;
 ?>
                     </th>
                 </tr>
                <tr>
                     <th colspan="14" id="filterDivision" class="hiding">
 <?php
-for ($i = 0; $i < count($this->divisions); $i++):
-?><label><?=str_pad($this->divisions[$i], 2, "0");?><input name="d_id[]" type="checkbox" value="<?=$this->divisions[$i];?>" <?=JRequest::getVar('d_id', false) && in_array($i, JRequest::getVar('d_id')) ? 'checked' : '';?> \></label>
+foreach ($this->divisions as $division):
+?><label><?=str_pad($division, 4, "0");?><input name="division[]" type="checkbox" value="<?=$division;?>" <?=JRequest::getVar('division', false) && in_array($i, JRequest::getVar('division')) ? 'checked' : '';?> \></label>
 <?php
-endfor;
+endforeach;
 ?>
                     </th>
                 </tr>
@@ -41,10 +41,10 @@ endfor;
                         P
                     </th>
                     <th><button id="btnWard" data-area="filterWard"><?=JText::_('Ward');?></button>
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;;;;;;?>
+                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;;;;;;;;?>
                     </th>
                     <th><button id="btnDivision" data-area"filterDivision"><?=JText::_('Division');?></button>
-                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;;;?></th>
+                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;;;;;?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
