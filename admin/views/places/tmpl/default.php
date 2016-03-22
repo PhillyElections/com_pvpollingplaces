@@ -14,7 +14,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
                     <th colspan="14" id="filterWard" class="hiding">
 <?php
 for ($i = 0; $i < count($this->wards); $i++):
-?><label><?=$i;?><input name="ward[]" type="checkbox" value="<?=$i;?>" <?=JRequest::getVar('ward', false) && in_array($i, JRequest::getVar('ward')) ? 'checked' : '';?> \></label>
+?><label><?=str_pad($i, 2, "0");?><input name="ward[]" type="checkbox" value="<?=$i;?>" <?=JRequest::getVar('ward', false) && in_array($i, JRequest::getVar('ward')) ? 'checked' : '';?> \></label>
 <?php
 endfor;
 ?>
@@ -24,7 +24,7 @@ endfor;
                     <th colspan="14" id="filterDivision" class="hiding">
 <?php
 for ($i = 0; $i < count($this->divisions); $i++):
-?><label><?=$i;?><input name="d_id[]" type="checkbox" value="<?=$i;?>" <?=JRequest::getVar('d_id', false) && in_array($i, JRequest::getVar('d_id')) ? 'checked' : '';?> \></label>
+?><label><?=str_pad($i, 2, "0");?><input name="d_id[]" type="checkbox" value="<?=$i;?>" <?=JRequest::getVar('d_id', false) && in_array($i, JRequest::getVar('d_id')) ? 'checked' : '';?> \></label>
 <?php
 endfor;
 ?>
@@ -41,10 +41,10 @@ endfor;
                         P
                     </th>
                     <th><button id="btnWard" data-area="filterWard"><?=JText::_('Ward');?></button>
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;;;?>
+                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;;;;?>
                     </th>
                     <th><button id="btnDivision" data-area"filterDivision"><?=JText::_('Division');?></button>
-                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;?></th>
+                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
