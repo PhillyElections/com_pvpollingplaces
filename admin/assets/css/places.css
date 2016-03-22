@@ -13,4 +13,5 @@
     width: 5em;
     heigh: 2em;
     border: .25em;
+    display: inline-grid;
 }
