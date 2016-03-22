@@ -20,8 +20,8 @@ $document = &JFactory::getDocument();
                     <th colspan="14" id="filterWard" class="hiding">
 <?php
 foreach ($this->wards as $ward):
-?><label><input name="ward[]" type="checkbox" value="<?=$ward->ward;?>" <?=JRequest::getVar('ward', false) && in_array($ward->ward, JRequest::getVar('ward')) ? 'checked' : '';?> \><?=sprintf("%02d", $ward->ward);?></label>
-<?php
+/*?><label><input name="ward[]" type="checkbox" value="<?=$ward->ward;?>" <?=JRequest::getVar('ward', false) && in_array($ward->ward, JRequest::getVar('ward')) ? 'checked' : '';?> \><?=sprintf("%02d", $ward->ward);?></label>
+<?php*/
 endforeach;
 ?>
                     </th>
@@ -30,8 +30,8 @@ endforeach;
                     <th colspan="14" id="filterDivision" class="hiding">
 <?php
 foreach ($this->divisions as $division):
-?><label><input name="division[]" type="checkbox" value="<?=$division->division_id;?>" <?=JRequest::getVar('division', false) && in_array($division->division_id, JRequest::getVar('division')) ? 'checked' : '';?> \><?=sprintf("%04d", $division->division_id);?></label>
-<?php
+/*?><label><input name="division[]" type="checkbox" value="<?=$division->division_id;?>" <?=JRequest::getVar('division', false) && in_array($division->division_id, JRequest::getVar('division')) ? 'checked' : '';?> \><?=sprintf("%04d", $division->division_id);?></label>
+<?php*/
 endforeach;
 ?>
                     </th>
