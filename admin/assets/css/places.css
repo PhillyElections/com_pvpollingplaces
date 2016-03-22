@@ -127,7 +127,9 @@ button:hover{
 .mcs-item.active{
     text-shadow: 0 0 0 #FFF;
 }
-
+.mcs-item.active:before{
+    content: "a";
+}
 .mcs-item.active:hover{
     background:#FFF;
     text-shadow: 0 0 0 #FFF;
