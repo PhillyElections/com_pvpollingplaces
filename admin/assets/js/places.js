@@ -5,6 +5,7 @@ var Places = (function () {
   return outer;
 })();
 window.addEvent('domready', function() {
+  console.log('in domready');
   Places.init();
 });
 // let's late-load jQuery
