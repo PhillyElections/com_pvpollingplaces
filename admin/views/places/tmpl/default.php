@@ -23,15 +23,15 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
             </tr>
             <tr id="selectcontrol2">
                 <th colspan="14">
-                <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'), 'division');?></th>
+                <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
             </tr>
                 <tr>
                     <th colspan="14" id="filterWard" class="hiding">
 <div class="mcs-container">
 <?php
-$i=0;
+$i = 0;
 foreach ($this->wards as $ward):
-?>    <a id="mcs-<?=$i++?>" data="<?=$ward->ward?>" class="mcs-item"><?=$ward->ward?></a>
+?>    <a id="mcs-<?=$i++;?>" data="<?=$ward->ward;?>" class="mcs-item"><?=$ward->ward;?></a>
 <?php
 endforeach;
 ?>
