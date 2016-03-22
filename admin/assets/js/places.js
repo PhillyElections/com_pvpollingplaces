@@ -1,7 +1,8 @@
-var Places = (function ($) {
-  var outer = [], inner = [];
+var Places = (function () {
+  var outer = [], inner = [], $;
+  outer.init = function() {$=window.jQuery;};
   return outer;
-})(jQuery);
+})();
 window.addEvent('domready', function() {
   Places.init();
 /*  var combos = document.querySelectorAll('[data-action="submits"]');
