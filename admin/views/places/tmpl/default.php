@@ -19,7 +19,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
             <thead>
             <tr id="selectcontrol">
                 <th colspan="14">
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'selectcontrol');?></th>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
             </tr>
             <tr id="selectcontrol2">
                 <th colspan="14">

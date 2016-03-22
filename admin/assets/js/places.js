@@ -8,7 +8,7 @@ window.addEvent('domready', function() {
   console.log('in domready');
   Places.init();
 
-jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelect({
+jQuery("#selectcontrol").MultiColumnSelect({
 
             multiple:           false,              // Single or Multiple Select- Default Single
             useOptionText :     true,               // Use text from option. Use false if you plan to use images
@@ -27,11 +27,11 @@ jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelect({
 });
 
 //Add item to selectbox
-jQuery('#selectcontrol, #selectcontrol2').MultiColumnSelectAddItem(OptionID,OptionValue,IDPrefix);
+//jQuery('#selectcontrol, #selectcontrol2').MultiColumnSelectAddItem(OptionID,OptionValue,IDPrefix);
 
 
 //Destroy plugin
-jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelectDestroy();
+//jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelectDestroy();
 });
 // let's late-load jQuery
 /*(function() {
