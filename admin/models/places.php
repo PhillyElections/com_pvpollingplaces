@@ -65,6 +65,7 @@ class PvpollingplacesModelPlaces extends JModel
         $where = '';
         $query = ' SELECT * FROM #__pollingplaces ';
         $wards_list = $divisions_list = [];
+
         $wards = JRequest::getVar('ward', false);
         $divisions = JRequest::getVar('d_id', false);
 
@@ -78,11 +79,11 @@ class PvpollingplacesModelPlaces extends JModel
                 $divisions_list[] = $this->_db->quote((int) $division);
             }
         }
-        if ($divisions && $wards) {
+        if ($divisions_list && $wards_list) {
             $where = ' where ';
             $where .= 'TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') and ';
             $where .= 'TRIM(LEADING \'0\' FROM division) in (' . implode(", ", $divisions_list) . ') ';
-        } elseif ($wards) {
+        } elseif ($wards_list) {
             $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $ward_list) . ') ';
         }
         d($query . $where, $wards, $division, $wards_list, $divisions_list, JRequest::getVar('ward', false), JRequest::getVar('d_id', false));
