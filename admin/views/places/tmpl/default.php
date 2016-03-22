@@ -31,10 +31,14 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
 <?php
 $i = 0;
 foreach ($this->wards as $ward):
-?>    <a id="mcs-<?=$i++;?>" data="<?=$ward->ward;?>" class="mcs-item"><?=$ward->ward;?></a>
+?>
+    <a id="ward-all" data="all" class="mcs-item">[A]</a>
+    <a id="ward-none" data="none" class="mcs-item">[N]</a>
 <?php
 endforeach;
 ?>
+<a id="mcs-<?=$i++;?>" data="<?=$ward->ward;?>" class="mcs-item"><?=$ward->ward;?></a>
+<a id="mcs-<?=$i++;?>" data="<?=$ward->ward;?>" class="mcs-item"><?=$ward->ward;?></a>
                     </th>
                 </tr>
                <tr>
