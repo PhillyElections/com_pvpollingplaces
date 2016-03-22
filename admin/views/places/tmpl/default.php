@@ -9,24 +9,30 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
 $document->addCustomTag('<script src="/media/bootstrap/dist/js/bootstrap.min.js" async defer></script>');
 $document->addCustomTag('<script src="/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.min.js" async defer></script>');
 $document->addStyleSheet('/media/bootstrap/dist/css/bootstrap.min.css');
+$document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css');
+
 //$document->addStyleSheet('/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.css');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
         <table class="adminlist">
             <thead>
-            <tr>
-                    <th colspan="4">
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;?>
-                    </th>
-                    <th colspan="10">
-                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;;;;;?></th>
+            <tr id="selectcontrol">
+                <th colspan="14">
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'selectcontrol');?></th>
+            </tr>
+            <tr id="selectcontrol2">
+                <th colspan="14">
+                <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'), 'division');?></th>
+            </tr>
                 <tr>
                     <th colspan="14" id="filterWard" class="hiding">
+<div class="mcs-container">
 <?php
+$i=0;
 foreach ($this->wards as $ward):
-/*?><label><input name="ward[]" type="checkbox" value="<?=$ward->ward;?>" <?=JRequest::getVar('ward', false) && in_array($ward->ward, JRequest::getVar('ward')) ? 'checked' : '';?> \><?=sprintf("%02d", $ward->ward);?></label>
-<?php*/
+?>    <a id="mcs-<?=$i++?>" data="<?=$ward->ward?>" class="mcs-item"><?=$ward->ward?></a>
+<?php
 endforeach;
 ?>
                     </th>
