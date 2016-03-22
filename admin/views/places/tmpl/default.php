@@ -26,8 +26,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
                 <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
             </tr>
                 <tr>
-                    <th colspan="14" id="filterWard" class="hiding">
-<div class="mcs-container">
+                    <th colspan="14"  class="mcs-container">
 <?php
 $i = 0;
 foreach ($this->wards as $ward):
