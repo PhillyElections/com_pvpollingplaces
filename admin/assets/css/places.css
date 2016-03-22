@@ -1,20 +1,20 @@
 /*The container that holds the dropdown items*/
 .mcs-container{
-        width:100%;
+    width:100%;
     overflow:hidden;
-        background:#222;
-        box-sizing: border-box;
-        display:none;
-        position: relative;
-        padding:5px;
-        clear:both;
+    background:#ddd;
+    box-sizing: border-box;
+    display:none;
+    position: relative;
+    padding:5px;
+    clear:both;
 }
 
 /*The menu items (options)*/
 .mcs-open,
 .mcs-item{
     box-sizing: border-box;
-    background:#293b47;
+    background:#ace;
     color:#FFF;    
     text-decoration: none;
     width:5%;
@@ -22,8 +22,7 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-        border:1px solid #111;
-        
+    border:1px solid #111;    
 }
 
 .mcs-open{
@@ -58,20 +57,17 @@ input[type=submit]{
     text-align: center;
     background: #00ada9;
     color: #FFF;
-    clear:both;
-
-    
+    clear:both;   
 }
 
 .mcs-item:hover,
 .mcs-open:hover{
-background:#00ada9;
-cursor:pointer;
+    background:#00ada9;
+    cursor:pointer;
 }
 
-input[type=submit]:hover{
-cursor:pointer;
-background:#293b47;
+button:hover{
+    cursor:pointer;
 }
 
 /*Hide Select Form Control*/
