@@ -47,7 +47,7 @@ class PvpollingplacesModelDivisions extends JModel
     {
         $where = '';
 
-        if (JRequest::getInt('ward', 0)) {
+        if (JRequest::getVar('ward', false)) {
             $wards = JRequest::getVar('ward', false);
             foreach ($wards as $ward) {
                 $wards_list[] = $this->_db->quote((int) $ward);
