@@ -2,7 +2,7 @@
 $pagination = &$this->pagination;
 
 jimport("pvcombo.PVCombo");
-d(JRequest::get('REQUEST'));
+d(JRequest::get('REQUEST'), $_POST);
 $document = &JFactory::getDocument();
 $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js"></script>');
