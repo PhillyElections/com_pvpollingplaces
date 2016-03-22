@@ -1,3 +1,4 @@
+jQuery.noConflict();
 var Places = (function () {
   var outer = [], inner = [], $;
   outer.init = function() {$=window.jQuery;};
