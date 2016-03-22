@@ -8,8 +8,8 @@ $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jque
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js"></script>');
 $document->addCustomTag('<script src="/media/bootstrap/dist/js/bootstrap.min.js" async defer></script>');
 $document->addCustomTag('<script src="/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.min.js" async defer></script>');
-//$document->addStyleSheet('/media/bootstrap/dist/css/bootstrap.min.css');
-$document->addStyleSheet('/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.css');
+$document->addStyleSheet('/media/bootstrap/dist/css/bootstrap.min.css');
+//$document->addStyleSheet('/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.css');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
@@ -17,10 +17,10 @@ $document->addStyleSheet('/media/bootstrap-multi-column-select/Multi-Column-Sele
             <thead>
             <tr>
                     <th colspan="4">
-                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;?>
+                    <?php //=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');;;;;;;;;;;?>
                     </th>
                     <th colspan="10">
-                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;;;;?></th>
+                    <?php //=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));;;;;;;;;;;?></th>
                 <tr>
                     <th colspan="14" id="filterWard" class="hiding">
 <?php
