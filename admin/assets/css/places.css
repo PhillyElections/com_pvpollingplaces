@@ -6,7 +6,7 @@
         box-sizing: border-box;
         display:none;
         position: relative;
-        padding:10px;
+        padding:5px;
         clear:both;
 }
 
@@ -17,10 +17,10 @@
     background:#293b47;
     color:#FFF;    
     text-decoration: none;
-    width:25%;
+    width:5%;
     float:left;
-    height: 50px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
         border:1px solid #111;
         
@@ -28,10 +28,10 @@
 
 .mcs-open{
     border: 0;
-        text-align: left;
-        padding: 0 10px 0 40px;
+    text-align: left;
+    padding: auto;
     width:100%;
-        margin-top:20px;
+    margin-top:10px;
 }
 
 .mcs-open.open{
