@@ -17,8 +17,8 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
     <div id="editcell">
         <table class="adminlist">
             <thead>
-            <tr id="selectcontrol">
-                <th colspan="14">
+            <tr >
+                <th colspan="14" id="selectcontrol">
                     <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
             </tr>
             <tr id="selectcontrol2">

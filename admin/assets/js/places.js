@@ -10,7 +10,7 @@ window.addEvent('domready', function() {
 
 jQuery("#selectcontrol").MultiColumnSelect({
 
-            multiple:           false,              // Single or Multiple Select- Default Single
+            multiple:           true,              // Single or Multiple Select- Default Single
             useOptionText :     true,               // Use text from option. Use false if you plan to use images
             hideselect :        true,               // Hide Original Select Control
             openmenuClass :     'mcs-open',         // Toggle Open Button Class
