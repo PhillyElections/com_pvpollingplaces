@@ -54,8 +54,8 @@ class PvpollingplacesModelDivisions extends JModel
             }
             $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
         }
-
-        $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where . ' order by division asc ';
+        d($where, $wards_list, $wards);
+        $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where . ' order by division_id asc ';
 
         return $query;
     }
