@@ -46,8 +46,13 @@ class PvpollingplacesModelDivisions extends JModel
     public function _buildQuery()
     {
         $where = '';
+
         if (JRequest::getInt('ward', 0)) {
-            $where = 'where ward=' . $this->_db->quote(JRequest::getInt('ward'));
+            $wards = JRequest::getVar('ward', false);
+            foreach ($wards as $ward) {
+                $wards_list[] = $this->_db->quote((int) $ward);
+            }
+            $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
         }
 
         $query = ' SELECT distinct id, division_id, division FROM #__divisions ' . $where . ' order by division asc ';
