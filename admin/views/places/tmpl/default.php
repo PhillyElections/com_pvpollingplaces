@@ -10,6 +10,12 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
     <div id="editcell">
         <table class="adminlist">
             <thead>
+            <tr>
+                    <th colspan="4">
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?>
+                    </th>
+                    <th colspan="10">
+                    <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division'), 'd_id', 'multiple data-action="submits"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 <tr>
                     <th colspan="14" id="filterWard" class="hiding">
 <?php
