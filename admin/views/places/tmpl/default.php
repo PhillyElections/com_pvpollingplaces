@@ -34,8 +34,8 @@ foreach ($this->wards as $ward):
 <?php
 endforeach;
 ?>
-    <a id="ward-all" data="all" class="mcs-item">[A]</a>
-    <a id="ward-none" data="none" class="mcs-item">[N]</a>
+    <a id="ward-all" data="all" class="mcs-nav">[A]</a>
+    <a id="ward-none" data="none" class="mcs-nav">[N]</a>
                     </th>
                 </tr>
                <tr>
