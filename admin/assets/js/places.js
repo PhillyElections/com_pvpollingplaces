@@ -1,8 +1,7 @@
 jQuery.noConflict();
 var Places = (function($) {
     var outer = [],
-        inner = [],
-        $;
+        inner = [];
     outer.init = function() {
         $("#selectcontrol, #selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
