@@ -3,13 +3,12 @@ var Places = (function() {
     var outer = [],
         inner = [];
     outer.init = function() {
-
         jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
             hideselect: true, // Hide Original Select Control
             openmenuClass: 'mcs-open', // Toggle Open Button Class
-            openmenuText: $(this).data('label'), // Text for button
+            openmenuText: jQuery(this).data('label'), // Text for button
             openclass: 'open', // Class added to Toggle button on open
             containerClass: 'mcs-container', // Class of parent container
             itemClass: 'mcs-item', // Class of menu items
