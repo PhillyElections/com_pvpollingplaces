@@ -21,8 +21,8 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
                     <th colspan="14" id="selectcontrol">
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
-                <tr id="selectcontrol2">
-                    <th colspan="14">
+                <tr>
+                    <th id="selectcontrol2" colspan="14">
                     <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 </tr>
                 <tr>
