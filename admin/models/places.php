@@ -81,7 +81,7 @@ class PvpollingplacesModelPlaces extends JModel
         }
         if ($divisions_list && $wards_list) {
             $where = ' where ';
-            $where .= 'TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') and ';
+            //$where .= 'TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') and ';
             $where .= 'TRIM(LEADING \'0\' FROM division_id) in (' . implode(", ", $divisions_list) . ') ';
         } elseif ($wards_list) {
             $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
