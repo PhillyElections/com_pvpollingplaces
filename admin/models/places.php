@@ -78,7 +78,7 @@ class PvpollingplacesModelPlaces extends JModel
                 array_push($divisions_list[$div_elem], $this->_db->quote(JString::substr($division, 2, 2)));
             }
             foreach ($divisions_list as $ward => $divs) {
-                $tmp[] = '(TRIM(LEADING \'0\' FROM ward)=' . $this->_db->quote($ward) . ' and division in (' . implode(', ', $divs) . '))';
+                $tmp[] = '(ward=' . $this->_db->quote($ward) . ' and division in (' . implode(', ', $divs) . '))';
 
             }
             $where .= implode(' and ', $tmp);
