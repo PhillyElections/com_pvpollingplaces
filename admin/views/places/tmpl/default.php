@@ -23,7 +23,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
                 </tr>
                 <tr>
                     <th id="selectcontrol2" colspan="14">
-                    <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
+                    <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 </tr>
                 <tr>
                     <th colspan="14"  class="mcs-container">
