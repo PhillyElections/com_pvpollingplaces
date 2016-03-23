@@ -8,7 +8,7 @@ window.addEvent('domready', function() {
   console.log('in domready');
   Places.init();
 
-jQuery("#selectcontrol").MultiColumnSelect({
+jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelect({
 
             multiple:           true,              // Single or Multiple Select- Default Single
             useOptionText :     true,               // Use text from option. Use false if you plan to use images
