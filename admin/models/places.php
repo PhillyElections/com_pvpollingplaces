@@ -69,15 +69,14 @@ class PvpollingplacesModelPlaces extends JModel
         $wards = JRequest::getVar('ward', false);
         $divisions = JRequest::getVar('d_id', false);
 
-        if ($wards) {
-            foreach ($wards as $ward) {
-                $wards_list[] = $this->_db->quote((int) $ward);
-            }
-        }
         if ($divisions) {
             foreach ($divisions as $division) {
-                $divisions_list[] = JString::substr($this->_db->quote($division), 2, 2);
-                //$wards_list[] = JString::substr($this->_db->quote($division), 2, 2);
+                $divisions_list[] = JString::substr($this->_db->quote($division), 3, 2);
+                $wards_list[] = JString::substr($this->_db->quote($division), 1, 2);
+            }
+        } elseif ($wards) {
+            foreach ($wards as $ward) {
+                $wards_list[] = $this->_db->quote((int) $ward);
             }
         }
         if ($divisions_list && $wards_list) {
