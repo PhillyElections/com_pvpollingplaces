@@ -81,7 +81,7 @@ class PvpollingplacesModelPlaces extends JModel
                 $tmp[] = '(ward=' . $this->_db->quote($ward) . ' and division in (' . implode(', ', $divs) . '))';
 
             }
-            $where .= implode(' and ', $tmp);
+            $where .= implode(' or ', $tmp);
 
         } elseif ($wards) {
             foreach ($wards as $ward) {
