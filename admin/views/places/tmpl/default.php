@@ -39,11 +39,12 @@ endforeach;
                     </th>
                 </tr>
                <tr>
-                    <th colspan="14" id="filterDivision" class="hiding">
+                    <th colspan="14" class="mcs-container">
 <?php
+$i = 0;
 foreach ($this->divisions as $division):
-/*?><label><input name="division[]" type="checkbox" value="<?=$division->division_id;?>" <?=JRequest::getVar('division', false) && in_array($division->division_id, JRequest::getVar('division')) ? 'checked' : '';?> \><?=sprintf("%04d", $division->division_id);?></label>
-<?php*/
+?>    <a id="mcs-<?=$i++;?>" data="<?=$division->division_id;?>" class="mcs-item"><?=$division->division_id;?></a>
+<?php
 endforeach;
 ?>
                     </th>
