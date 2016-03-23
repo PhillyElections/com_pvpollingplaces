@@ -27,7 +27,7 @@ class PvpollingplacesViewPlaces extends JView
     public function display($tpl = null)
     {
         $divlink = $wardlink = '';
-        JToolBarHelper::title(JText::_('Pvpollingplaces Manager'), 'generic.png');
+        JToolBarHelper::title(JText::_('Pollingplaces Manager'), 'generic.png');
         JToolBarHelper::deleteList();
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();
