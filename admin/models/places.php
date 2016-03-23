@@ -75,7 +75,7 @@ class PvpollingplacesModelPlaces extends JModel
             foreach ($divisions as $division) {
                 $div_elem = JString::substr($this->_db->quote($division), 1, 2);
                 $divisions_list[$div_elem] = array();
-                $divisions_list[$div_elem][] = JString::substr($this->_db->quote($division), 3, 2);
+                array_push($divisions_list[$div_elem], JString::substr($this->_db->quote($division), 3, 2));
             }
             foreach ($divisions_list as $ward->$divs) {
                 $tmp[] = '(ward=' . $ward . ' and division in (' . implode(', ', $divs) . '))';
