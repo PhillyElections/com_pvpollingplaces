@@ -63,6 +63,7 @@ input[type=submit]{
 .mcs-item:hover,
 .mcs-open:hover{
     background:#444;
+    color:#fff;
     cursor:pointer;
 }
 
