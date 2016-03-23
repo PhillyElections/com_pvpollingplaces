@@ -34,12 +34,12 @@
 }
 
 .mcs-open.open{
-    background:#ffffff;
-    color:#111;
+    background:#fff;
+    color:#444;
 }
 .mcs-open.open:hover{
     background:#444;
-    color:#FFF;
+    color:#fff;
 }
 
 .mcs-item.active{
