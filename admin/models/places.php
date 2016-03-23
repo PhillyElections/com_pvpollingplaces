@@ -76,8 +76,8 @@ class PvpollingplacesModelPlaces extends JModel
         }
         if ($divisions) {
             foreach ($divisions as $division) {
-                $divisions_list[] = JString::substr($this->_db->quote($division), 0, 2);
-                $wards_list[] = JString::substr($this->_db->quote($division), 2, 2);
+                $divisions_list[] = JString::substr($this->_db->quote($division), 2, 2);
+                //$wards_list[] = JString::substr($this->_db->quote($division), 2, 2);
             }
         }
         if ($divisions_list && $wards_list) {
