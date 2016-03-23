@@ -55,14 +55,14 @@ input[type=submit]{
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #00ada9;
+    background: #444;
     color: #FFF;
     clear:both;   
 }
 
 .mcs-item:hover,
 .mcs-open:hover{
-    background:#00ada9;
+    background:#444;
     cursor:pointer;
 }
 
