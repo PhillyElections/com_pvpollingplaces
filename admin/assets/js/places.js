@@ -3,6 +3,7 @@ var Places = (function() {
     var outer = [],
         inner = [];
     outer.init = function() {
+        console.log('in Places.init')
         jQuery("#selectcontrol, #selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
