@@ -14,7 +14,7 @@ var Places = (function($) {
             itemClass: 'mcs-item', // Class of menu items
             idprefix: null, // Assign as ID to items eg 'item-' = #item-1, #item-2, #item-3...
             duration: 200, //Toggle Height duration
-            onOpen: function() {console.log(this.parent()},
+            onOpen: function() {console.log(this.parent())},
             onClose: function() {},
             onItemSelect: function() {}
         });
