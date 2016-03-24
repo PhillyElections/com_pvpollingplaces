@@ -18,11 +18,11 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
         <table class="adminlist">
             <thead>
                 <tr>
-                    <th colspan="14" id="selectcontrol">
+                    <th colspan="14" id="selectcontrol" data-label="Filter by Wards">
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
                 <tr>
-                    <th id="selectcontrol2" colspan="14">
+                    <th id="selectcontrol2" colspan="14" data-label="Filter by Divisions">
                     <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 </tr>
                 <tr>
@@ -38,6 +38,9 @@ endforeach;
     <a id="ward-none" data="none" class="mcs-nav">[N]</a>
                     </th>
                 </tr>
+<?php
+if (isset($this->divisions)):
+?>
                 <tr>
                     <th colspan="14" class="mcs-container">
 <?php
@@ -49,7 +52,9 @@ endforeach;
 ?>
                     </th>
                 </tr>
-                <tr>
+<?php
+endif;
+?>                <tr>
                     <th width="5px">
                         <?=JText::_('ID');?>
                     </th>
