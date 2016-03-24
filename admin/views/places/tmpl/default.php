@@ -21,11 +21,15 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
                     <th colspan="14" id="selectcontrol" data-label="Filter by Wards">
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
-                <tr>
+<?php
+if (isset($this->divisions)):
+?>                <tr>
                     <th id="selectcontrol2" colspan="14" data-label="Filter by Divisions">
                     <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 </tr>
-                <tr>
+<?php
+endif;
+?>                <tr>
                     <th colspan="14"  class="mcs-container">
 <?php
 $i = 0;
