@@ -1,5 +1,5 @@
 jQuery.noConflict();
-var Places = (function() {
+var Places = (function($) {
     var outer = [],
         inner = [];
     outer.init = function() {
@@ -21,7 +21,7 @@ var Places = (function() {
         });
     };
     return outer;
-})();
+})(jQuery);
 window.addEvent('domready', function() {
     console.log('in domready');
     Places.init();
