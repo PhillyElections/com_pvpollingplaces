@@ -17,10 +17,10 @@
     background:#ccc;
     color:#222;    
     text-decoration: none;
-    width:70px;
+    width:4em;
     float:left;
-    height: 30px;
-    line-height: 30px;
+    height: 2em;
+    line-height: 1.66em;
     text-align: center;
     border:1px solid #aaa;    
 }
