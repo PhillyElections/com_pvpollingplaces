@@ -24,13 +24,13 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
 <?php
 if (isset($this->divisions)):
 ?>                <tr>
-                    <th id="selectcontrol2" colspan="14" data-label="Filter by Divisions">
+                    <th id="selectcontrol2" colspan="14">
                     <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
                 </tr>
 <?php
 endif;
 ?>                <tr>
-                    <th colspan="14"  class="mcs-container">
+                    <th colspan="14"  class="mcs-container" data-label="Filter by Wards">
 <?php
 $i = 0;
 foreach ($this->wards as $ward):
@@ -46,7 +46,7 @@ endforeach;
 if (isset($this->divisions)):
 ?>
                 <tr>
-                    <th colspan="14" class="mcs-container">
+                    <th colspan="14" class="mcs-container" data-label="Filter by Divisions">
 <?php
 $i = 0;
 foreach ($this->divisions as $division):
