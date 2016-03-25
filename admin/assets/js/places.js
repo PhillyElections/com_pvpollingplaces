@@ -29,10 +29,10 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol').MultiColumnSelectAddItem('wards-all','All','');
-        $('#selectcontrol').MultiColumnSelectAddItem('wards-none','None','');
-        $('#selectcontrol').MultiColumnSelectAddItem('wards-none','Invert','');
-        $('#selectcontrol').MultiColumnSelectAddItem('wards-send','Submit','');
+        $('#selectcontrol').MultiColumnSelectAddItem('all','All','wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('none','None','wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('invert','Invert','wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('submit','Submit','wards-');
         $("#selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
