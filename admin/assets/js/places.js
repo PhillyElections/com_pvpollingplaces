@@ -20,6 +20,7 @@ var Places = (function($) {
         });
         $('#selectcontrol').MultiColumnSelectAddItem('wards-all','All','');
         $('#selectcontrol').MultiColumnSelectAddItem('wards-none','None','');
+        $('#selectcontrol').MultiColumnSelectAddItem('wards-send','Send','');
         $("#selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
@@ -37,6 +38,7 @@ var Places = (function($) {
         });
         $('#selectcontrol').MultiColumnSelectAddItem('divs-all','All','');
         $('#selectcontrol').MultiColumnSelectAddItem('divs-none','None','');
+        $('#selectcontrol').MultiColumnSelectAddItem('divs-send','Send','');
     };
     return outer;
 })(jQuery);
