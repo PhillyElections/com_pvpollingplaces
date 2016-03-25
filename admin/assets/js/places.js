@@ -48,10 +48,10 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol').MultiColumnSelectAddItem('divs-all','All','');
-        $('#selectcontrol').MultiColumnSelectAddItem('divs-none','None','');
-        $('#selectcontrol').MultiColumnSelectAddItem('divs-none','Invert','');
-        $('#selectcontrol').MultiColumnSelectAddItem('divs-send','Submit','');        
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-all','All','');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none','None','');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none','Invert','');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-send','Submit','');        
     };
     outer.init = function() {
         inner.build();
