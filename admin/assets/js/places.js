@@ -2,7 +2,18 @@ jQuery.noConflict();
 var Places = (function($) {
     var outer = [],
         inner = [];
-    outer.init = function() {
+    inner.events = function () {
+        $(document).on('click', '#wards-all, #divs-all', function (){
+
+        });
+        $(document).on('click', '#wards-none, #divs-none', function (){
+            
+        });
+        $(document).on('click', '#wards-send, #divs-send', function (){
+            
+        });
+    };
+    inner.build = function() {
         $("#selectcontrol").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
@@ -20,7 +31,8 @@ var Places = (function($) {
         });
         $('#selectcontrol').MultiColumnSelectAddItem('wards-all','All','');
         $('#selectcontrol').MultiColumnSelectAddItem('wards-none','None','');
-        $('#selectcontrol').MultiColumnSelectAddItem('wards-send','Send','');
+        $('#selectcontrol').MultiColumnSelectAddItem('wards-none','Invert','');
+        $('#selectcontrol').MultiColumnSelectAddItem('wards-send','Submit','');
         $("#selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
@@ -38,7 +50,11 @@ var Places = (function($) {
         });
         $('#selectcontrol').MultiColumnSelectAddItem('divs-all','All','');
         $('#selectcontrol').MultiColumnSelectAddItem('divs-none','None','');
-        $('#selectcontrol').MultiColumnSelectAddItem('divs-send','Send','');
+        $('#selectcontrol').MultiColumnSelectAddItem('divs-none','Invert','');
+        $('#selectcontrol').MultiColumnSelectAddItem('divs-send','Submit','');        
+    };
+    outer.init = function() {
+        inner.build();
     };
     return outer;
 })(jQuery);
