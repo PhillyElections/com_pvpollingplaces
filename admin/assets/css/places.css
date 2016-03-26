@@ -11,6 +11,7 @@
 }
 
 /*The menu items (options)*/
+.additem,
 .mcs-open,
 .mcs-item{
     box-sizing: border-box;
@@ -60,6 +61,7 @@ input[type=submit]{
     clear:both;   
 }
 
+.additem:hover,
 .mcs-item:hover,
 .mcs-open:hover{
     background:#444;
@@ -97,6 +99,7 @@ button:hover{
     font-size:1em;
 }           
 
+.additem,
 .mcs-item{
     font-family: 'Ubuntu', sans-serif;
     font-size:1.2em;
@@ -117,6 +120,7 @@ button:hover{
     box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);
 }
 
+.additem,
 .mcs-item:hover{
     -moz-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -webkit-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
