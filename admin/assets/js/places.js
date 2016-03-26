@@ -23,7 +23,7 @@ var Places = (function($) {
             openclass: 'open', // Class added to Toggle button on open
             containerClass: 'mcs-container', // Class of parent container
             itemClass: 'mcs-item', // Class of menu items
-            idprefix: '', // Assign as ID to items eg 'item-' = #item-1, #item-2, #item-3...
+            idprefix: 'wards-', // Assign as ID to items eg 'item-' = #item-1, #item-2, #item-3...
             duration: 200, //Toggle Height duration
             onOpen: function() {},
             onClose: function() {},

@@ -7,7 +7,7 @@ $document = &JFactory::getDocument();
 $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/places.js"></script>');
 $document->addCustomTag('<script src="/media/bootstrap/dist/js/bootstrap.min.js" async defer></script>');
-$document->addCustomTag('<script src="/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.min.js" async defer></script>');
+$document->addCustomTag('<script src="/media/bootstrap-multi-column-select/Multi-Column-Select/Multi-Column-Select.js" async defer></script>');
 //$document->addStyleSheet('/media/bootstrap/dist/css/bootstrap.min.css');
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css');
 
