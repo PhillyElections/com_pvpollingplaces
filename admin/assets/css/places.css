@@ -26,6 +26,10 @@
     border:1px solid #aaa;    
 }
 
+.additem{
+    width:4em;
+}
+
 .mcs-open{
     border: 0;
     text-align: left;
@@ -120,7 +124,7 @@ button:hover{
     box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);
 }
 
-.additem,
+/*.additem,*/
 .mcs-item:hover{
     -moz-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -webkit-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
