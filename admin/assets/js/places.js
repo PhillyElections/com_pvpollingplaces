@@ -9,7 +9,7 @@ var Places = (function($) {
         $(document).on('click', '#wards-none, #divs-none', function() {
 
         });
-        $(document).on('click', '#wards-invert, $divs-invert', function() {
+        $(document).on('click', '#wards-invert, #divs-invert', function() {
             $closest = $(this).closest('.mcs-container');
             $closest.find('.mcs-item').each(function(){this.click()});
         });
