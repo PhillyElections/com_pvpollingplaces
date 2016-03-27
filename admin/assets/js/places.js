@@ -2,15 +2,22 @@ jQuery.noConflict();
 var Places = (function($) {
     var outer = [],
         inner = [];
-    inner.events = function () {
-        $(document).on('click', '#wards-all, #divs-all', function (){
+    inner.events = function() {
+        $(document).on('click', '#wards-all, #divs-all', function() {
 
         });
-        $(document).on('click', '#wards-none, #divs-none', function (){
-            
+        $(document).on('click', '#wards-none, #divs-none', function() {
+
         });
-        $(document).on('click', '#wards-send, #divs-send', function (){
-            
+        $(document).on('click', '#wards-invert, $divs-invert', function() {
+            $closest = $(this).closest('.mcs-container');
+            $closest.find('.mcs-item').each(function(){this.click()});
+        });
+/*        $(document).on('click', '#wards-invert', function() {
+            document.querySelectorAll('#selectcontrol2 .mcd-items').click();
+        });*/
+        $(document).on('click', '#wards-send, #divs-send', function() {
+            document.getElementById('adminForm').submit();
         });
     };
     inner.build = function() {
@@ -29,10 +36,10 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol').MultiColumnSelectAddItem('all','All','wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('none','None','wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('invert','Invert','wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('submit','Submit','wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('all', 'All', 'wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('none', 'None', 'wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('invert', 'Invert', 'wards-');
+        $('#selectcontrol').MultiColumnSelectAddItem('submit', 'Submit', 'wards-');
         $("#selectcontrol2").MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
@@ -48,13 +55,14 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-all','All','');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none','None','');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none','Invert','');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-send','Submit','');        
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-all', 'All', '');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none', 'None', '');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none', 'Invert', '');
+        $('#selectcontrol2').MultiColumnSelectAddItem('divs-send', 'Submit', '');
     };
     outer.init = function() {
         inner.build();
+        inner.events();
     };
     return outer;
 })(jQuery);
