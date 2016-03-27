@@ -9,8 +9,8 @@ var Places = (function($) {
         $(document).on('click', '#wards-none, #divs-none', function() {
 
         });
-        $(document).on('click', '[data-invert]', function() {
-            console.log('event (invert)');
+        $(document).on('click', '[data=invert]', function() {
+            console.log('event (invert)', $(this).data());
             $closest = $(this).closest('.mcs-container');
             $closest.find('.mcs-item').each(function(){this.click()});
         });
