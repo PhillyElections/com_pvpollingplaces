@@ -4,21 +4,14 @@ var Places = (function($) {
         inner = [];
     inner.events = function() {
         $(document).on('click', '[data=all]', function() {
-            $closest = $(this).closest('.mcs-container');
-            $closest.find('.mcs-item').not('.active').click();
+            $(this).parent().find('.mcs-item').not('.active').click();
         });
         $(document).on('click', '[data=none]', function() {
-            $closest = $(this).closest('.mcs-container');
-            $closest.find('.mcs-item .active').click();
+            $(this).parent().find('.active').click();
         });
         $(document).on('click', '[data=invert]', function() {
-            console.log('event (invert)', $(this).data());
-            $closest = $(this).closest('.mcs-container');
-            $closest.find('.mcs-item').each(function(){this.click()});
+            $(this).parent().find('.mcs-item').click();
         });
-/*        $(document).on('click', '#wards-invert', function() {
-            document.querySelectorAll('#selectcontrol2 .mcd-items').click();
-        });*/
         $(document).on('click', '[data=submit]', function() {
             document.getElementById('adminForm').submit();
         });
