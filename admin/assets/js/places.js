@@ -33,7 +33,7 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol').append('<hr/>');
+        $selectcontrol.append('<hr class="clear" />');
         $selectcontrol.MultiColumnSelectAddItem('all', 'All', 'wards-');
         $selectcontrol.MultiColumnSelectAddItem('none', 'None', 'wards-');
         $selectcontrol.MultiColumnSelectAddItem('invert', 'Invert', 'wards-');
