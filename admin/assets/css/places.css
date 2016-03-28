@@ -127,11 +127,11 @@ button:hover{
 
 /*.additem,*/
 .mcs-item:hover{
-    -moz-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+/*    -moz-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -webkit-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -o-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -ms-transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    transform: scale(1) rotate(-3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);*/
 }
 
 .mcs-item.active{
