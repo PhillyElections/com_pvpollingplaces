@@ -17,7 +17,7 @@ var Places = (function($) {
         });
     };
     inner.build = function() {
-$selectcontrol=$("#selectcontrol");
+        $selectcontrol = $("#selectcontrol");
         $selectcontrol.MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
