@@ -1,5 +1,5 @@
 jQuery.noConflict();
-var Filter = (function($) {
+(function($) {
     var outer = [],
         inner = [];
     inner.events = function() {
@@ -43,8 +43,7 @@ var Filter = (function($) {
         inner.build();
         inner.events();
     };
-    return outer;
+    window.addEvent('domready', function() {
+        outer.init();
+    });
 })(jQuery);
-window.addEvent('domready', function() {
-    Places.init();
-});
