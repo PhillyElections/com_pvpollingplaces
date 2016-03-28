@@ -22,14 +22,15 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple class="hidden"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
 <?php
-if (isset($this->divisions)):
+// backing out of divisions filtering for now
+/*if (isset($this->divisions)):
 ?>                <tr>
-                    <th id="selectcontrol2" colspan="14">
-                    <?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple class="hidden"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
-                </tr>
+<th id="selectcontrol2" colspan="14">
+<?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple class="hidden"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
+</tr>
 <?php
-endif;
-?>                <tr>
+endif;*/
+;?>                <tr>
                     <th colspan="14"  class="mcs-container" data-label="Filter by Wards">
 <?php
 $i = 0;
@@ -41,10 +42,11 @@ endforeach;
                     </th>
                 </tr>
 <?php
-if (isset($this->divisions)):
+// backing out of divisions filtering for now
+/*if (isset($this->divisions)):
 ?>
-                <tr>
-                    <th colspan="14" class="mcs-container" data-label="Filter by Divisions">
+<tr>
+<th colspan="14" class="mcs-container" data-label="Filter by Divisions">
 <?php
 $i = 0;
 foreach ($this->divisions as $division):
@@ -52,11 +54,11 @@ foreach ($this->divisions as $division):
 <?php
 endforeach;
 ?>
-                    </th>
-                </tr>
+</th>
+</tr>
 <?php
-endif;
-?>                <tr>
+endif;*/
+;?>                <tr>
                     <th width="5px">
                         <?=JText::_('ID');?>
                     </th>
