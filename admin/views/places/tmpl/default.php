@@ -19,7 +19,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
             <thead>
                 <tr>
                     <th colspan="14" id="selectcontrol" data-label="Filter by Wards">
-                        <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple class="hidden"', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
+                        <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
 <?php
 // backing out of divisions filtering for now
