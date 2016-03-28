@@ -37,8 +37,8 @@ endif;*/
                     <th width="5px">
                         P
                     </th>
-                    <th><button id="btnWard" data-area="filterWard"><?=JText::_('Ward');?></button></th>
-                    <th><button id="btnDivision" data-area"filterDivision"><?=JText::_('Division');?></button></th>
+                    <th><?=JText::_('Ward');?></th>
+                    <th><?=JText::_('Division');?></th>
                     <th><?=JText::_('Pin');?></th>
                     <th><?=JText::_('Display');?></th>
                     <th><?=JText::_('Name');?></th>
