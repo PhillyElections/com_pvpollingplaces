@@ -31,34 +31,6 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css')
 <?php
 endif;*/
 ;?>                <tr>
-                    <th colspan="14"  class="mcs-container" data-label="Filter by Wards">
-<?php
-$i = 0;
-foreach ($this->wards as $ward):
-?>    <a id="mcs-<?=$i++;?>" data="<?=$ward->ward;?>" class="mcs-item"><?=$ward->ward;?></a>
-<?php
-endforeach;
-?>
-                    </th>
-                </tr>
-<?php
-// backing out of divisions filtering for now
-/*if (isset($this->divisions)):
-?>
-<tr>
-<th colspan="14" class="mcs-container" data-label="Filter by Divisions">
-<?php
-$i = 0;
-foreach ($this->divisions as $division):
-?>    <a id="mcs-<?=$i++;?>" data="<?=$division->division_id;?>" class="mcs-item"><?=$division->division_id;?></a>
-<?php
-endforeach;
-?>
-</th>
-</tr>
-<?php
-endif;*/
-;?>                <tr>
                     <th width="5px">
                         <?=JText::_('ID');?>
                     </th>

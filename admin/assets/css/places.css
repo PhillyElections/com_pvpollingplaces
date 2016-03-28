@@ -108,7 +108,7 @@ button:hover{
 .mcs-item{
     font-family: 'Ubuntu', sans-serif;
     font-size:1.2em;
-    -moz-transform: scale(0.95) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+/*    -moz-transform: scale(0.95) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -webkit-transform: scale(0.95) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -o-transform: scale(0.95) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
     -ms-transform: scale(0.95) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
@@ -117,7 +117,7 @@ button:hover{
     -moz-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     -o-transition: all 300ms ease;
-    transition: all 300ms ease;
+    transition: all 300ms ease;*/
     -webkit-border-radius: 3px 3px 3px 3px;
     border-radius: 3px 3px 3px 3px;
     text-shadow: -1px 1px 1px #eee;
