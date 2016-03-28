@@ -3,16 +3,16 @@ var Places = (function($) {
     var outer = [],
         inner = [];
     inner.events = function() {
-        $(document).on('click', '[data=all]', function() {
-            $(this).parent().find('.mcs-item').not('.active').click();
+        $(document).on('click', 'a[data=all]', function() {
+            $(this).parent().find('a.mcs-item').not('.active').click();
         });
-        $(document).on('click', '[data=none]', function() {
-            $(this).parent().find('.active').click();
+        $(document).on('click', 'a[data=none]', function() {
+            $(this).parent().find('a.active').click();
         });
-        $(document).on('click', '[data=invert]', function() {
-            $(this).parent().find('.mcs-item').click();
+        $(document).on('click', 'a[data=invert]', function() {
+            $(this).parent().find('a.mcs-item').click();
         });
-        $(document).on('click', '[data=submit]', function() {
+        $(document).on('click', 'a[data=submit]', function() {
             document.getElementById('adminForm').submit();
         });
     };
