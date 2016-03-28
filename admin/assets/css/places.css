@@ -118,6 +118,7 @@ button:hover{
 }
 
 .mcs-item.active:hover{
+    color: #CCC;
     background:#FFF;
     text-shadow: 0 0 0 #FFF;
 }
