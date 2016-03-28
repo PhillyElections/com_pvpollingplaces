@@ -17,7 +17,8 @@ var Places = (function($) {
         });
     };
     inner.build = function() {
-        $("#selectcontrol").MultiColumnSelect({
+$selectcontrol=$("#selectcontrol");
+        $selectcontrol.MultiColumnSelect({
             multiple: true, // Single or Multiple Select- Default Single
             useOptionText: true, // Use text from option. Use false if you plan to use images
             hideselect: true, // Hide Original Select Control
@@ -32,10 +33,11 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol').MultiColumnSelectAddItem('all', 'All', 'wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('none', 'None', 'wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('invert', 'Invert', 'wards-');
-        $('#selectcontrol').MultiColumnSelectAddItem('submit', 'Submit', 'wards-');
+        $('#selectcontrol').append('<hr/>');
+        $selectcontrol.MultiColumnSelectAddItem('all', 'All', 'wards-');
+        $selectcontrol.MultiColumnSelectAddItem('none', 'None', 'wards-');
+        $selectcontrol.MultiColumnSelectAddItem('invert', 'Invert', 'wards-');
+        $selectcontrol.MultiColumnSelectAddItem('submit', 'Submit', 'wards-');
     };
     outer.init = function() {
         inner.build();
