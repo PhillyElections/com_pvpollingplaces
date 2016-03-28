@@ -7,7 +7,7 @@ $document = &JFactory::getDocument();
 $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/filter.js"></script>');
 $document->addCustomTag('<script src="/media/multi-column-select/Multi-Column-Select/Multi-Column-Select.js" async defer></script>');
-$document->addStyleSheet('components/com_pvpollingplaces/assets/css/places.css');
+$document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css');
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
