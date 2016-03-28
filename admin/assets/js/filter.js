@@ -1,5 +1,5 @@
 jQuery.noConflict();
-var Places = (function($) {
+var Filter = (function($) {
     var outer = [],
         inner = [];
     inner.events = function() {
