@@ -51,10 +51,10 @@ var Places = (function($) {
             onClose: function() {},
             onItemSelect: function() {}
         });
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-all', 'All', '');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none', 'None', '');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-none', 'Invert', '');
-        $('#selectcontrol2').MultiColumnSelectAddItem('divs-send', 'Submit', '');
+        $('#selectcontrol').MultiColumnSelectAddItem('all', 'All', 'divs-');
+        $('#selectcontrol').MultiColumnSelectAddItem('none', 'None', 'divs-');
+        $('#selectcontrol').MultiColumnSelectAddItem('invert', 'Invert', 'divs-');
+        $('#selectcontrol').MultiColumnSelectAddItem('submit', 'Submit', 'divs-');
     };
     outer.init = function() {
         inner.build();
