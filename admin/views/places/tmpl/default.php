@@ -13,21 +13,17 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css')
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
         <table class="adminlist">
-            <thead>
+<?php
+if (count($this->items)):
+?>
                 <tr>
-                    <th colspan="14" id="selectcontrol" data-label="Filter by Wards">
+                    <th colspan="9" id="selectcontrol" data-label="Filter by Wards">
                         <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
                 </tr>
 <?php
-// backing out of divisions filtering for now
-/*if (isset($this->divisions)):
-?>                <tr>
-<th id="selectcontrol2" colspan="14">
-<?=(isset($this->divisions) && count($this->divisions) ? JHTML::_('select.genericlist', PVCombo::getsFromObject($this->divisions, 'division_id', 'division_id'), 'd_id[]', 'multiple class="hidden"', 'idx', 'value', (JRequest::getVar('d_id') ? JRequest::getVar('d_id') : ''), 'd_id') : JText::_('Division'));?></th>
-</tr>
-<?php
-endif;*/
-;?>                <tr>
+endif;
+?>
+                <tr>
                     <th width="5px">
                         <?=JText::_('ID');?>
                     </th>
