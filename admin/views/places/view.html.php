@@ -40,9 +40,10 @@ class PvpollingplacesViewPlaces extends JView
         $wards = $model->getData();
         $this->assignRef('wards', $wards);
 
+        // leaving division wiring in place
         if (JRequest::getVar('ward', false) && !JRequest::getVar('format', false)) {
-            if (JRequest::getVar('d_id', false)) {
-                $divlink = "&d_id=" . JRequest::getVar('d_id');
+            if (JRequest::getVar('div', false)) {
+                $divlink = "&div=" . JRequest::getVar('div');
             }
             $wardlink = "&ward=" . JRequest::getVar('ward');
             $model = $this->getModel('Divisions');

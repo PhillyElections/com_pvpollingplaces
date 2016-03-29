@@ -68,7 +68,7 @@ class PvpollingplacesModelPlaces extends JModel
         $wards_list = $divisions_list = array();
 
         $wards = JRequest::getVar('ward', false);
-        $divisions = JRequest::getVar('d_id', false);
+        $divisions = JRequest::getVar('div', false);
 
         if ($divisions) {
             $where = ' where ';
