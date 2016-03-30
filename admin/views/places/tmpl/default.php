@@ -50,7 +50,7 @@ endif;
 $k = 0;
 for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $row = &$this->items[$i];
-    $link = JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $row->id . ());
+    $link = JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $row->id);
     ?>
             <tr class="<?="row$k";?>">
                 <td>
