@@ -36,11 +36,11 @@
     text-align: left;
     padding: auto;
     width:auto;
-    margin:.1em;
+    margin:.1em .25em .1em .25em;
 }
 
 .mcs-open.open{
-    background:#fff;
+    background:#e8e8e8;
     color:#444;
 }
 .mcs-open.open:hover{
@@ -57,8 +57,8 @@
 .additem:hover,
 .mcs-item:hover,
 .mcs-open:hover{
-    background:#444;
-    color:#fff;
+    background:#888;
+    color:#ddd;
     cursor:pointer;
     text-decoration: none;
 }
