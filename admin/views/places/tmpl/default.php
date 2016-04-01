@@ -14,7 +14,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css')
     <div id="editcell">
         <table class="adminlist">
 <?php
-if (count($this->items)):
+if (count($this->items) or JRequest::getVar('ward')):
 ?>
                 <tr>
                     <th colspan="14" id="selectcontrol" data-filter="Filter by Wards">
