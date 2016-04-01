@@ -32,6 +32,13 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
         $view->display();
     }
 
+    public function edit()
+    {
+        $mainframe = JFactory::getApplication();
+        $cid = JRequest::getVar('cid');
+        $mainframe->redirect('index.php?option=com_pvpollingplaces&view=place&cid=' . $cid[0]);
+    }
+
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
