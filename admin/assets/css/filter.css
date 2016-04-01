@@ -32,12 +32,11 @@
 }
 
 .mcs-open{
-    border: 0;
+    border: .1em;
     text-align: left;
     padding: auto;
-    width:100%;
-    margin-top:1em;
-    text-decoration: none;
+    width:auto;
+    margin:.1em;
 }
 
 .mcs-open.open{
@@ -61,6 +60,7 @@
     background:#444;
     color:#fff;
     cursor:pointer;
+    text-decoration: none;
 }
 
 button:hover{
@@ -110,7 +110,6 @@ button:hover{
     text-shadow: -.1em .1em .1em #eee;
     -webkit-box-shadow: 0 0 .2em .1em rgba(0,0,0,0.4);
     box-shadow: 0 0 .2em .1em rgba(0,0,0,0.4);
-
 }
 
 .mcs-item.active{
