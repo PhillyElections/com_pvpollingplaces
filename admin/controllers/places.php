@@ -32,11 +32,17 @@ class PvpollingplacesControllerPlaces extends PvpollingplacesController
         $view->display();
     }
 
+    public function add()
+    {
+        $mainframe = JFactory::getApplication();
+        $mainframe->redirect('index.php?option=com_pvmachineinspectors&controller=place&task=add&&cid=' . $cid[0]);
+    }
+
     public function edit()
     {
         $mainframe = JFactory::getApplication();
         $cid = JRequest::getVar('cid');
-        $mainframe->redirect('index.php?option=com_pvpollingplaces&controller=place&cid=' . $cid[0]);
+        $mainframe->redirect('index.php?option=com_pvmachineinspectors&controller=place&task=edit&cid=' . $cid[0]);
     }
 
     public function publish()
