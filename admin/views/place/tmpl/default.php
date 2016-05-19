@@ -18,12 +18,12 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
 <table cellpadding="0" cellspacing="0" border="0" width="100%" class="contentpane">
     <tr>
         <td height="40">
-            <label id="field1msg" for="field1">
+            <label id="field1msg" for="display_address">
     <?=JText::_('FIELD');?>:
             </label>
         </td>
         <td>
-            <input type="text" id="field1" name="field1" size="60%" value="<?=($place->field1 ? $place->field1 : 'default');?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_('FIELD1 PLACEHOLDER');?>" />
+            <input type="text" id="display_address" name="display_address" size="60%" value="<?=($place->display_address ? $place->display_address : '');?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_('DISPLAY_ADDRESS PLACEHOLDER');?>" />
         </td>
     </tr>
     <tr>
