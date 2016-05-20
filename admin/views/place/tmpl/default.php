@@ -10,7 +10,8 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
     }
 }
 $place = $this->place;
-$document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/pollingplaces.js" async defer></script>');
+$document->addStyleSheet('components/com_pvpollingplaces/assets/css/map.css');
+$document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/map.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
   <div class="right" id="map"></div>
