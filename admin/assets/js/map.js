@@ -45,6 +45,7 @@ var map = (function(d) {
       lat: d.getElementById('alat'),
       lng: d.getElementById('alng')
     };
+    console.log(inner.location);
   }
 
   return outer;
