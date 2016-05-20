@@ -15,7 +15,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/m
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
   <div class="right" id="map"></div>
-  <table cellpadding="0" cellspacing="0" border="0" width="80%" class="contentpane">
+  <table cellpadding="0" cellspacing="0" border="0" width="80%" class="contentpane clearfix">
     <tr>
       <td height="40">
         <label id="idmsg" for="id"><?=JText::_("ID");?>:</label>
