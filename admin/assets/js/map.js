@@ -1,7 +1,7 @@
 var map = (function(d) {
   'use strict';
   var inner = {}, outer = {};
-
+  inner.location={};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
 
   inner.resetBounds = function() {
