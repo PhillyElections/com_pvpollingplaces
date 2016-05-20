@@ -3,7 +3,7 @@ var map = (function(d) {
   var inner = {}, outer = {};
   inner.location={};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
-
+//key='+inner.apikey+'
   inner.resetBounds = function() {
     bounds = new google.maps.LatLngBounds();
   };
@@ -14,7 +14,7 @@ var map = (function(d) {
     var script = document.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key='+inner.apikey+'v=3.exp&callback=map.display';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=map.display';
     document.body.appendChild(script);
   };
 
