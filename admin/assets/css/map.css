@@ -7,6 +7,10 @@
     float: right;
 }
 
+.left {
+    float: left;
+}
+
 .clearfix {
     clear: both;
 }
