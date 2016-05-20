@@ -1,6 +1,6 @@
 var map = (function(d) {
   'use strict';
-  var inner = outer = {};
+  var inner = {}, outer = {};
 
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
 
