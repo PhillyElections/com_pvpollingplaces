@@ -32,18 +32,18 @@ var map = (function(d) {
 
   outer.setLocations = function () {
     inner.location.building = {
-      lat: d.getElementById('lat').value,
-      lng: d.getElementById('lng').value
+      lat: document.getElementById('lat').value,
+      lng: document.getElementById('lng').value
     };
 
     inner.location.entrance = {
-      lat: d.getElementById('elat').value,
-      lng: d.getElementById('elng').value
+      lat: document.getElementById('elat').value,
+      lng: document.getElementById('elng').value
     };
 
     inner.location.accessible = {
-      lat: d.getElementById('alat').value,
-      lng: d.getElementById('alng').value
+      lat: document.getElementById('alat').value,
+      lng: document.getElementById('alng').value
     };
     console.log(inner.location);
   }
