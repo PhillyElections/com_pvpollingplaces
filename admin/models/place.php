@@ -31,7 +31,7 @@ class PvpollingplacesModelPlace extends JModel
         parent::__construct();
 
         $array = JRequest::getVar('cid', 0, '', 'array');
-        $id = JRequest::getInt('id');
+        $id    = JRequest::getInt('id');
         if ($id) {
             // in case we're updating and check() failed
             $this->setId((int) $id);
@@ -41,21 +41,21 @@ class PvpollingplacesModelPlace extends JModel
     }
 
     /**
-     * Method to set the applicant identifier
+     * Method to set the place identifier
      *
      * @access    public
-     * @param    int applicant identifier
+     * @param    int place identifier
      * @return    void
      */
     public function setId($id)
     {
         // Set id and wipe data
-        $this->_id = $id;
+        $this->_id   = $id;
         $this->_data = null;
     }
 
     /**
-     * Method to get an applicant
+     * Method to get an place
      *
      * @return object with data
      */
@@ -69,8 +69,8 @@ class PvpollingplacesModelPlace extends JModel
             $this->_data = $this->_db->loadObject();
         }
         if (!$this->_data) {
-            $this->_data = new stdClass();
-            $this->_data->id = 0;
+            $this->_data           = new stdClass();
+            $this->_data->id       = 0;
             $this->_data->greeting = null;
         }
         return $this->_data;
