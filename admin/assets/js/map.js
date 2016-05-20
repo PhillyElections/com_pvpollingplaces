@@ -27,24 +27,24 @@ var map = (function(d) {
     }
     inner.map = new google.maps.Map(document.getElementById('map'), {
       center: location,
-      zoom: 22
+      zoom: 19
     });
   };
 
   outer.setLocations = function () {
     inner.location.building = {
-      lat: document.getElementById('lat').value,
-      lng: document.getElementById('lng').value
+      lat: parseFloat(document.getElementById('lat').value),
+      lng: parseFloat(document.getElementById('lng').value)
     };
 
     inner.location.entrance = {
-      lat: document.getElementById('elat').value,
-      lng: document.getElementById('elng').value
+      lat: parseFloat(document.getElementById('elat').value),
+      lng: parseFloat(document.getElementById('elng').value)
     };
 
     inner.location.accessible = {
-      lat: document.getElementById('alat').value,
-      lng: document.getElementById('alng').value
+      lat: parseFloat(document.getElementById('alat').value),
+      lng: parseFloat(document.getElementById('alng').value)
     };
     console.log(inner.location);
   }
