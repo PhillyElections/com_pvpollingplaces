@@ -1,4 +1,4 @@
-var map = (function(d) {
+var place = (function(d) {
   'use strict';
   var inner = {}, outer = {};
   inner.location={};
@@ -14,11 +14,11 @@ var map = (function(d) {
     var script = document.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=map.display';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.mapDisplay';
     document.body.appendChild(script);
   };
 
-  outer.display = function (type) {
+  outer.mapDisplay = function (type) {
     if (type) {
       location=innner.location[type];
     } else {
@@ -52,6 +52,6 @@ var map = (function(d) {
   return outer;
 })(document);
 window.addEvent('domready', function() {
-  map.init();
-  map.setLocations();
+  place.init();
+  place.setLocations();
 });
