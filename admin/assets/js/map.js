@@ -18,13 +18,13 @@ var map = (function(d) {
     document.body.appendChild(script);
   };
 
-  outer.display = function (location) {
-    console.log(location);
-    if (typeof location === 'object' && location.lat) {
-      // we have a location, do nothing
+  outer.display = function (type) {
+    if (type) {
+      location=innner.location[type];
     } else {
       location = inner.location.building;
     }
+    
     inner.map = new google.maps.Map(document.getElementById('map'), {
       center: location,
       zoom: 19
