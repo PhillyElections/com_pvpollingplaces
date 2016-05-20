@@ -13,7 +13,8 @@ $place = $this->place;
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/pollingplaces.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
-  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="contentpane">
+  <div class="right" id="map"></div>
+  <table cellpadding="0" cellspacing="0" border="0" width="80%" class="contentpane">
     <tr>
       <td height="40">
         <label id="idmsg" for="id"><?=JText::_("ID");?>:</label>
