@@ -19,13 +19,14 @@ var map = (function(d) {
   };
 
   outer.display = function (location) {
+    console.log(location);
     if (typeof location === 'object' && location.lat) {
       // we have a location, do nothing
     } else {
       location = inner.location.building;
     }
     inner.map = new google.maps.Map(document.getElementById('map'), {
-      center: {location},
+      center: location,
       zoom: 22
     });
   };
