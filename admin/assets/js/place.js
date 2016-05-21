@@ -29,7 +29,8 @@ var place = (function(d) {
     var buildingMarker = new google.maps.Marker({
       position: inner.location.building,
       map: inner.map,
-      title: inner.locationName
+      title: inner.locationName,
+      icon: 'components/com_pvpollingplaces/assets/images/b.png'
     });
   };
 
