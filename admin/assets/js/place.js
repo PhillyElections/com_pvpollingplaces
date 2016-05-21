@@ -15,7 +15,7 @@ var place = (function(d) {
   };
 
   outer.mapDisplay = function () {
-    outer.setLocations();
+    inner.setLocations();
 
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
@@ -26,15 +26,13 @@ var place = (function(d) {
   };
 
   outer.markerDisplay = function () {
-
     var buildingMarker = new google.maps.Marker({
       position: inner.location.building;
       map: inner.map,
       title: inner.locationName;
     });
+  };
 
-
-  }
   inner.setLocations = function () {
     inner.locationName = d.getElementById('location').value;
     inner.location.building = {
