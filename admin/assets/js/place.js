@@ -1,7 +1,7 @@
 var place = (function(d) {
   'use strict';
-  var inner = {},
-    outer = {};
+  var inner = {}, outer = {};
+  inner.markers.building = inner.markers.entrance = inner.markers.accessible = inner.listener = null;
   inner.location = {};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
@@ -20,13 +20,17 @@ var place = (function(d) {
       zoom: 19,
       navigationControl: false
     });
-    outer.markerDisplay();
+    outer.markerDisplay(inner.markers.building, inner.location.building, inner.locationName);
   };
-  outer.markerDisplay = function() {
-    var buildingMarker = new google.maps.Marker({
-      position: inner.location.building,
+  outer.markerDisplay = function(marker, coords, title) {
+    if (marker) {
+      marker.setMap(null);
+      marker=null;
+    }
+    marker = new google.maps.Marker({
+      position: coords,
       map: inner.map,
-      title: inner.locationName,
+      title: title
     });
   };
   inner.setLocations = function() {
@@ -45,6 +49,19 @@ var place = (function(d) {
     };
     console.log(inner.location);
   }
+  outer.deaf = function () {
+      google.maps.event.removeListener(inner.listener);   
+  };
+  outer.listen = function () {
+    inner.listener = google.maps.event.addListener(map, 'click', function(event) {
+      //call function to create marker
+      if (marker) {
+        marker.setMap(null);
+        marker = null;
+      }
+      marker = displayMarker(event.latLng, "Set Me Based On The Click That Activates");
+    });    
+  };
 /*
   var infowindow = new google.maps.InfoWindow({
     size: new google.maps.Size(150, 50)
