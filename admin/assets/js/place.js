@@ -46,6 +46,7 @@ var place = (function(d) {
     };
     console.log(inner.location);
   }
+/*
   var infowindow = new google.maps.InfoWindow({
     size: new google.maps.Size(150, 50)
   });
@@ -90,6 +91,7 @@ var place = (function(d) {
       marker = createMarker(event.latLng, "name", "<b>Location</b><br>" + event.latLng);
     });
   }
+*/
   return outer;
 })(document);
 window.addEvent('domready', function() {
