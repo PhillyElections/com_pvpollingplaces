@@ -14,21 +14,29 @@ var place = (function(d) {
     d.body.appendChild(script);
   };
 
-  outer.mapDisplay = function (type) {
-    var loc = {};
-    if (type) {
-      loc=innner.location[type];
-    } else {
-      loc = inner.location.building;
-    }
-    
+  outer.mapDisplay = function () {
+    outer.setLocations();
+
     inner.map = new google.maps.Map(d.getElementById('map'), {
-      center: location,
+      center: inner.location.building,
       zoom: 19
     });
+
+    outer.markerDisplay();
   };
 
-  outer.setLocations = function () {
+  outer.markerDisplay = function () {
+
+    var buildingMarker = new google.maps.Marker({
+      position: inner.location.building;
+      map: inner.map,
+      title: inner.locationName;
+    });
+
+
+  }
+  inner.setLocations = function () {
+    inner.locationName = d.getElementById('location').value;
     inner.location.building = {
       lat: parseFloat(d.getElementById('lat').value),
       lng: parseFloat(d.getElementById('lng').value)
@@ -50,5 +58,4 @@ var place = (function(d) {
 })(document);
 window.addEvent('domready', function() {
   place.init();
-  place.setLocations();
 });
