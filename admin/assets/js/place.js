@@ -2,7 +2,7 @@ var place = (function(d) {
   'use strict';
   var inner = {}, outer = {};
   inner.markers = inner.location = {};
-  inner.markers.building = inner.markers.entrance = inner.markers.accessible = inner.listener = null;
+  inner.markers.building = inner.markers.entrance = inner.markers.accessible = inner.listener = false;
   
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
@@ -26,7 +26,7 @@ var place = (function(d) {
   outer.markerDisplay = function(marker, coords, title) {
     if (marker) {
       marker.setMap(null);
-      marker=null;
+      marker=false;
     }
     marker = new google.maps.Marker({
       position: coords,
