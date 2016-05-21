@@ -4,10 +4,6 @@ var place = (function(d) {
   inner.location={};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
 //key='+inner.apikey+'
-  inner.resetBounds = function() {
-    var bounds = new google.maps.LatLngBounds();
-  };
-
 
   // hot init function
   outer.init = function() {
