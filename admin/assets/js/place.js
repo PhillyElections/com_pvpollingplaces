@@ -24,7 +24,7 @@ var place = (function(d) {
     outer.markerDisplay(inner.markers.building, inner.location.building, inner.locationName);
   };
   outer.markerDisplay = function(marker, coords, title) {
-    if (marker) {
+    if (marker && marker.setMap typeof === "function") {
       marker.setMap(null);
       marker=false;
     }
