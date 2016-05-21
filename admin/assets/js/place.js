@@ -27,7 +27,6 @@ var place = (function(d) {
       position: inner.location.building,
       map: inner.map,
       title: inner.locationName,
-      icon: 'components/com_pvpollingplaces/assets/images/b.png'
     });
   };
   inner.setLocations = function() {
