@@ -27,7 +27,7 @@ var place = (function(d) {
 
   outer.markerDisplay = function () {
     var buildingMarker = new google.maps.Marker({
-      position: inner.location.building;
+      position: inner.location.building,
       map: inner.map,
       title: inner.locationName;
     });
