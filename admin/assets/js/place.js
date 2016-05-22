@@ -8,11 +8,25 @@ var place = (function(d) {
   inner.markers = { 'building': false, 'entrance': false, 'accessible': false };
   inner.listener = false;
   inner.elements = { 'building': {}, 'entrance': {}, 'accessible': {} };
-  inner.images = { 'building': '/components/com_voterapp/polling.png', 'entrance': 'components/com_pvpollingplaces/assets/images/e.png', 'accessible': 'components/com_pvpollingplaces/assets/images/h.png' };
+  inner.images = {
+    'building': '/components/com_voterapp/polling.png',
+    'entrance': 'components/com_pvpollingplaces/assets/images/e.png',
+    'accessible': 'components/com_pvpollingplaces/assets/images/h.png'
+  };
 
-  inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
-  //key='+inner.apikey+'
-  // hot init function
+  inner.createMarker = function(coords, image, title) {
+    var marker = new google.maps.Marker({
+      position: coords,
+      map: inner.map,
+      title: title,
+      icon: image
+    });
+    return marker;
+  };
+
+  inner.dropListener = function() {
+    google.maps.event.removeListener(inner.listener);
+  };
 
   inner.setElements = function() {
     inner.elements.building.lat = d.getElementById('lat');
@@ -21,7 +35,6 @@ var place = (function(d) {
     inner.elements.entrance.lng = d.getElementById('elng');
     inner.elements.accessible.lat = d.getElementById('alat');
     inner.elements.accessible.lng = d.getElementById('alng');
-    console.log(inner.elements);
   };
 
   inner.setLocations = function() {
@@ -38,7 +51,6 @@ var place = (function(d) {
       lat: parseFloat(inner.elements.accessible.lat.value),
       lng: parseFloat(inner.elements.accessible.lng.value)
     };
-    console.log(inner.location);
   }
 
   outer.init = function() {
@@ -57,42 +69,25 @@ var place = (function(d) {
       center: inner.location.building,
       zoom: 19,
     });
-    inner.markers.building = outer.createMarker(inner.location.building, inner.images.building, inner.locationName);
-  };
-
-  outer.createMarker = function(coords, image, title) {
-    var marker = new google.maps.Marker({
-      position: coords,
-      map: inner.map,
-      title: title,
-      icon: image
-    });
-    return marker;
-  };
-
-  outer.dropListener = function() {
-    console.log('dropping listener');
-    google.maps.event.removeListener(inner.listener);
+    inner.markers.building = inner.createMarker(inner.location.building, inner.images.building, inner.locationName);
   };
 
   outer.addListener = function(type) {
     // we only allow one listener at a time
-    outer.dropListener();
-    console.log('adding listener');
+    inner.dropListener();
     inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
-      console.log('listener executed');
       //call function to create marker
       if (inner.markers[type] && typeof inner.markers[type].setMap === 'function') {
         inner.markers[type].setMap(null);
         inner.markers[type] = null;
       }
-      inner.markers[type] = outer.createMarker(event.latLng, inner.images[type], "Set Me Based On The Click That Activates" + event.latLng);
-      console.log(event, inner.images[type]);
+      inner.markers[type] = inner.createMarker(event.latLng, inner.images[type], "Set Me Based On The Click That Activates" + event.latLng);
       inner.elements[type].lat.value = event.latLng.lat();
       inner.elements[type].lng.value = event.latLng.lng();
     });
   };
 
+  console.log(d.getQuerySelectorAll(".marker"));
   return outer;
 })(document);
 window.addEvent('domready', function() {
