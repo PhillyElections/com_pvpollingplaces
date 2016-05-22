@@ -75,7 +75,7 @@ var place = (function(d) {
 
   outer.addListener = function (marker) {
     console.log('adding listener');
-    inner.listener = google.maps.event.addListener(map, 'click', function(event) {
+    inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
       console.log('listener executed');
       //call function to create marker
 
