@@ -20,11 +20,12 @@ div.wrap {
 }
 
 ul.markers li {
+  background-color: #aaa;
   display: inline-block;
   cursor: pointer;
   border: 1px solid #333;
   border-radius: 5px;
-  padding: 2px;
+  padding: 2px 5px 2px 5px;
   margin: 0 5px 0 0;
   vertical-align: middle;
 }
