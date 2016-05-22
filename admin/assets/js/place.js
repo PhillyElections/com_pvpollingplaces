@@ -87,7 +87,7 @@ var place = (function(d) {
         inner.markers[type].setMap(null);
         inner.markers[type] = null;
       }
-      inner.markers[type] = outer.createMarker(event.latLng, "Set Me Based On The Click That Activates");
+      inner.markers[type] = outer.createMarker(event.latLng, "Set Me Based On The Click That Activates" + event.latLng);
       console.log(event.latLng);
       inner.elements[type].lat.value = event.latLng.lat;
       inner.elements[type].lng.value = event.latLng.lng;
