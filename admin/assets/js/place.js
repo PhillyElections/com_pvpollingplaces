@@ -89,8 +89,8 @@ var place = (function(d) {
       }
       inner.markers[type] = outer.createMarker(event.latLng, "Set Me Based On The Click That Activates" + event.latLng);
       console.log(event);
-      inner.elements[type].lat.value = event.latLng.lat;
-      inner.elements[type].lng.value = event.latLng.lng;
+      inner.elements[type].lat.value = event.latLng.lat();
+      inner.elements[type].lng.value = event.latLng.lng();
     });
   };
   /*
