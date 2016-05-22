@@ -28,12 +28,18 @@ var place = (function(d) {
 
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
-    for (var type in ['building', 'entrance', 'accessible']) {
-      inner.location[type] = {
-        lat: parseFloat(inner.elements[type].lat.value),
-        lng: parseFloat(inner.elements[type].lng.value)
-      };
-    }
+    inner.location.building = {
+      lat: parseFloat(inner.elements.building.lat.value),
+      lng: parseFloat(inner.elements.building.lng.value)
+    };
+    inner.location.entrance = {
+      lat: parseFloat(inner.elements.entrance.lat.value),
+      lng: parseFloat(inner.elements.entrance.lng.value)
+    };
+    inner.location.accessible = {
+      lat: parseFloat(inner.elements.accessible.lat.value),
+      lng: parseFloat(inner.elements.accessible.lng.value)
+    };
     console.log(inner.location);
   }
 
