@@ -54,6 +54,7 @@ var place = (function(d) {
   }
 
   outer.init = function() {
+    var markers = d.querySelectorAll("img.marker");
     var script = d.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
@@ -62,10 +63,9 @@ var place = (function(d) {
 
     inner.setElements();
     inner.setLocations();
-    console.log(d.querySelectorAll("img.marker"));
-    for (var marker in d.querySelectorAll("img.marker")) {
-      console.log(marker);
-      //marker.addListener('click', function() { inner.addListener(marker.dataset.marker) });
+    for (var i; i < markers.length; i++) {
+
+      markers[i].addListener('click', function() { inner.addListener(markers[i].dataset.marker) });
     }
 
   };
