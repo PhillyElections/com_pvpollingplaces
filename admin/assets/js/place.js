@@ -3,7 +3,7 @@ var place = (function(d) {
   var inner = {}, outer = {};
   inner.markers = inner.location = inner.elements = {};
   inner.markers.building = inner.markers.entrance = inner.markers.accessible = inner.listener = false;
-  inner.elements.building = innner.elements.entrance = inner.elements.accessible = {};
+  inner.elements.building = inner.elements.entrance = inner.elements.accessible = {};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
   // hot init function
