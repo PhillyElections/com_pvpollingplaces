@@ -62,7 +62,10 @@ var place = (function(d) {
 
     inner.setElements();
     inner.setLocations();
-    console.log(d.querySelectorAll("img.marker"));
+    for (var marker as d.querySelectorAll("img.marker")) {
+      console.log(this.getAttribute('data'));
+      marker.addListener('click', function() { inner.addListener(this.getAttribute('data')) });
+    }
 
   };
 
