@@ -79,6 +79,8 @@ var place = (function(d) {
   };
 
   outer.addListener = function(type) {
+    // we only allow one listener at a time
+    outer.dropListener();
     console.log('adding listener');
     inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
       console.log('listener executed');
