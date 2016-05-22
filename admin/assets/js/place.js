@@ -54,7 +54,7 @@ var place = (function(d) {
   }
 
   outer.init = function() {
-    var markers = d.querySelectorAll("ulli.marker");
+    var markers = d.querySelectorAll("ul.markers li.marker");
     var script = d.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
