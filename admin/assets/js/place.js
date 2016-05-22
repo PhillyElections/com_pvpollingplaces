@@ -63,8 +63,8 @@ var place = (function(d) {
     inner.setElements();
     inner.setLocations();
     for (var marker in d.querySelectorAll("img.marker")) {
-      console.log(marker.dataset);
-      marker.addListener('click', function() { inner.addListener(marker.dataset.marker) });
+      console.log(marker);
+      //marker.addListener('click', function() { inner.addListener(marker.dataset.marker) });
     }
 
   };
