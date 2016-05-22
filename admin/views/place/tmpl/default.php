@@ -14,7 +14,16 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
-  <div class="right"><div id="map"></div>Click to set: <ul><li><li><img src="/components/com_voterapp/pollingplace.png" /> Building</li><img src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li><li><img src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li></ul></div>
+  <div class="right">
+    <div id="map"></div>
+    <p>Click to set:
+      <ul class="markers">
+        <li><img class="marker" data="building" src="/components/com_voterapp/polling.png" /> Building</li>
+        <li><img class="marker" data="entrance" src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
+        <li><img class="marker" data="accessible" src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
+      </ul>
+    </p>
+  </div>
   <div class="left">
     <table cellpadding="0" cellspacing="0" border="0" width="80%" class="contentpane clearfix">
       <tr>
