@@ -78,11 +78,8 @@ var place = (function(d) {
     inner.listener = google.maps.event.addListener(map, 'click', function(event) {
       console.log('listener executed');
       //call function to create marker
-      if (marker) {
-        marker.setMap(null);
-        marker = null;
-      }
-      marker = displayMarker(event.latLng, "Set Me Based On The Click That Activates");
+
+      marker = displayMarker(marker, event.latLng, "Set Me Based On The Click That Activates");
     });    
   };
 /*
