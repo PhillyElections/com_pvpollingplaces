@@ -87,7 +87,7 @@ class PvpollingplacesModelPlace extends JModel
         $row = &$this->getTable();
 
         $data = JRequest::get('post');
-        dd($data);
+
         // Bind the form fields to the place table
         if (!$row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
@@ -102,7 +102,7 @@ class PvpollingplacesModelPlace extends JModel
             }
             return false;
         }
-
+        dd($row);
         // Store the web link table to the database
         if (!$row->store()) {
             $this->setError($row->getErrorMsg());
