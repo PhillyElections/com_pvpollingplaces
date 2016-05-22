@@ -1,26 +1,35 @@
 var place = (function(d) {
   'use strict';
   var inner = {}, outer = {};
-  inner.markers = inner.location = {};
+  inner.markers = inner.location = inner.elements = {};
   inner.markers.building = inner.markers.entrance = inner.markers.accessible = inner.listener = false;
-  
+  inner.elements.building = innner.elements.entrance = inner.elements.accessible = {};
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
   // hot init function
 
+  inner.setElements = function () {
+    inner.elements.building.lat = d.getElementById('lat');
+    inner.elements.building.lng = d.getElementById('lng');
+    inner.elements.entrance.lat = d.getElementById('elat');
+    inner.elements.entrance.lng = d.getElementById('elng');
+    inner.elements.accessible.lat = d.getElementById('alat');
+    inner.elements.accessible.lng = d.getElementById('alng');
+  };
+
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
     inner.location.building = {
-      lat: parseFloat(d.getElementById('lat').value),
-      lng: parseFloat(d.getElementById('lng').value)
+      lat: parseFloat(inner.elements.building.lat.value),
+      lng: parseFloat(inner.elements.building.lng.value)
     };
     inner.location.entrance = {
-      lat: parseFloat(d.getElementById('elat').value),
-      lng: parseFloat(d.getElementById('elng').value)
+      lat: parseFloat(inner.elements.entrance.lat.value),
+      lng: parseFloat(inner.elements.entrance.lng.value)
     };
     inner.location.accessible = {
-      lat: parseFloat(d.getElementById('alat').value),
-      lng: parseFloat(d.getElementById('alng').value)
+      lat: parseFloat(inner.elements.accessible.lat.value),
+      lng: parseFloat(inner.elements.accessible.lng.value)
     };
     console.log(inner.location);
   }
@@ -34,6 +43,7 @@ var place = (function(d) {
   };
 
   outer.mapDisplay = function() {
+    inner.setElements();
     inner.setLocations();
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
@@ -53,7 +63,7 @@ var place = (function(d) {
       map: inner.map,
       title: title
     });
-    outer.addListener();
+    outer.addListener(inner.markers.entrance);
   };
 
   outer.dropListener = function () {
@@ -61,7 +71,7 @@ var place = (function(d) {
       google.maps.event.removeListener(inner.listener);   
   };
 
-  outer.addListener = function () {
+  outer.addListener = function (marker) {
     console.log('adding listener');
     inner.listener = google.maps.event.addListener(map, 'click', function(event) {
       console.log('listener executed');
