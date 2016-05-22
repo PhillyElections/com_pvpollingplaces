@@ -7,7 +7,7 @@ var place = (function(d) {
   inner.elements = {};
   inner.listener = false;
 
-  for (var type in { 'building', 'entrance', 'accessible' }) {
+  for (var type in ['building', 'entrance', 'accessible']) {
     inner.markers[type] = false;
     inner.elements[type] = {};
   }
@@ -28,7 +28,7 @@ var place = (function(d) {
 
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
-    for (var type in { 'building', 'entrance', 'accessible' }) {
+    for (var type in ['building', 'entrance', 'accessible']) {
       inner.location.building = {
         lat: parseFloat(inner.elements.[type].lat.value),
         lng: parseFloat(inner.elements.[type].lng.value)
