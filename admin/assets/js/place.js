@@ -8,7 +8,7 @@ var place = (function(d) {
   inner.markers = { 'building': false, 'entrance': false, 'accessible': false };
   inner.listener = false;
   inner.elements = { 'building': {}, 'entrance': {}, 'accessible': {} };
-  inner.images = { 'building': '', 'entrance': 'components/com_pvpollingplaces/assets/e.png', 'accessible': 'components/com_pvpollingplaces/assets/h.png' };
+  inner.images = { 'building': '', 'entrance': 'components/com_pvpollingplaces/assets/images/e.png', 'accessible': 'components/com_pvpollingplaces/assets/images/h.png' };
 
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
