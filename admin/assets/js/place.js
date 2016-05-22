@@ -8,7 +8,7 @@ var place = (function(d) {
   inner.markers = { 'building': false, 'entrance': false, 'accessible': false };
   inner.listener = false;
   inner.elements = { 'building': {}, 'entrance': {}, 'accessible': {} };
-  inner.images = = { 'building': false, 'entrance': false, 'accessible': false };
+  inner.images = { 'building': false, 'entrance': false, 'accessible': false };
 
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
