@@ -14,6 +14,21 @@ var place = (function(d) {
     'accessible': 'components/com_pvpollingplaces/assets/images/h.png'
   };
 
+  inner.addListener = function(type, title) {
+    // we only allow one listener at a time
+    inner.dropListener();
+    inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
+      //call function to create marker
+      if (inner.markers[type] && typeof inner.markers[type].setMap === 'function') {
+        inner.markers[type].setMap(null);
+        inner.markers[type] = null;
+      }
+      inner.markers[type] = inner.createMarker(event.latLng, inner.images[type], title);
+      inner.elements[type].lat.value = event.latLng.lat();
+      inner.elements[type].lng.value = event.latLng.lng();
+    });
+  };
+
   inner.createMarker = function(coords, image, title) {
     var marker = new google.maps.Marker({
       position: coords,
@@ -64,7 +79,7 @@ var place = (function(d) {
     inner.setElements();
     inner.setLocations();
     for (var i = 0; i < markers.length; i++) {
-      markers[i].addListener('click', function() { inner.addListener(this.dataset.marker); });
+      markers[i].addListener('click', function() { inner.addListener(this.dataset.marker, this.textContent || this.innerText || ''); });
     }
 
   };
@@ -75,21 +90,6 @@ var place = (function(d) {
       zoom: 19,
     });
     inner.markers.building = inner.createMarker(inner.location.building, inner.images.building, inner.locationName);
-  };
-
-  inner.addListener = function(type) {
-    // we only allow one listener at a time
-    inner.dropListener();
-    inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
-      //call function to create marker
-      if (inner.markers[type] && typeof inner.markers[type].setMap === 'function') {
-        inner.markers[type].setMap(null);
-        inner.markers[type] = null;
-      }
-      inner.markers[type] = inner.createMarker(event.latLng, inner.images[type], "Set Me Based On The Click That Activates" + event.latLng);
-      inner.elements[type].lat.value = event.latLng.lat();
-      inner.elements[type].lng.value = event.latLng.lng();
-    });
   };
 
   return outer;
