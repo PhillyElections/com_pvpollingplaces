@@ -87,7 +87,7 @@ class PvpollingplacesModelPlace extends JModel
         $row = &$this->getTable();
 
         $data = JRequest::get('post');
-
+        d($data);
         // Bind the form fields to the place table
         if (!$row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
