@@ -18,9 +18,9 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
     <div id="map"></div>
     <p>Click to set:
       <ul class="markers">
-        <li><img class="marker" data-marker="building" src="/components/com_voterapp/polling.png" /> Building</li>
-        <li><img class="marker" data-marker="entrance" src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
-        <li><img class="marker" data-marker="accessible" src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
+        <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> Building</li>
+        <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
+        <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
       </ul>
     </p>
   </div>
