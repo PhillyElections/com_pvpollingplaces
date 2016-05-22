@@ -62,6 +62,8 @@ var place = (function(d) {
 
     inner.setElements();
     inner.setLocations();
+    console.log(d.querySelectorAll("img.marker"));
+
   };
 
   outer.createMap = function() {
@@ -87,7 +89,6 @@ var place = (function(d) {
     });
   };
 
-  console.log(d.querySelectorAll("img.marker"));
   return outer;
 })(document);
 window.addEvent('domready', function() {
