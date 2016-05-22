@@ -56,16 +56,12 @@ var place = (function(d) {
   };
 
   outer.createMarker = function(coords, title) {
-/*    if (marker && typeof marker.setMap === "function") {
-      marker.setMap(null);
-      marker=false;
-    }*/
     var marker = new google.maps.Marker({
       position: coords,
       map: inner.map,
       title: title
     });
-    return 
+    return marker;
   };
 
   outer.dropListener = function () {
