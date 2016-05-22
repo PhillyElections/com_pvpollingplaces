@@ -39,33 +39,33 @@ var place = (function(d) {
     var script = d.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.mapDisplay';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.createMap';
     d.body.appendChild(script);
 
     inner.setElements();
     inner.setLocations();
   };
 
-  outer.mapDisplay = function() {
+  outer.createMap = function() {
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
       zoom: 19,
       navigationControl: false
     });
-    outer.markerDisplay(inner.markers.building, inner.location.building, inner.locationName);
+    inner.markers.building = outer.createMarker(inner.location.building, inner.locationName);
   };
 
-  outer.markerDisplay = function(marker, coords, title) {
+  outer.createMarker = function(coords, title) {
 /*    if (marker && typeof marker.setMap === "function") {
       marker.setMap(null);
       marker=false;
     }*/
-    marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position: coords,
       map: inner.map,
       title: title
     });
-    outer.addListener(inner.markers.entrance);
+    return 
   };
 
   outer.dropListener = function () {
@@ -79,7 +79,7 @@ var place = (function(d) {
       console.log('listener executed');
       //call function to create marker
       marker.setMap(null);
-      marker = outer.markerDisplay(marker, event.latLng, "Set Me Based On The Click That Activates");
+      marker = outer.createMarker(marker, event.latLng, "Set Me Based On The Click That Activates");
     });    
   };
 /*
