@@ -15,6 +15,7 @@ var place = (function(d) {
     inner.elements.entrance.lng = d.getElementById('elng');
     inner.elements.accessible.lat = d.getElementById('alat');
     inner.elements.accessible.lng = d.getElementById('alng');
+    console.log(inner.elements);
   };
 
   inner.setLocations = function() {
@@ -31,7 +32,7 @@ var place = (function(d) {
       lat: parseFloat(inner.elements.accessible.lat.value),
       lng: parseFloat(inner.elements.accessible.lng.value)
     };
-    console.log(inner.location, inner.elements);
+    console.log(inner.location);
   }
 
   outer.init = function() {
