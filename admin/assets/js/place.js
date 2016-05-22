@@ -66,7 +66,7 @@ var place = (function(d) {
     console.log(markers);
     for (var i = 0; i < 3; i++) {
       console.log(markers[i]);
-      markers[i].addListener('click', function() { /*inner.addListener(markers[i].dataset.marker)*/ alert('alert! ' + markers[i].dataset.marker) });
+      markers[i].addListener('click', function() { /*inner.addListener(markers[i].dataset.marker)*/ alert('alert! ' + this.dataset.marker) });
     }
 
   };
