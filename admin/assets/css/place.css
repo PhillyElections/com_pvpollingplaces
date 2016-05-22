@@ -33,6 +33,7 @@ ul.markers li {
 img.marker {
   height: 20px;
   width: 20px;
+  margin-right: 3px;
 }
 
 .forty-five {
