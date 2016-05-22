@@ -7,33 +7,7 @@ var place = (function(d) {
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
   // hot init function
-  outer.init = function() {
-    var script = d.createElement('script');
-    script.id = '_gmaps';
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.mapDisplay';
-    d.body.appendChild(script);
-  };
-  outer.mapDisplay = function() {
-    inner.setLocations();
-    inner.map = new google.maps.Map(d.getElementById('map'), {
-      center: inner.location.building,
-      zoom: 19,
-      navigationControl: false
-    });
-    outer.markerDisplay(inner.markers.building, inner.location.building, inner.locationName);
-  };
-  outer.markerDisplay = function(marker, coords, title) {
-    if (marker && typeof marker.setMap === "function") {
-      marker.setMap(null);
-      marker=false;
-    }
-    marker = new google.maps.Marker({
-      position: coords,
-      map: inner.map,
-      title: title
-    });
-  };
+
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
     inner.location.building = {
@@ -50,11 +24,47 @@ var place = (function(d) {
     };
     console.log(inner.location);
   }
-  outer.deaf = function () {
+
+  outer.init = function() {
+    var script = d.createElement('script');
+    script.id = '_gmaps';
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.mapDisplay';
+    d.body.appendChild(script);
+  };
+
+  outer.mapDisplay = function() {
+    inner.setLocations();
+    inner.map = new google.maps.Map(d.getElementById('map'), {
+      center: inner.location.building,
+      zoom: 19,
+      navigationControl: false
+    });
+    outer.markerDisplay(inner.markers.building, inner.location.building, inner.locationName);
+  };
+
+  outer.markerDisplay = function(marker, coords, title) {
+    if (marker && typeof marker.setMap === "function") {
+      marker.setMap(null);
+      marker=false;
+    }
+    marker = new google.maps.Marker({
+      position: coords,
+      map: inner.map,
+      title: title
+    });
+    outer.addListener();
+  };
+
+  outer.dropListener = function () {
+      console.log('dropping listener');
       google.maps.event.removeListener(inner.listener);   
   };
-  outer.listen = function () {
+
+  outer.addListener = function () {
+    console.log('adding listener');
     inner.listener = google.maps.event.addListener(map, 'click', function(event) {
+      console.log('listener executed');
       //call function to create marker
       if (marker) {
         marker.setMap(null);
