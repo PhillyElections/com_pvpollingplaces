@@ -24,6 +24,9 @@ ul.markers li {
   cursor: pointer;
   border: 1px solid #333;
   border-radius: 5px;
+  padding: 2px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
 }
 
 img.marker {
