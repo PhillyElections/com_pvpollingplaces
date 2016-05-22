@@ -53,10 +53,11 @@ var place = (function(d) {
   };
 
   outer.createMap = function() {
+    console.log(inner.images.building);
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
       zoom: 19,
-      icon: inner.images['building']
+      icon: '/components/com_voterapp/polling.png'
     });
     inner.markers.building = outer.createMarker(inner.location.building, inner.locationName);
   };
