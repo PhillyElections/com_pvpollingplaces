@@ -50,10 +50,10 @@ class TablePlace extends JTable
     public function check()
     {
         // we need a first_name
-        if (!JString::trim($this->field)) {
-            $this->setError(JText::_('VALIDATION FIELD REQUIRED'));
+        /*        if (!JString::trim($this->field)) {
+        $this->setError(JText::_('VALIDATION FIELD REQUIRED'));
         }
-
+         */
         if (count($this->getErrors())) {
             return false;
         }
