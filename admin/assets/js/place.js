@@ -40,11 +40,12 @@ var place = (function(d) {
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.mapDisplay';
     d.body.appendChild(script);
+
+    inner.setElements();
+    inner.setLocations();
   };
 
   outer.mapDisplay = function() {
-    inner.setElements();
-    inner.setLocations();
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
       zoom: 19,
