@@ -61,12 +61,12 @@ var place = (function(d) {
     inner.markers.building = outer.createMarker(inner.location.building, inner.locationName);
   };
 
-  outer.createMarker = function(coords, title) {
+  outer.createMarker = function(coords, image, title) {
     var marker = new google.maps.Marker({
       position: coords,
       map: inner.map,
       title: title,
-      icon: ''
+      icon: image
     });
     return marker;
   };
@@ -87,7 +87,7 @@ var place = (function(d) {
         inner.markers[type].setMap(null);
         inner.markers[type] = null;
       }
-      inner.markers[type] = outer.createMarker(event.latLng, "Set Me Based On The Click That Activates" + event.latLng);
+      inner.markers[type] = outer.createMarker(event.latLng, inner.images[type], "Set Me Based On The Click That Activates" + event.latLng);
       console.log(event);
       inner.elements[type].lat.value = event.latLng.lat();
       inner.elements[type].lng.value = event.latLng.lng();
