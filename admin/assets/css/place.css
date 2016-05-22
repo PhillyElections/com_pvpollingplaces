@@ -22,6 +22,11 @@ div.wrap {
 ul.markers li {
   display: inline-block;
   cursor: pointer;
-  border: 1px grey;
+  border: 1px solid #333;
   border-radius: 5px;
+}
+
+img.marker {
+  height: 20px;
+  width: 20px;
 }
