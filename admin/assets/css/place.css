@@ -19,8 +19,5 @@ ul.markers li {
   display: inline-block;
   cursor: pointer;
   border: 1px grey;
-}
-
-img.marker:hover {
-  cursor: pointer;
+  border-radius: 5px;
 }
