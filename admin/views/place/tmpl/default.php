@@ -14,7 +14,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
-  <div class="right wrapper">
+  <div class="right wrapper fifty-five">
     <div id="map"></div>
     <p>Click to set:
       <ul class="markers">
@@ -25,7 +25,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
     </p>
   </div>
   <div class="left">
-    <table cellpadding="0" cellspacing="0" border="0" width="45%" class="contentpane clearfix">
+    <table class="contentpane clearfix forty-five">
       <tr>
         <td height="40">
           <label id="idmsg" for="id"><?=JText::_("ID");?>:</label>
