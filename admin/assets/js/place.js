@@ -56,8 +56,7 @@ var place = (function(d) {
     inner.map = new google.maps.Map(d.getElementById('map'), {
       center: inner.location.building,
       zoom: 19,
-      //      navigationControl: false
-      icon: inner.images.building
+      icon: inner.images['building']
     });
     inner.markers.building = outer.createMarker(inner.location.building, inner.locationName);
   };
