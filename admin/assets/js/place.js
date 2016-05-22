@@ -31,7 +31,7 @@ var place = (function(d) {
       lat: parseFloat(inner.elements.accessible.lat.value),
       lng: parseFloat(inner.elements.accessible.lng.value)
     };
-    console.log(inner.location);
+    console.log(inner.location, inner.elements);
   }
 
   outer.init = function() {
