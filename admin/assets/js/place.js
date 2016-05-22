@@ -63,10 +63,8 @@ var place = (function(d) {
 
     inner.setElements();
     inner.setLocations();
-    console.log(markers);
-    for (var i = 0; i < 3; i++) {
-      console.log(markers[i]);
-      markers[i].addListener('click', function() { /*inner.addListener(markers[i].dataset.marker)*/ alert('alert! ' + this.dataset.marker) });
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].addListener('click', function() { inner.addListener(this.dataset.marker); });
     }
 
   };
