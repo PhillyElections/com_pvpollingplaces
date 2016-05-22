@@ -87,7 +87,7 @@ var place = (function(d) {
     });
   };
 
-  console.log(d.querySelectorAll(".marker"));
+  console.log(d.querySelectorAll("img.marker"));
   return outer;
 })(document);
 window.addEvent('domready', function() {
