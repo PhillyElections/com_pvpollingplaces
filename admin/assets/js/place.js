@@ -62,6 +62,7 @@ var place = (function(d) {
 
     inner.setElements();
     inner.setLocations();
+    console.log(d.querySelectorAll("img.marker"));
     for (var marker in d.querySelectorAll("img.marker")) {
       console.log(marker);
       //marker.addListener('click', function() { inner.addListener(marker.dataset.marker) });
