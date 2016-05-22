@@ -79,7 +79,7 @@ var place = (function(d) {
       console.log('listener executed');
       //call function to create marker
 
-      marker = displayMarker(marker, event.latLng, "Set Me Based On The Click That Activates");
+      marker = outer.displayMarker(marker, event.latLng, "Set Me Based On The Click That Activates");
     });    
   };
 /*
