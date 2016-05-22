@@ -77,7 +77,7 @@ var place = (function(d) {
     inner.markers.building = inner.createMarker(inner.location.building, inner.images.building, inner.locationName);
   };
 
-  outer.addListener = function(type) {
+  inner.addListener = function(type) {
     // we only allow one listener at a time
     inner.dropListener();
     inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
