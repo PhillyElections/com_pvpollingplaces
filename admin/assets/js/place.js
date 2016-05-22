@@ -5,13 +5,10 @@ var place = (function(d) {
   inner.markers = {};
   inner.location = {};
   inner.elements = {};
-  inner.markers.building = false;
-  inner.markers.entrance = false;
-  inner.markers.accessible = false;
+  inner.markers = { 'building': false, 'entrance': false, 'accessible': false };
   inner.listener = false;
-  inner.elements.building = {};
-  inner.elements.entrance = {};
-  inner.elements.accessible = {};
+  inner.elements = { 'building': {}, 'entrance': {}, 'accessible': {} };
+  inner.images = = { 'building': false, 'entrance': false, 'accessible': false };
 
   inner.apikey = 'AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
   //key='+inner.apikey+'
@@ -68,7 +65,8 @@ var place = (function(d) {
     var marker = new google.maps.Marker({
       position: coords,
       map: inner.map,
-      title: title
+      title: title,
+      icon: ''
     });
     return marker;
   };
