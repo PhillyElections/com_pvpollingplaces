@@ -56,10 +56,10 @@ var place = (function(d) {
   };
 
   outer.markerDisplay = function(marker, coords, title) {
-    if (marker && typeof marker.setMap === "function") {
+/*    if (marker && typeof marker.setMap === "function") {
       marker.setMap(null);
       marker=false;
-    }
+    }*/
     marker = new google.maps.Marker({
       position: coords,
       map: inner.map,
@@ -78,7 +78,7 @@ var place = (function(d) {
     inner.listener = google.maps.event.addListener(inner.map, 'click', function(event) {
       console.log('listener executed');
       //call function to create marker
-
+      marker.setMap(null);
       marker = outer.markerDisplay(marker, event.latLng, "Set Me Based On The Click That Activates");
     });    
   };
