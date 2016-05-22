@@ -29,9 +29,9 @@ var place = (function(d) {
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
     for (var type in ['building', 'entrance', 'accessible']) {
-      inner.location.[type] = {
-        lat: parseFloat(inner.elements.[type].lat.value),
-        lng: parseFloat(inner.elements.[type].lng.value)
+      inner.location[type] = {
+        lat: parseFloat(inner.elements[type].lat.value),
+        lng: parseFloat(inner.elements[type].lng.value)
       };
     }
     console.log(inner.location);
