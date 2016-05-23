@@ -121,11 +121,6 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
         </td>
         <td>
           <table>
-            <thead>
-              <tr>
-                <th colspan="3">Coordinates:</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td>Building</td>
