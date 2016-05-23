@@ -8,15 +8,15 @@ SET @db   = DATABASE();
 /* ==================== tables ==================== */
 
 CREATE TABLE IF NOT EXISTS `jos_pollingplaces` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `division_id` int(11) unsigned NOT NULL DEFAULT '0',
   `ward` char(2) NOT NULL DEFAULT '',
   `division` char(2) NOT NULL DEFAULT '',
-  `pin_address` varchar(255) NOT NULL,
-  `display_address` varchar(255) DEFAULT NULL,
+  `pin_address` varchar(255) NOT NULL DEFAULT '',
+  `display_address` varchar(255)  DEFAULT '',
   `zip_code` int(5) unsigned NOT NULL,
   `location` varchar(255) NOT NULL DEFAULT '',
-  `display_location` varchar(255) NOT NULL,
+  `display_location` varchar(255) NOT NULL DEFAULT '',
   `building` char(1) NOT NULL DEFAULT '',
   `parking` char(1) NOT NULL DEFAULT '',
   `lat` decimal(15,12) NOT NULL,
