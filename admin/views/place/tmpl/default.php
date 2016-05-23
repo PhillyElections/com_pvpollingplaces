@@ -154,7 +154,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="publishedmsg" for="published"><?=JText::_("PUBLISHED");?>:</label>
         </td>
         <td>
-          <input type="checkbox" id="published" name="published" size="60%" value="<?=($place->published ? "true" : "false");?>" />
+          <input type="checkbox" id="published" name="published" size="60%" "<?=($place->published ? "checked" : "");?>" />
         </td>
       </tr>
       <tr>
