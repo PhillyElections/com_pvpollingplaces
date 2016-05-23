@@ -5,14 +5,18 @@ var place = (function(d) {
   inner.markers = {};
   inner.location = {};
   inner.elements = {};
-  inner.markers = { 'building': false, 'entrance': false, 'accessible': false };
+  inner.types = ['building', 'entrance', 'accessible'];
   inner.listener = false;
-  inner.elements = { 'building': {}, 'entrance': {}, 'accessible': {} };
   inner.images = {
     'building': '/components/com_voterapp/polling.png',
     'entrance': 'components/com_pvpollingplaces/assets/images/e.png',
     'accessible': 'components/com_pvpollingplaces/assets/images/h.png'
   };
+
+  for (var type of inner.types) {
+    inner.markers[type] = false;
+    inner.elements[type] = {};
+  }
 
   inner.addListener = function(type, title) {
     // we only allow one listener at a time
@@ -54,7 +58,7 @@ var place = (function(d) {
 
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
-    for (var type of['building', 'entrance', 'accessible']) {
+    for (var type ofinner.types) {
       inner.location[type] = {
         lat: parseFloat(inner.elements[type].lat.value),
         lng: parseFloat(inner.elements[type].lng.value)
@@ -83,7 +87,7 @@ var place = (function(d) {
       center: inner.location.building,
       zoom: 19,
     });
-    for (var type of['building', 'entrance', 'accessible']) {
+    for (var type ofinner.types) {
       if (inner.location[type].lat)
         inner.markers[type] = inner.createMarker(inner.location[type], inner.images[type], inner.locationName);
     }
