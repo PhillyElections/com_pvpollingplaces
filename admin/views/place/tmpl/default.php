@@ -117,50 +117,36 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
       </tr>
       <tr>
         <td height="40">
-          <label id="latmsg" for="lat"><?=JText::_("LAT");?>:</label>
+          <label id="latmsg" for="lat"><?=JText::_("COORDINATES");?>:</label>
         </td>
         <td>
-          <input type="text" id="lat" name="lat" size="60%" value="<?=($place->lat ? $place->lat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LAT PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="lngmsg" for="lng"><?=JText::_("LNG");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="lng" name="lng" size="60%" value="<?=($place->lng ? $place->lng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LNG PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="elatmsg" for="elat"><?=JText::_("ELAT");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="elat" name="elat" size="60%" value="<?=($place->elat ? $place->elat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELAT PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="elngmsg" for="elng"><?=JText::_("ELNG");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="alatmsg" for="alat"><?=JText::_("ALAT");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="alngmsg" for="alng"><?=JText::_("ALNG");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" disabled />
+          <table>
+            <thead>
+              <tr>
+                <th colspan="3">Coordinates:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Building</td>
+                <td id="display-building"></td>
+              </tr>
+              <tr>
+                <td>Main Entrance</td>
+                <td id="display-entrance"></td>
+              </tr>
+              <tr>
+                <td>Accessible Entrance</td>
+                <td id="display-accessible"></td>
+              </tr>
+            </tbody>
+          </table>
+          <input type="hidden" id="lat" name="lat" size="60%" value="<?=($place->lat ? $place->lat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LAT PLACEHOLDER");?>" disabled />
+          <input type="hidden" id="lng" name="lng" size="60%" value="<?=($place->lng ? $place->lng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LNG PLACEHOLDER");?>" disabled />
+          <input type="hidden" id="elat" name="elat" size="60%" value="<?=($place->elat ? $place->elat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELAT PLACEHOLDER");?>" disabled />
+          <input type="hidden" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" disabled />
+          <input type="hidden" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" disabled />
+          <input type="hidden" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
