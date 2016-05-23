@@ -33,7 +33,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
         </td>
         <td>
           <input type="checkbox" id="published" name="published" value="true" <?=($place->published ? "checked" : "");?> />
-          <label id="idmsg" for="id"><?=($place->id ? $place->id : "");?></label>
+          <label id="idmsg" class="right" for="id">ID: <?=($place->id ? $place->id : "");?></label>
         </td>
       </tr>
       <tr>
