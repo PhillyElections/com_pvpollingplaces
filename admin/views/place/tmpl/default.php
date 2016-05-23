@@ -154,39 +154,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="publishedmsg" for="published"><?=JText::_("PUBLISHED");?>:</label>
         </td>
         <td>
-          <input type="text" id="published" name="published" size="60%" value="<?=($place->published ? $place->published : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("PUBLISHED PLACEHOLDER");?>" />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="checked_outmsg" for="checked_out"><?=JText::_("CHECKED_OUT");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="checked_out" name="checked_out" size="60%" value="<?=($place->checked_out ? $place->checked_out : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("CHECKED_OUT PLACEHOLDER");?>" />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="checked_out_timemsg" for="checked_out_time"><?=JText::_("CHECKED_OUT_TIME");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="checked_out_time" name="checked_out_time" size="60%" value="<?=($place->checked_out_time ? $place->checked_out_time : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("CHECKED_OUT_TIME PLACEHOLDER");?>" />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="createdmsg" for="created"><?=JText::_("CREATED");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="created" name="created" size="60%" value="<?=($place->created ? $place->created : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("CREATED PLACEHOLDER");?>" />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="updatedmsg" for="updated"><?=JText::_("UPDATED");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="updated" name="updated" size="60%" value="<?=($place->updated ? $place->updated : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("UPDATED PLACEHOLDER");?>" />
+          <input type="checkbox" id="published" name="published" size="60%" value="<?=($place->published ? "true" : "false");?>" />
         </td>
       </tr>
       <tr>
