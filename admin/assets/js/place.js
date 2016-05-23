@@ -1,12 +1,13 @@
 var place = (function(d) {
   'use strict';
+  // instantiate 
   var inner = {},
     outer = {};
   inner.markers = {};
   inner.location = {};
   inner.elements = {};
   inner.types = ['building', 'entrance', 'accessible'];
-  inner.listener = false;
+  inner.listener = false; // we will have only one map listener
   inner.images = {
     'building': '/components/com_voterapp/polling.png',
     'entrance': 'components/com_pvpollingplaces/assets/images/e.png',
@@ -18,6 +19,7 @@ var place = (function(d) {
     inner.elements[type] = {};
   }
 
+  // private methods
   inner.addListener = function(type, title) {
     // we only allow one listener at a time
     inner.dropListener();
@@ -66,6 +68,18 @@ var place = (function(d) {
     }
   }
 
+  // public methods
+  outer.createMap = function() {
+    inner.map = new google.maps.Map(d.getElementById('map'), {
+      center: inner.location.building,
+      zoom: 19,
+    });
+    for (var type of inner.types) {
+      if (inner.location[type].lat)
+        inner.markers[type] = inner.createMarker(inner.location[type], inner.images[type], inner.locationName);
+    }
+  };
+
   outer.init = function() {
     var markers = d.querySelectorAll("ul.markers li.marker");
     var cancel = d.querySelectorAll("ul.markers li.cancel");
@@ -83,19 +97,9 @@ var place = (function(d) {
     cancel[0].addListener('click', function() { inner.dropListener() });
   };
 
-  outer.createMap = function() {
-    inner.map = new google.maps.Map(d.getElementById('map'), {
-      center: inner.location.building,
-      zoom: 19,
-    });
-    for (var type of inner.types) {
-      if (inner.location[type].lat)
-        inner.markers[type] = inner.createMarker(inner.location[type], inner.images[type], inner.locationName);
-    }
-  };
-
   return outer;
 })(document);
+
 window.addEvent('domready', function() {
   place.init();
 });
