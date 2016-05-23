@@ -47,7 +47,7 @@ var place = (function(d) {
 
   inner.cloneValues = function() {
     for (var type of inner.types) {
-      if (inner.elements[type].lat > 0) {
+      if (inner.elements[type].lat != 0) {
         d.getElementById('display-' + type).textContent = inner.elements[type].lat + "," + inner.elements[type].lng;
       }
     }
