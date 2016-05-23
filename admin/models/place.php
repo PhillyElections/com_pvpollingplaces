@@ -107,7 +107,7 @@ class PvpollingplacesModelPlace extends JModel
             }
             return false;
         }
-        dd($row, $data);
+
         // Store the web link table to the database
         if (!$row->store()) {
             $this->setError($row->getErrorMsg());
