@@ -32,7 +32,25 @@ var place = (function(d) {
       inner.markers[type] = inner.createMarker(event.latLng, inner.images[type], title);
       inner.elements[type].lat.value = event.latLng.lat();
       inner.elements[type].lng.value = event.latLng.lng();
+      inner.cloneValues();
     });
+  };
+
+  inner.bindElements = function() {
+    inner.elements.building.lat = d.getElementById('lat');
+    inner.elements.building.lng = d.getElementById('lng');
+    inner.elements.entrance.lat = d.getElementById('elat');
+    inner.elements.entrance.lng = d.getElementById('elng');
+    inner.elements.accessible.lat = d.getElementById('alat');
+    inner.elements.accessible.lng = d.getElementById('alng');
+  };
+
+  inner.cloneValues = function {
+    for (var type of inner.types) {
+      if (inner.elements[type].lat > 0) {
+        d.getElementById('display-' + type).innerText = inner.elements[type].lat + "," + inner.elements[type].lng;
+      }
+    }
   };
 
   inner.createMarker = function(coords, image, title) {
@@ -47,15 +65,6 @@ var place = (function(d) {
 
   inner.dropListener = function() {
     google.maps.event.removeListener(inner.listener);
-  };
-
-  inner.setElements = function() {
-    inner.elements.building.lat = d.getElementById('lat');
-    inner.elements.building.lng = d.getElementById('lng');
-    inner.elements.entrance.lat = d.getElementById('elat');
-    inner.elements.entrance.lng = d.getElementById('elng');
-    inner.elements.accessible.lat = d.getElementById('alat');
-    inner.elements.accessible.lng = d.getElementById('alng');
   };
 
   inner.setLocations = function() {
@@ -89,7 +98,8 @@ var place = (function(d) {
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.createMap';
     d.body.appendChild(script);
 
-    inner.setElements();
+    inner.bindElements();
+    inner.cloneValues();
     inner.setLocations();
     for (var i = 0; i < markers.length; i++) {
       markers[i].addListener('click', function() { inner.addListener(this.dataset.marker, this.textContent || this.innerText || ''); });
