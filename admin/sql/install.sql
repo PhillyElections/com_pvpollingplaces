@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `jos_pollingplaces` (
   KEY `ward` (`ward`),
   KEY `division` (`division`),
   KEY `division_id` (`division_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
+) ENGINE=MyISAM DEFAULT AUTO_INCREMENT=1 CHARSET=utf8 ;
 
 INSERT INTO `jos_pollingplaces` (`id`, `division_id`, `ward`, `division`, `pin_address`, `display_address`, `zip_code`, `location`, `building`, `parking`, `lat`, `lng`, `elat`, `elng`, `alat`, `alng`, `published`, `checked_out`, `checked_out_time`, `created`, `updated`) VALUES
 ('', 601, '01', '01', '1501 S 10TH ST', '1501 S 10th St', 19147, 'ANNUNCIATION CHURCH', 'B', 'N', 39.93054600, -75.16096400, 0, 0, 0, 0, 1, 0, @tnl, '2016-04-04 14:12:34', @tnl),
