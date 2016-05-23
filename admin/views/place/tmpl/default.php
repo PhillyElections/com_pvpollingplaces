@@ -93,6 +93,14 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
       </tr>
       <tr>
         <td height="40">
+          <label id="display_locationmsg" for="display_location"><?=JText::_("DISPLAY_LOCATION");?>:</label>
+        </td>
+        <td>
+          <input type="text" id="display_location" name="display_location" size="60%" value="<?=($place->display_location ? $place->display_location : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LOCATION PLACEHOLDER");?>" />
+        </td>
+      </tr>
+      <tr>
+        <td height="40">
           <label id="buildingmsg" for="building"><?=JText::_("BUILDING");?>:</label>
         </td>
         <td>
@@ -112,7 +120,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="latmsg" for="lat"><?=JText::_("LAT");?>:</label>
         </td>
         <td>
-          <input type="text" id="lat" name="lat" size="60%" value="<?=($place->lat ? $place->lat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LAT PLACEHOLDER");?>" />
+          <input type="text" id="lat" name="lat" size="60%" value="<?=($place->lat ? $place->lat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LAT PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -120,7 +128,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="lngmsg" for="lng"><?=JText::_("LNG");?>:</label>
         </td>
         <td>
-          <input type="text" id="lng" name="lng" size="60%" value="<?=($place->lng ? $place->lng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LNG PLACEHOLDER");?>" />
+          <input type="text" id="lng" name="lng" size="60%" value="<?=($place->lng ? $place->lng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LNG PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -128,7 +136,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="elatmsg" for="elat"><?=JText::_("ELAT");?>:</label>
         </td>
         <td>
-          <input type="text" id="elat" name="elat" size="60%" value="<?=($place->elat ? $place->elat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELAT PLACEHOLDER");?>" />
+          <input type="text" id="elat" name="elat" size="60%" value="<?=($place->elat ? $place->elat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELAT PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -136,7 +144,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="elngmsg" for="elng"><?=JText::_("ELNG");?>:</label>
         </td>
         <td>
-          <input type="text" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" />
+          <input type="text" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -144,7 +152,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="alatmsg" for="alat"><?=JText::_("ALAT");?>:</label>
         </td>
         <td>
-          <input type="text" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" />
+          <input type="text" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -152,7 +160,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <label id="alngmsg" for="alng"><?=JText::_("ALNG");?>:</label>
         </td>
         <td>
-          <input type="text" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" />
+          <input type="text" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
