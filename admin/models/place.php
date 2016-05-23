@@ -84,9 +84,14 @@ class PvpollingplacesModelPlace extends JModel
      */
     public function store()
     {
-        $row = &$this->getTable();
+        $row     = &$this->getTable();
+        $dateNow = JFactory::getDate();
 
         $data = JRequest::get('post');
+
+        if ($data['id']) {
+            $data['updated'] = $dateNow->toMySQL();
+        }
 
         // Bind the form fields to the place table
         if (!$row->bind($data)) {
