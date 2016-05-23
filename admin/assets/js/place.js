@@ -54,18 +54,12 @@ var place = (function(d) {
 
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
-    inner.location.building = {
-      lat: parseFloat(inner.elements.building.lat.value),
-      lng: parseFloat(inner.elements.building.lng.value)
-    };
-    inner.location.entrance = {
-      lat: parseFloat(inner.elements.entrance.lat.value),
-      lng: parseFloat(inner.elements.entrance.lng.value)
-    };
-    inner.location.accessible = {
-      lat: parseFloat(inner.elements.accessible.lat.value),
-      lng: parseFloat(inner.elements.accessible.lng.value)
-    };
+    for each(var type in { 'building', 'entrance', 'accessible' }) {
+      inner.location[type] = {
+        lat: parseFloat(inner.elements[type].lat.value),
+        lng: parseFloat(inner.elements[type].lng.value)
+      };
+    }
   }
 
   outer.init = function() {
@@ -89,7 +83,10 @@ var place = (function(d) {
       center: inner.location.building,
       zoom: 19,
     });
-    inner.markers.building = inner.createMarker(inner.location.building, inner.images.building, inner.locationName);
+    for each(var type in { 'building', 'entrance', 'accessible' }) {
+      if (inner.location[type].lat)
+        inner.markers[type] = inner.createMarker(inner.location[type], inner.images[type], inner.locationName);
+    }
   };
 
   return outer;
