@@ -93,6 +93,12 @@ class PvpollingplacesModelPlace extends JModel
             $data['updated'] = $dateNow->toMySQL();
         }
 
+        if ($data['published']) {
+            $data['published'] = 1;
+        } else {
+            $data['published'] = 0;
+        }
+
         // Bind the form fields to the place table
         if (!$row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
