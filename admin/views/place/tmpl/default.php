@@ -29,10 +29,11 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
     <table class="contentpane clearfix forty-five">
       <tr>
         <td height="40">
-          <label id="idmsg" for="id"><?=JText::_("ID");?>:</label>
+          <label id="publishedmsg" for="published"><?=JText::_("PUBLISHED");?>:</label>
         </td>
         <td>
-          <input type="text" id="id" name="id" size="60%" value="<?=($place->id ? $place->id : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ID PLACEHOLDER");?>" />
+          <input type="checkbox" id="published" name="published" value="true" <?=($place->published ? "checked" : "");?> />
+          <label id="idmsg" for="id"><?=($place->id ? $place->id : "");?></label>
         </td>
       </tr>
       <tr>
@@ -142,14 +143,6 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
           <input type="hidden" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" />
           <input type="hidden" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" />
           <input type="hidden" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="publishedmsg" for="published"><?=JText::_("PUBLISHED");?>:</label>
-        </td>
-        <td>
-          <input type="checkbox" id="published" name="published" value="true" <?=($place->published ? "checked" : "");?> />
         </td>
       </tr>
       <tr>
