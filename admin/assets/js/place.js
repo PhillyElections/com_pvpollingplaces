@@ -82,7 +82,7 @@ var place = (function(d) {
 
   outer.init = function() {
     var markers = d.querySelectorAll("ul.markers li.marker");
-    var cancel = d.querySelectorAll("ul.markers li.cancel");
+    var cancel = d.querySelectorAll("ul.markers li.marker-cancel");
     var script = d.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';

@@ -21,7 +21,7 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
         <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> Building</li>
         <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
         <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
-        <li class="cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" />Stop placing markers</li>
+        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" />Stop placing markers</li>
       </ul>
     </p>
   </div>
