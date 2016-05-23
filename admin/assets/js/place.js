@@ -47,9 +47,8 @@ var place = (function(d) {
 
   inner.cloneValues = function() {
     for (var type of inner.types) {
-      console.log(type, inner.elements[type].lat);
-      if (inner.elements[type].lat != 0) {
-        d.getElementById('display-' + type).textContent = inner.elements[type].lat + "," + inner.elements[type].lng;
+      if (inner.elements[type].lat.value != 0) {
+        d.getElementById('display-' + type).textContent = inner.elements[type].lat.value + "," + inner.elements[type].lng.value;
       }
     }
   };
