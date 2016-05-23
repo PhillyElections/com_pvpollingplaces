@@ -58,7 +58,7 @@ var place = (function(d) {
 
   inner.setLocations = function() {
     inner.locationName = d.getElementById('location').value;
-    for (var type ofinner.types) {
+    for (var type of inner.types) {
       inner.location[type] = {
         lat: parseFloat(inner.elements[type].lat.value),
         lng: parseFloat(inner.elements[type].lng.value)
@@ -87,7 +87,7 @@ var place = (function(d) {
       center: inner.location.building,
       zoom: 19,
     });
-    for (var type ofinner.types) {
+    for (var type of inner.types) {
       if (inner.location[type].lat)
         inner.markers[type] = inner.createMarker(inner.location[type], inner.images[type], inner.locationName);
     }
