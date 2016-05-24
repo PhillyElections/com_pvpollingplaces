@@ -20,6 +20,9 @@ jimport('joomla.application.component.model');
  */
 class PvpollingplacesModelPlace extends JModel
 {
+
+    private $_criteria = array();
+
     /**
      * Constructor that retrieves the ID from the request
      *
@@ -38,6 +41,10 @@ class PvpollingplacesModelPlace extends JModel
         } else {
             $this->setId((int) $array[0]);
         }
+
+        // We have an id, so we can set the previous/next strings
+        $_criteria->next     = ' id = (select min(id) from foo where id > ' . $this->_db->quote($this->_id) . ') ';
+        $_criteria->previous = ' id = (select max(id) from foo where id < ' . $this->_db->quote($this->_id) . ') ';
 
         $mainframe = JFactory::getApplication();
 
@@ -80,6 +87,64 @@ class PvpollingplacesModelPlace extends JModel
             $this->_data->greeting = null;
         }
         return $this->_data;
+    }
+
+    /**
+     * Returns the query
+     * @return string The query to be used to retrieve the rows from the database
+     */
+    public function _buildQuery()
+    {
+        $where      = '';
+        $tmp        = array();
+        $query      = ' SELECT * FROM #__pollingplaces ';
+        $wards_list = $divisions_list = array();
+
+        $wards     = $this->getState('wards');
+        $divisions = $this->getState('divisions');
+
+        if ($divisions) {
+            $where = ' where ';
+            foreach ($divisions as $division) {
+                $div_elem = (string) JString::substr(trim($division), 0, 2);
+                if (!isset($divisions_list[$div_elem])) {
+                    $divisions_list[$div_elem] = array();
+                }
+                array_push($divisions_list[$div_elem], $this->_db->quote(JString::substr($division, 2, 2)));
+            }
+            foreach ($divisions_list as $ward => $divs) {
+                $tmp[] = '(ward=' . $this->_db->quote($ward) . ' and division in (' . implode(', ', $divs) . '))';
+
+            }
+            $where .= implode(' or ', $tmp);
+
+        } elseif ($wards) {
+            foreach ($wards as $ward) {
+                $wards_list[] = $this->_db->quote((int) $ward);
+            }
+            $where = ' where ';
+            $where .= ' TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
+        }
+
+        $where .= ' and (' . $_criteria->next . ' or ' . $_criteria->previous . ')';
+
+        return $query . $where;
+    }
+
+    /**
+     * Retrieves the Pvpollingplace data
+     *
+     * @return array Array of objects containing the data from the database
+     */
+    public function getNeighbors()
+    {
+        // Load the data
+        if (empty($this->_neighbors)) {
+            $query = $this->_buildQuery();
+            $this->_db->setQuery($query);
+            $this->_neighbors = $this->_db->loadObject();
+        }
+        return $this->_neighbors;
     }
 
     /**
