@@ -128,7 +128,7 @@ class PvpollingplacesModelPlace extends JModel
         }
 
         $where .= ' and (' . $this->_criteria->next . ' or ' . $this->_criteria->previous . ')';
-
+        d('buildQuery()', $where);
         return $query . $where;
     }
 
