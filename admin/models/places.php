@@ -58,7 +58,7 @@ class PvpollingplacesModelPlaces extends JModel
         $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', ''));
 
         $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', ''));
-
+        d($mainframe);
     }
 
     /**
