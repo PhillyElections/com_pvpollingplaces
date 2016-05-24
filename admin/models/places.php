@@ -55,8 +55,10 @@ class PvpollingplacesModelPlaces extends JModel
         $this->setState('limit', $limit);
         $this->setState('limitstart', $limitstart);
 
-        $wards = $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', '', 'int');
-        d($wards);
+        $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', '', 'int'));
+
+        $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', '', 'int'));
+
     }
 
     /**
@@ -70,8 +72,8 @@ class PvpollingplacesModelPlaces extends JModel
         $query      = ' SELECT * FROM #__pollingplaces ';
         $wards_list = $divisions_list = array();
 
-        $wards     = JRequest::getVar('ward', false);
-        $divisions = JRequest::getVar('div', false);
+        $wards     = $this->getState('wards');
+        $divisions = $this->getState('divisions');
 
         if ($divisions) {
             $where = ' where ';
