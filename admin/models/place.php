@@ -127,7 +127,7 @@ class PvpollingplacesModelPlace extends JModel
             $where .= ' TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
         }
 
-        $where .= ' and (' . $_criteria->next . ' or ' . $_criteria->previous . ')';
+        $where .= ' and (' . $this->_criteria->next . ' or ' . $this->_criteria->previous . ')';
 
         return $query . $where;
     }
