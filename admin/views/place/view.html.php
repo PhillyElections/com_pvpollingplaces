@@ -27,7 +27,8 @@ class PvpollingplacesViewPlace extends JView
     public function display($tpl = null)
     {
 
-        $place = &$this->get('Data');
+        $place     = &$this->get('Data');
+        $neighbors = &$this->get('Neighbors');
 
         $isNew = ($place->id < 1);
 
@@ -45,6 +46,7 @@ class PvpollingplacesViewPlace extends JView
         }
 
         $this->assignRef('place', $place);
+        $this->assignRef('neighbors', $neighbors);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);
