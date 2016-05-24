@@ -55,9 +55,9 @@ class PvpollingplacesModelPlaces extends JModel
         $this->setState('limit', $limit);
         $this->setState('limitstart', $limitstart);
 
-        $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', '', 'int'));
+        $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', ''));
 
-        $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', '', 'int'));
+        $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', ''));
 
     }
 
