@@ -127,8 +127,8 @@ class PvpollingplacesModelPlace extends JModel
         }
 
         $where = ' where ';
-        $where .= ' (id = (select min(id) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ' and ' . $filter_criteria . ' )) or ' .
-        '( id = (select max(id) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' and ' . $filter_criteria . ' )) ';
+        $where .= ' (id = (select min(id) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) or ' .
+        '( id = (select max(id) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) ';
 
         d('buildQuery()', $where);
         return $query . $where;
