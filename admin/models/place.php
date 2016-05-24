@@ -20,7 +20,7 @@ jimport('joomla.application.component.model');
  */
 class PvpollingplacesModelPlace extends JModel
 {
-
+    private $__neighbors;
     /**
      * Constructor that retrieves the ID from the request
      *
