@@ -139,7 +139,7 @@ class PvpollingplacesModelPlace extends JModel
             $this->_db->setQuery($query);
             $this->_neighbors = $this->_db->loadObject();
         }
-        d($query, $this->_neighbors);
+
         return $this->_neighbors;
     }
 
