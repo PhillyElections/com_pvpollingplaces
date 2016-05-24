@@ -52,13 +52,14 @@ class PvpollingplacesModelPlaces extends JModel
         // In case limit has been changed, adjust it
         $limitstart = ($limit != 0 ? (floor($limitstart / $limit) * $limit) : 0);
 
+        // Store pagination values locally
         $this->setState('limit', $limit);
         $this->setState('limitstart', $limitstart);
 
+        // Set filter state in session and store locally
         $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', ''));
-
         $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', ''));
-        d($mainframe);
+
     }
 
     /**

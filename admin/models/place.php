@@ -38,6 +38,12 @@ class PvpollingplacesModelPlace extends JModel
         } else {
             $this->setId((int) $array[0]);
         }
+
+        $mainframe = JFactory::getApplication();
+
+        // Set filter state in session and store locally
+        $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', ''));
+        $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', ''));
     }
 
     /**
