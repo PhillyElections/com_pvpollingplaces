@@ -136,7 +136,7 @@ class PvpollingplacesModelPlace extends JModel
      *
      * @return array Array of objects containing the data from the database
      */
-    public function getNeighbors()
+    public function &getNeighbors()
     {
         // Load the data
         if (empty($this->_neighbors)) {
