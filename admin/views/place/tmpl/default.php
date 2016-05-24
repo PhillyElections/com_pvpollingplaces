@@ -12,7 +12,19 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 $place = $this->place;
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
+
+if (count($this->items)):
 ?>
+<div class="left">
+<a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
+</div>
+<div class="right">
+<a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[1]->id);?>" >Next</a>
+</div>
+<?php
+endif;
+?>
+<div class="clearfix"></div>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
   <div class="right wrapper fifty-five">
     <div id="map"></div>
