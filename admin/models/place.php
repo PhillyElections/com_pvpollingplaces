@@ -42,8 +42,8 @@ class PvpollingplacesModelPlace extends JModel
         $mainframe = JFactory::getApplication();
 
         // Set filter state in session and store locally
-        $this->setState('wards', $mainframe->getUserStateFromRequest('com_pvpollingplaces.wards', 'ward', ''));
-        $this->setState('divisions', $mainframe->getUserStateFromRequest('com_pvpollingplaces.divisions', 'div', ''));
+        $this->setState('wards', $mainframe->getUserState('com_pvpollingplaces.wards', 'ward', ''));
+        $this->setState('divisions', $mainframe->getUserState('com_pvpollingplaces.divisions', 'div', ''));
     }
 
     /**
