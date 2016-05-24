@@ -13,7 +13,8 @@ $place = $this->place;
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
 
-if (count($this->items)):
+if (count($this->neighbors)):
+
 ?>
 <div class="left">
 <a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
