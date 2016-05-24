@@ -44,8 +44,8 @@ class PvpollingplacesModelPlace extends JModel
 
         // We have an id, so we can set the previous/next strings
         $this->_criteria           = new stdClass();
-        $this->_criteria->next     = ' id = (select min(id) from foo where id > ' . $this->_db->quote($this->_id) . ') ';
-        $this->_criteria->previous = ' id = (select max(id) from foo where id < ' . $this->_db->quote($this->_id) . ') ';
+        $this->_criteria->next     = ' id = (select min(id) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ') ';
+        $this->_criteria->previous = ' id = (select max(id) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ') ';
 
         $mainframe = JFactory::getApplication();
 
@@ -105,7 +105,6 @@ class PvpollingplacesModelPlace extends JModel
         $divisions = $this->getState('divisions');
 
         if ($divisions) {
-            $where = ' where ';
             foreach ($divisions as $division) {
                 $div_elem = (string) JString::substr(trim($division), 0, 2);
                 if (!isset($divisions_list[$div_elem])) {
@@ -117,17 +116,20 @@ class PvpollingplacesModelPlace extends JModel
                 $tmp[] = '(ward=' . $this->_db->quote($ward) . ' and division in (' . implode(', ', $divs) . '))';
 
             }
-            $where .= implode(' or ', $tmp);
+            $filter_criteria = implode(' or ', $tmp);
 
         } elseif ($wards) {
             foreach ($wards as $ward) {
                 $wards_list[] = $this->_db->quote((int) $ward);
             }
-            $where = ' where ';
-            $where .= ' TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
+
+            $filter_criteria = ' and (TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ')) ';
         }
 
-        $where .= ' and (' . $this->_criteria->next . ' or ' . $this->_criteria->previous . ')';
+        $where = ' where ';
+        $where .= ' (id = (select min(id) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ' and ' . $filter_criteria . ' )) or ' .
+        '( id = (select max(id) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' and ' . $filter_criteria . ' )) ';
+
         d('buildQuery()', $where);
         return $query . $where;
     }
