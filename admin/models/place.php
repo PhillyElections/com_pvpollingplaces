@@ -21,8 +21,6 @@ jimport('joomla.application.component.model');
 class PvpollingplacesModelPlace extends JModel
 {
 
-    private $_criteria;
-
     /**
      * Constructor that retrieves the ID from the request
      *
@@ -41,11 +39,6 @@ class PvpollingplacesModelPlace extends JModel
         } else {
             $this->setId((int) $array[0]);
         }
-
-        // We have an id, so we can set the previous/next strings
-        $this->_criteria           = new stdClass();
-        $this->_criteria->next     = ' id = (select min(id) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ') ';
-        $this->_criteria->previous = ' id = (select max(id) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ') ';
 
         $mainframe = JFactory::getApplication();
 
