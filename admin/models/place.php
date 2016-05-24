@@ -22,6 +22,7 @@ class PvpollingplacesModelPlace extends JModel
 {
 
     private $_criteria;
+    public $_neighbors;
 
     /**
      * Constructor that retrieves the ID from the request
