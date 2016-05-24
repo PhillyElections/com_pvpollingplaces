@@ -46,7 +46,7 @@ class PvpollingplacesModelPlaces extends JModel
         $mainframe = JFactory::getApplication();
 
         // Get pagination request variables
-        $limit = $mainframe->getUserStateFromRequest('global.list.limit', 'limit', $mainframe->getCfg('list_limit'), 'int');
+        $limit      = $mainframe->getUserStateFromRequest('global.list.limit', 'limit', $mainframe->getCfg('list_limit'), 'int');
         $limitstart = JRequest::getVar('limitstart', 0, '', 'int');
 
         // In case limit has been changed, adjust it
@@ -54,6 +54,7 @@ class PvpollingplacesModelPlaces extends JModel
 
         $this->setState('limit', $limit);
         $this->setState('limitstart', $limitstart);
+        d($this);
     }
 
     /**
@@ -62,12 +63,12 @@ class PvpollingplacesModelPlaces extends JModel
      */
     public function _buildQuery()
     {
-        $where = '';
-        $tmp = array();
-        $query = ' SELECT * FROM #__pollingplaces ';
+        $where      = '';
+        $tmp        = array();
+        $query      = ' SELECT * FROM #__pollingplaces ';
         $wards_list = $divisions_list = array();
 
-        $wards = JRequest::getVar('ward', false);
+        $wards     = JRequest::getVar('ward', false);
         $divisions = JRequest::getVar('div', false);
 
         if ($divisions) {
@@ -105,7 +106,7 @@ class PvpollingplacesModelPlaces extends JModel
     {
         // if data hasn't already been obtained, load it
         if (empty($this->_data)) {
-            $query = $this->_buildQuery();
+            $query       = $this->_buildQuery();
             $this->_data = $this->_getList($query, $this->getState('limitstart'), $this->getState('limit'));
         }
         return $this->_data;
@@ -120,7 +121,7 @@ class PvpollingplacesModelPlaces extends JModel
     {
         // Load the content if it doesn't already exist
         if (empty($this->_total)) {
-            $query = $this->_buildQuery();
+            $query        = $this->_buildQuery();
             $this->_total = $this->_getListCount($query);
         }
         return $this->_total;

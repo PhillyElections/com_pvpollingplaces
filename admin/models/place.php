@@ -38,6 +38,7 @@ class PvpollingplacesModelPlace extends JModel
         } else {
             $this->setId((int) $array[0]);
         }
+        d($this);
     }
 
     /**
