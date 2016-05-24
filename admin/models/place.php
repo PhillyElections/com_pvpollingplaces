@@ -22,7 +22,6 @@ class PvpollingplacesModelPlace extends JModel
 {
 
     private $_criteria;
-    public $_neighbors;
 
     /**
      * Constructor that retrieves the ID from the request
@@ -44,9 +43,9 @@ class PvpollingplacesModelPlace extends JModel
         }
 
         // We have an id, so we can set the previous/next strings
-        $_criteria           = new stdClass();
-        $_criteria->next     = ' id = (select min(id) from foo where id > ' . $this->_db->quote($this->_id) . ') ';
-        $_criteria->previous = ' id = (select max(id) from foo where id < ' . $this->_db->quote($this->_id) . ') ';
+        $this->_criteria           = new stdClass();
+        $this->_criteria->next     = ' id = (select min(id) from foo where id > ' . $this->_db->quote($this->_id) . ') ';
+        $this->_criteria->previous = ' id = (select max(id) from foo where id < ' . $this->_db->quote($this->_id) . ') ';
 
         $mainframe = JFactory::getApplication();
 
