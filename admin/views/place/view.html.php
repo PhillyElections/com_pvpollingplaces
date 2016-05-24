@@ -28,7 +28,7 @@ class PvpollingplacesViewPlace extends JView
     {
 
         $place     = &$this->get('Data');
-        $neighbors = &$this->get('Neighbors');
+        $neighbors = &$this->_models->getNeighbors();
 
         $isNew = ($place->id < 1);
 
