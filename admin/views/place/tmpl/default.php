@@ -165,8 +165,7 @@ endif;
         </td>
       </tr>
       <tr>
-        <td height="40">&nbsp;</td>
-        <td>
+        <td colspan="2">
           <input class="button validate" name="save_and_close" type="submit" value="<?=$this->isNew ? JText::_('CREATE') : JText::_('SAVE AND CLOSE');?>" />
 <?php
 if (!$this->isNew):
