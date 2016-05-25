@@ -175,13 +175,13 @@ if (!$this->isNew):
 <?php
 if ($this->neighbors->previous):
 ?>
-          <button class="button validate" type="submit"><?=JText::_('SAVE AND PREVIOUS');?></button>
+          <input class="button validate" name="save_and_previous" type="submit" value="<?=JText::_('SAVE AND PREVIOUS');?>" />
           <input type="hidden" name="next" value="<?=$this->neighbors->previous->id;?>" />
 <?php
 endif;
 if ($this->neighbors->next):
 ?>
-          <button class="button validate" type="submit"><?=JText::_('SAVE AND NEXT');?></button>
+          <input class="button validate" name="save_and_next" type="submit" value="<?=JText::_('SAVE AND NEXT');?>" />
           <input type="hidden" name="next" value="<?=$this->neighbors->next->id;?>" />
 <?php
 endif;
