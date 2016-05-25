@@ -14,15 +14,20 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
 
 if (count($this->neighbors)):
-
+    if ($this->neighbors[0]->ward . $this->neighbors[0]->division < $place->ward . $place->division):
+    ?>
+	<div class="left">
+	<a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
+	</div>
+	<?php
+endif;
+if ($this->neighbors[1]->ward . $this->neighbors[1]->division > $place->ward . $place->division):
 ?>
-<div class="left">
-<a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
-</div>
 <div class="right">
 <a href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[1]->id);?>" >Next</a>
 </div>
 <?php
+endif;
 endif;
 ?>
 <div class="clearfix"></div>
