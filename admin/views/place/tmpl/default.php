@@ -13,13 +13,28 @@ $place = $this->place;
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/place.css');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/place.js" async defer></script>');
 
+?>
+<form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
+  <div class="right wrapper fifty-five">
+    <div id="map"></div>
+    <p>Click to set:
+      <ul class="markers">
+        <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> Building</li>
+        <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
+        <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
+        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" />Stop placing markers</li>
+      </ul>
+    </p>
+  </div>
+  <div class="left">
+<?php
 if (count($this->neighbors)):
     if ($this->neighbors[0]->ward . $this->neighbors[0]->division < $place->ward . $place->division):
     ?>
-				<div class="left">
-				<a class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
-				</div>
-				<?php
+	        <div class="left">
+	        <a class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
+	        </div>
+	        <?php
 endif;
 if ($this->neighbors[1]->ward . $this->neighbors[1]->division > $place->ward . $place->division):
 ?>
@@ -37,19 +52,7 @@ endif;
 endif;
 ?>
 <div class="clearfix"></div>
-<form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
-  <div class="right wrapper fifty-five">
-    <div id="map"></div>
-    <p>Click to set:
-      <ul class="markers">
-        <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> Building</li>
-        <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" />Main Entrance</li>
-        <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" />Accessible Entrance</li>
-        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" />Stop placing markers</li>
-      </ul>
-    </p>
-  </div>
-  <div class="left">
+
     <table class="contentpane clearfix forty-five">
       <tr>
         <td height="40">
