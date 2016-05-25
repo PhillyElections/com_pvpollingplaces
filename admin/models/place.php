@@ -70,7 +70,7 @@ class PvpollingplacesModelPlace extends JModel
     {
         // Load the data
         if (empty($this->_data)) {
-            $query = ' SELECT * FROM #__pollingplaces ' .
+            $query = ' SELECT *, concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) as wd FROM #__pollingplaces ' .
             '  WHERE id = ' . $this->_db->quote($this->_id);
             $this->_db->setQuery($query);
             $this->_data = $this->_db->loadObject();
@@ -91,7 +91,7 @@ class PvpollingplacesModelPlace extends JModel
     {
         $where      = '';
         $tmp        = array();
-        $query      = ' SELECT * FROM #__pollingplaces ';
+        $query      = ' SELECT *, concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) as wd FROM #__pollingplaces ';
         $wards_list = $divisions_list = array();
 
         $wards     = $this->getState('wards');
@@ -135,9 +135,22 @@ class PvpollingplacesModelPlace extends JModel
     {
         // Load the data
         if (empty($this->_neighbors)) {
-            $query = $this->_buildQuery();
+            $this->_neighbors = new stdClass();
+            // defaults
+            $this->_neighbors->next = $this->neighbors->previous = false;
+            $query                  = $this->_buildQuery();
             //$this->_db->setQuery($query);
-            $this->_neighbors = $this->_getList($query);
+            $tmp = $this->_getList($query);
+            if (count($tmp) === 1) {
+                if ($tmp[0]->ward . $tmp[0]->division > $this->_data->ward . $this->_data->division) {
+                    $this->_neighbors->next = $tmp[0];
+                } else {
+                    $this->_neighbors->previous = $tmp[0];
+                }
+            } else {
+                $this->_neighbors->previous = $tmp[0];
+                $this->_neighbors->next     = $tmp[1];
+            }
         }
 
         return $this->_neighbors;

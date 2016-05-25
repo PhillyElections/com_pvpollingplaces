@@ -28,27 +28,19 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
   </div>
   <div class="left">
 <?php
-if (count($this->neighbors)):
-    if ($this->neighbors[0]->ward . $this->neighbors[0]->division < $place->ward . $place->division):
-    ?>
-	        <div class="left">
-	        <a class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Previous</a>
-	        </div>
-	        <?php
-endif;
-if ($this->neighbors[1]->ward . $this->neighbors[1]->division > $place->ward . $place->division):
+if ($this->neighbors->previous):
 ?>
-<div class="right">
-<a class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[1]->id);?>" >Next</a>
-</div>
+    <div class="left">
+	    <a title="Skip to division: <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->previous->id);?>" > Previous</a>
+    </div>
 <?php
-else:
-?>
-  <div class="right">
-  <a class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors[0]->id);?>" > Next</a>
-  </div>
-  <?php
 endif;
+if ($this->neighbors->next):
+?>
+    <div class="right">
+      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->next->id);?>" >Next</a>
+    </div>
+<?php
 endif;
 ?>
 <div class="clearfix"></div>
@@ -175,8 +167,30 @@ endif;
       <tr>
         <td height="40">&nbsp;</td>
         <td>
-          <button class="button validate" type="submit"><?=$this->isNew ? JText::_('CREATE') : JText::_('UPDATE');?></button>
-          <input type="hidden" name="task" value="<?=$this->isNew ? 'create' : 'update';?>" />
+          <button class="button validate" type="submit"><?=$this->isNew ? JText::_('CREATE') : JText::_('SAVE AND CLOSE');?></button>
+<?php
+if (!$this->isNew):
+?>
+          <input type="hidden" name="task" value="update" />
+<?php
+if ($this->neighbors->previous):
+?>
+          <button class="button validate" type="submit"><?=JText::_('SAVE AND PREVIOUS');?></button>
+          <input type="hidden" name="next" value="<?=$this->neighbors->previous->id;?>" />
+<?php
+endif;
+if ($this->neighbors->next):
+?>
+          <button class="button validate" type="submit"><?=JText::_('SAVE AND NEXT');?></button>
+          <input type="hidden" name="next" value="<?=$this->neighbors->next->id;?>" />
+<?php
+endif;
+else:
+?>
+          <input type="hidden" name="task" value="create" />
+<?php
+endif;
+?>
           <input type="hidden" name="controller" value="place" />
           <input type="hidden" name="id" value="<?=$place->id;?>" />
           <?=JHTML::_('form.token');?>
