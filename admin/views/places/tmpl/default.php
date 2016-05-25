@@ -41,7 +41,7 @@ endif;
                 <th><?=JText::_('NAME');?></th>
                 <th><?=JText::_('LOCATION');?></th>
                 <th><?=JText::_('ENTRANCE');?></th>
-                <th><?=JText::_('ACCESSIBLILITY');?></th>
+                <th><?=JText::_('ACCESSIBILITY');?></th>
                 <th><?=JText::_('PUBLISHED');?></th>
                 <th><?=JText::_('CREATED');?></th>
                 <th><?=JText::_('UPDATED');?></th>
