@@ -46,7 +46,7 @@ class PvpollingplacesControllerPlace extends PvpollingplacesController
     }
 
     /**
-     * save a record (and redirect to main page)
+     * save a record (and redirect according to how it was saved)
      *
      * @return void
      */
