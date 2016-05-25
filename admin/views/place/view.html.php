@@ -48,7 +48,7 @@ class PvpollingplacesViewPlace extends JView
         $this->assignRef('place', $place);
         $this->assignRef('neighbors', $neighbors);
         $this->assignRef('isNew', $isNew);
-        d($neighbors, $this);
+
         parent::display($tpl);
     }
 }
