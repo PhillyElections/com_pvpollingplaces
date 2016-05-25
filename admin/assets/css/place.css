@@ -20,7 +20,7 @@ div.wrap {
 }
 
 ul.markers li,
-div.btn {
+a.btn {
   background-color: #ddd;
   display: inline-block;
   cursor: pointer;
