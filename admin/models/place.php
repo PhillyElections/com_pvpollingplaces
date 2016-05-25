@@ -120,8 +120,8 @@ class PvpollingplacesModelPlace extends JModel
         }
 
         $where = ' where ';
-        $where .= ' (id = (select min(concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0"))) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) or ';
-        $where .= ' (id = (select max(concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0"))) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) ';
+        $where .= ' (concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) = (select min(concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0"))) from #__pollingplaces where id > ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) or ';
+        $where .= ' (concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) = (select max(concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0"))) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) ';
 
         return $query . $where;
     }
