@@ -137,8 +137,7 @@ class PvpollingplacesModelPlace extends JModel
         if (empty($this->_neighbors)) {
             $this->_neighbors = new stdClass();
             // defaults
-            $this->_neighbors->next    = false;
-            $this->neighbors->previous = false;
+            $this->_neighbors->next = $this->_neighbors->previous = false;
 
             // get the query string
             $query = $this->_buildQuery();
