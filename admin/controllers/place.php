@@ -55,9 +55,9 @@ class PvpollingplacesControllerPlace extends PvpollingplacesController
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('place');
-        $post  = JRequest::get('post');
+        dd(JRequest::get('post'));
 
-        if ($model->store($post)) {
+        if ($model->store()) {
             $msg = JText::_('Saved!');
         } else {
             // let's grab all those errors and make them available to the view
