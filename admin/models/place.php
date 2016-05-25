@@ -136,8 +136,8 @@ class PvpollingplacesModelPlace extends JModel
         // Load the data
         if (empty($this->_neighbors)) {
             $query = $this->_buildQuery();
-            $this->_db->setQuery($query);
-            $this->_neighbors = $this->_db->loadObject();
+            //$this->_db->setQuery($query);
+            $this->_neighbors = $this->_getList($query);
         }
 
         return $this->_neighbors;
