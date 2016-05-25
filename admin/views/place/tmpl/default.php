@@ -118,7 +118,7 @@ endif;
           <label id="buildingmsg" for="building"><?=JText::_("BUILDING");?>:</label>
         </td>
         <td>
-          <?=JHTML::_('select.genericlist', PVCombo::gets('building'), 'building', 'class="input_box required"', 'idx', 'value', PVCombo::keySearch('building', $place->building), 'building');?>
+          <?=JHTML::_('select.genericlist', PVCombo::gets('building'), 'building', 'class="input_box required"', 'idx', 'value', ($place->building ? $place->building : ''), 'building');?>
         </td>
       </tr>
       <tr>
@@ -126,8 +126,8 @@ endif;
           <label id="parkingmsg" for="parking"><?=JText::_("PARKING");?>:</label>
         </td>
         <td>
-          <?=JHTML::_('select.genericlist', PVCombo::gets('parking'), 'parking', 'class="input_box required"', 'idx', 'value', PVCombo::keySearch('parking', $place->parking), 'parking');?>
-        </td>
+          <?=JHTML::_('select.genericlist', PVCombo::gets('parking'), 'parking', 'class="input_box required"', 'idx', 'value', ($place->parking ? $place->parking : ''), 'parking');?>
+          </td>
       </tr>
       <tr>
         <td height="40">
