@@ -19,7 +19,8 @@ div.wrap {
   clear: both;
 }
 
-ul.markers li {
+ul.markers li,
+div.btn {
   background-color: #ddd;
   display: inline-block;
   cursor: pointer;
