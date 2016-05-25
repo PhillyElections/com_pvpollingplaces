@@ -66,8 +66,23 @@ class PvpollingplacesControllerPlace extends PvpollingplacesController
             return $this->edit();
         }
 
-        // Let's go back to the default view
+        $record_url = 'index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=';
+
         $link = 'index.php?option=com_pvpollingplaces';
+
+        if (JRequest::getVar('save_only')) {
+            $link = $record_url . JRequest::getVar('id', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_previous')) {
+            $link = $record_url . JRequest::getVar('previous', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_next')) {
+            $link = $record_url . JRequest::getVar('next', '', 'int');
+        }
+
+        // Let's go back to the default view
         $this->setRedirect($link, $msg);
     }
 
