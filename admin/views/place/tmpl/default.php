@@ -2,8 +2,10 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 $document = &JFactory::getDocument();
-// we'll need these for the combo
+
+// we'll need this for the combos
 jimport("pvcombo.PVCombo");
+
 if (count(JRequest::getVar('msg', null, 'post'))) {
     foreach (JRequest::getVar('msg', null, 'post') as $msg) {
         JError::raiseWarning(1, $msg);
@@ -116,7 +118,7 @@ endif;
           <label id="buildingmsg" for="building"><?=JText::_("BUILDING");?>:</label>
         </td>
         <td>
-          <input type="text" id="building" name="building" size="60%" value="<?=($place->building ? $place->building : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("BUILDING PLACEHOLDER");?>" />
+          <?=JHTML::_('select.genericlist', PVCombo::gets('building'), 'building', 'class="input_box required"', 'idx', 'value', PVCombo::keySearch('building', $place->building), 'building');?>
         </td>
       </tr>
       <tr>
@@ -124,7 +126,7 @@ endif;
           <label id="parkingmsg" for="parking"><?=JText::_("PARKING");?>:</label>
         </td>
         <td>
-          <input type="text" id="parking" name="parking" size="60%" value="<?=($place->parking ? $place->parking : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("PARKING PLACEHOLDER");?>" />
+          <?=JHTML::_('select.genericlist', PVCombo::gets('parking'), 'parking', 'class="input_box required"', 'idx', 'value', PVCombo::keySearch('parking', $place->parking), 'parking');?>
         </td>
       </tr>
       <tr>
@@ -135,15 +137,15 @@ endif;
           <table>
             <tbody>
               <tr>
-                <td>Building</td>
+                <td><?=JText::_('Building')?></td>
                 <td id="display-building"></td>
               </tr>
               <tr>
-                <td>Main Entrance</td>
+                <td><?=JText::_('Main Entrance')?></td>
                 <td id="display-entrance"></td>
               </tr>
               <tr>
-                <td>Accessible Entrance</td>
+                <td><?=JText::_('Accessible Entrance')?></td>
                 <td id="display-accessible"></td>
               </tr>
             </tbody>
