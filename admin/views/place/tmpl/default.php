@@ -167,10 +167,11 @@ endif;
       <tr>
         <td height="40">&nbsp;</td>
         <td>
-          <button class="button validate" type="submit"><?=$this->isNew ? JText::_('CREATE') : JText::_('SAVE AND CLOSE');?></button>
+          <input class="button validate" name="save_and_close" type="submit" value="<?=$this->isNew ? JText::_('CREATE') : JText::_('SAVE AND CLOSE');?>" />
 <?php
 if (!$this->isNew):
 ?>
+          <input class="button validate" name="save_only" type="submit" value="<?=JText::_('UPDATE');?>" />
           <input type="hidden" name="task" value="update" />
 <?php
 if ($this->neighbors->previous):
