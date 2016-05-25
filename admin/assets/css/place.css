@@ -29,6 +29,9 @@ a.btn {
   padding: 2px 5px 2px 5px;
   margin: 0 5px 0 0;
   vertical-align: middle;
+}
+
+a.btn:hover {
   text-decoration: none;
 }
 
