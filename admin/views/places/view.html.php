@@ -30,7 +30,7 @@ class PvpollingplacesViewPlaces extends JView
         JToolBarHelper::title(JText::_('Pollingplaces Manager'), 'generic.png');
         JToolBarHelper::deleteList();
         JToolBarHelper::editListX();
-        JToolBarHelper::addNewX();
+//        JToolBarHelper::addNewX();
         JToolBarHelper::publish();
         JToolBarHelper::unpublish();
 
