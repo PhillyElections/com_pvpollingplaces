@@ -62,7 +62,7 @@ endif;
           <label id="wardmsg" for="ward"><?=JText::_("WARD");?>:</label>
         </td>
         <td>
-          <input type="text" id="ward" name="ward" size="60%" value="<?=($place->ward ? $place->ward : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("WARD PLACEHOLDER");?>" />
+          <input type="text" id="ward" name="ward" size="60%" value="<?=($place->ward ? $place->ward : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("WARD PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -70,7 +70,7 @@ endif;
           <label id="divisionmsg" for="division"><?=JText::_("DIVISION");?>:</label>
         </td>
         <td>
-          <input type="text" id="division" name="division" size="60%" value="<?=($place->division ? $place->division : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DIVISION PLACEHOLDER");?>" />
+          <input type="text" id="division" name="division" size="60%" value="<?=($place->division ? $place->division : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DIVISION PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
