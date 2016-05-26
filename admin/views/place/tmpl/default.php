@@ -150,12 +150,12 @@ endif;
               </tr>
             </tbody>
           </table>
-          <input type="hidden" id="lat" name="lat" size="60%" value="<?=($place->lat ? $place->lat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LAT PLACEHOLDER");?>" />
-          <input type="hidden" id="lng" name="lng" size="60%" value="<?=($place->lng ? $place->lng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LNG PLACEHOLDER");?>" />
-          <input type="hidden" id="elat" name="elat" size="60%" value="<?=($place->elat ? $place->elat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELAT PLACEHOLDER");?>" />
-          <input type="hidden" id="elng" name="elng" size="60%" value="<?=($place->elng ? $place->elng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ELNG PLACEHOLDER");?>" />
-          <input type="hidden" id="alat" name="alat" size="60%" value="<?=($place->alat ? $place->alat : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALAT PLACEHOLDER");?>" />
-          <input type="hidden" id="alng" name="alng" size="60%" value="<?=($place->alng ? $place->alng : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ALNG PLACEHOLDER");?>" />
+          <input type="hidden" id="lat" name="lat" value="<?=($place->lat ? $place->lat : "");?>" />
+          <input type="hidden" id="lng" name="lng" value="<?=($place->lng ? $place->lng : "");?>" />
+          <input type="hidden" id="elat" name="elat" value="<?=($place->elat ? $place->elat : "");?>" />
+          <input type="hidden" id="elng" name="elng" value="<?=($place->elng ? $place->elng : "");?>" />
+          <input type="hidden" id="alat" name="alat" value="<?=($place->alat ? $place->alat : "");?>" />
+          <input type="hidden" id="alng" name="alng" value="<?=($place->alng ? $place->alng : "");?>" />
         </td>
       </tr>
       <tr>
