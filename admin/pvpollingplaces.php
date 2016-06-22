@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 
 // Uzer
 jimport('uzer.Uzer');
-Uzer::blok(JFactory::getUser(), 'Administrator');
+Uzer::blok(JFactory::getUser(), 'Manager');
 
 // pull in the super-groovy debugger
 jimport('kint.kint');
