@@ -13,6 +13,10 @@ defined('_JEXEC') or die('Restricted access');
  * @package Philadelphia.Votes
  */
 
+// Uzer
+jimport('uzer.Uzer');
+Uzer::blok(JFactory::getUser(), 'Administrator');
+
 // pull in the super-groovy debugger
 jimport('kint.kint');
 
