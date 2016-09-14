@@ -95,7 +95,7 @@ var place = (function(d) {
     var script = d.createElement('script');
     script.id = '_gmaps';
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.createMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=place.createMap&key=AIzaSyDG7jgg6RbsEKG7UFXsSPi7F5RyRDTasnE';
     d.body.appendChild(script);
 
     inner.bindElements();
