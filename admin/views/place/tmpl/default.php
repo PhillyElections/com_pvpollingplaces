@@ -17,14 +17,15 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
-  <div class="right wrapper fifty-five">
+  <div class="right fifty-five">
     <div id="map"></div>
     <p>Click to set:
       <ul class="markers">
         <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> <?=JText::_('BUILDING')?></li>
         <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" /><?=JText::_('MAIN ENTRANCE')?></li>
         <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" /><?=JText::_('ACCESSIBLE ENTRANCE')?></li>
-        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" /><?=JText::_('STOP PLACING ARCHERS')?></li>
+        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" /><?=JText::_('STOP PLACING MARKERS')?></li>
+        <li class="marker-clear"><?=JText::_('CLEAR MARKERS')?></li>
       </ul>
     </p>
   </div>
@@ -62,7 +63,7 @@ endif;
           <label id="wardmsg" for="ward"><?=JText::_("WARD");?>:</label>
         </td>
         <td>
-          <input type="text" id="ward" name="ward" size="60%" value="<?=($place->ward ? $place->ward : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("WARD PLACEHOLDER");?>" disabled />
+          <input type="text" id="ward" name="ward" size="60" value="<?=($place->ward ? $place->ward : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("WARD PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -70,7 +71,7 @@ endif;
           <label id="divisionmsg" for="division"><?=JText::_("DIVISION");?>:</label>
         </td>
         <td>
-          <input type="text" id="division" name="division" size="60%" value="<?=($place->division ? $place->division : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DIVISION PLACEHOLDER");?>" disabled />
+          <input type="text" id="division" name="division" size="60" value="<?=($place->division ? $place->division : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DIVISION PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -78,7 +79,7 @@ endif;
           <label id="pin_addressmsg" for="pin_address"><?=JText::_("PIN_ADDRESS");?>:</label>
         </td>
         <td>
-          <input type="text" id="pin_address" name="pin_address" size="60%" value="<?=($place->pin_address ? $place->pin_address : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("PIN_ADDRESS PLACEHOLDER");?>" />
+          <input type="text" id="pin_address" name="pin_address" size="60" value="<?=($place->pin_address ? $place->pin_address : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("PIN_ADDRESS PLACEHOLDER");?>" />
         </td>
       </tr>
       <tr>
@@ -86,7 +87,7 @@ endif;
           <label id="display_addressmsg" for="display_address"><?=JText::_("DISPLAY_ADDRESS");?>:</label>
         </td>
         <td>
-          <input type="text" id="display_address" name="display_address" size="60%" value="<?=($place->display_address ? $place->display_address : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DISPLAY_ADDRESS PLACEHOLDER");?>" />
+          <input type="text" id="display_address" name="display_address" size="60" value="<?=($place->display_address ? $place->display_address : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DISPLAY_ADDRESS PLACEHOLDER");?>" />
         </td>
       </tr>
       <tr>
@@ -94,7 +95,7 @@ endif;
           <label id="zip_codemsg" for="zip_code"><?=JText::_("ZIP_CODE");?>:</label>
         </td>
         <td>
-          <input type="text" id="zip_code" name="zip_code" size="60%" value="<?=($place->zip_code ? $place->zip_code : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ZIP_CODE PLACEHOLDER");?>" />
+          <input type="text" id="zip_code" name="zip_code" size="60" value="<?=($place->zip_code ? $place->zip_code : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("ZIP_CODE PLACEHOLDER");?>" />
         </td>
       </tr>
       <tr>
@@ -102,7 +103,7 @@ endif;
           <label id="locationmsg" for="location"><?=JText::_("LOCATION");?>:</label>
         </td>
         <td>
-          <input type="text" id="location" name="location" size="60%" value="<?=($place->location ? $place->location : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LOCATION PLACEHOLDER");?>" />
+          <input type="text" id="location" name="location" size="50%" value="<?=($place->location ? $place->location : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("LOCATION PLACEHOLDER");?>" /> <span id="find_by_name" class="btn">Find</span>
         </td>
       </tr>
       <tr>
@@ -110,7 +111,7 @@ endif;
           <label id="display_locationmsg" for="display_location"><?=JText::_("DISPLAY_LOCATION");?>:</label>
         </td>
         <td>
-          <input type="text" id="display_location" name="display_location" size="60%" value="<?=($place->display_location ? $place->display_location : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DISPLAY_LOCATION PLACEHOLDER");?>" />
+          <input type="text" id="display_location" name="display_location" size="60" value="<?=($place->display_location ? $place->display_location : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DISPLAY_LOCATION PLACEHOLDER");?>" />
         </td>
       </tr>
       <tr>

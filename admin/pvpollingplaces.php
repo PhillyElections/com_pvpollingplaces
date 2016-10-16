@@ -13,12 +13,12 @@ defined('_JEXEC') or die('Restricted access');
  * @package Philadelphia.Votes
  */
 
-// Uzer
-jimport('uzer.Uzer');
-Uzer::blok(JFactory::getUser(), 'Manager');
-
 // pull in the super-groovy debugger
 jimport('kint.kint');
+
+// Uzer
+jimport('uzer.Uzer');
+Uzer::blok(JFactory::getUser(), 'Administrator');
 
 $language = JFactory::getLanguage();
 $language->load(JRequest::getCmd('option'), JPATH_SITE);

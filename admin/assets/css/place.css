@@ -1,6 +1,6 @@
 #map {
   height: 400px;
-  width: 100%;
+  width: 95%;
 }
 
 div.wrap {
@@ -19,6 +19,7 @@ div.wrap {
   clear: both;
 }
 
+span.btn,
 ul.markers li,
 a.btn {
   background-color: #ddd;
@@ -43,9 +44,9 @@ li.marker-cancel img {
 }
 
 .forty-five {
-  width: 45%;
+  width: 40%;
 }
 
 .fifty-five {
-  width: 55%;
+  width: 50%;
 }
