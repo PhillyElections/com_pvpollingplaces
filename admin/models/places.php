@@ -70,7 +70,7 @@ class PvpollingplacesModelPlaces extends JModel
     {
         $where      = '';
         $tmp        = array();
-        $query      = ' SELECT * FROM #__pollingplaces ';
+        $query      = ' SELECT * FROM `#__pv_pollingplaces` AS `p`, `#__pv_pollingplace_divisions` AS `pd`, `#__divisions` AS `d` ';
         $wards_list = $divisions_list = array();
 
         $wards     = $this->getState('wards');
@@ -95,8 +95,10 @@ class PvpollingplacesModelPlaces extends JModel
             foreach ($wards as $ward) {
                 $wards_list[] = $this->_db->quote((int) $ward);
             }
-            $where = ' where ';
-            $where = ' where TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
+            $where = ' WHERE ';
+            $where .= '   TRIM(LEADING \'0\' FROM ward) in (' . implode(", ", $wards_list) . ') ';
+            $where .= '   AND `d`.`id`=`pd`.`division_id` ';
+            $where .= '   AND `p`.`id`=`pd`.`pollingplace_id` ';
         }
 
         return $query . $where;
