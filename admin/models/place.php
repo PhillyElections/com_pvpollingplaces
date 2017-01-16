@@ -66,7 +66,7 @@ class PvpollingplacesModelPlace extends JModel
      *
      * @return object with data
      */
-    public function &getData()
+    public function &_p_getData()
     {
         // Load the data
         if (empty($this->_data)) {
@@ -84,14 +84,36 @@ class PvpollingplacesModelPlace extends JModel
     }
 
     /**
+     * Method to get an place
+     *
+     * @return object with data
+     */
+    public function &getData()
+    {
+        // Load the data
+        if (empty($this->_data)) {
+            $query = ' SELECT * FROM `#__pv_pollingplaces` ' .
+            '  WHERE `id` = ' . $this->_db->quote($this->_id);
+            $this->_db->setQuery($query);
+            $this->_data = $this->_db->loadObject();
+        }
+        if (!$this->_data) {
+            $this->_data           = new stdClass();
+            $this->_data->id       = 0;
+            $this->_data->greeting = null;
+        }
+        return $this->_data;
+    }
+
+    /**
      * Returns the query
      * @return string The query to be used to retrieve the rows from the database
      */
-    public function _buildQuery()
+    public function _p_buildQuery()
     {
         $where      = '';
         $tmp        = array();
-        $query      = ' SELECT *, concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) as wd FROM #__pollingplaces ';
+        $query      = ' SELECT *, concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) as wd FROM #__pv_pollingplaces ';
         $wards_list = $divisions_list = array();
 
         $wards     = $this->getState('wards');
@@ -124,6 +146,20 @@ class PvpollingplacesModelPlace extends JModel
         $where .= ' (concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0")) = (select max(concat(lpad(`ward`, 2, "0"), lpad(`division`, 2, "0"))) from #__pollingplaces where id < ' . $this->_db->quote($this->_id) . ' ' . $filter_criteria . ' )) ';
 
         return $query . $where;
+    }
+
+    /**
+     * Returns the query
+     * @return string The query to be used to retrieve the rows from the database
+     */
+    public function _buildQuery()
+    {
+        $query = ' SELECT * FROM `#__pv_pollingplaces` ';
+        $where = ' WHERE ';
+        $where .= ' `id` = ' . $this->_db->quote($this->_id - 1) . ' OR ';
+        $where .= ' `id` = ' . $this->_db->quote($this->_id + 1) . ' ';
+
+        return $query;
     }
 
     /**
