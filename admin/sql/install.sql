@@ -62,5 +62,5 @@ SET
 
 INSERT INTO `#__pv_pollingplace_divisions`
   (`pollingplace_id`, `division_id`, `published`, `created`) 
-SELECT `p`.`id`, `d`.`id`, 1, @tnow FROM `#__pollingplaces` as `p`, `#__divisions` as `d` where LPAD(`d`.`division_id`, 4, '0')=LPAD(`p`.`division_id`, 4, '0');
+SELECT `p`.`id`, `p`.`division_id`, 1, @tnow FROM `#__pollingplaces` as `p`;
     
