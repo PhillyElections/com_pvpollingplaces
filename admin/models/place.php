@@ -149,20 +149,6 @@ class PvpollingplacesModelPlace extends JModel
     }
 
     /**
-     * Returns the query
-     * @return string The query to be used to retrieve the rows from the database
-     */
-    public function _buildQuery()
-    {
-        $query = ' SELECT * FROM `#__pv_pollingplaces` ';
-        $where = ' WHERE ';
-        $where .= ' `id` = ' . $this->_db->quote($this->_id - 1) . ' OR ';
-        $where .= ' `id` = ' . $this->_db->quote($this->_id + 1) . ' ';
-
-        return $query;
-    }
-
-    /**
      * Retrieves the Pvpollingplace data
      *
      * @return array Array of objects containing the data from the database
