@@ -14,7 +14,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css')
     <div id="editcell">
         <table class="adminlist">
         <thead>
-<?php php; /*
+<?php /*
 if (count($this->items) or JRequest::getVar('ward')):
 
 <tr>
@@ -24,7 +24,7 @@ HTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'war
 </tr>
 
 endif;
- */?>
+ */;?>
             <tr>
                 <th width="5px">
                     <?=JText::_('ID');?>
