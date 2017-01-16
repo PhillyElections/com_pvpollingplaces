@@ -31,17 +31,17 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
   </div>
   <div class="left">
 <?php
-if ($this->neighbors->previous):
+if (($place->id - 1)):
 ?>
     <div class="left">
-	    <a title="<?=JText::_('SKIP TO DIVISION');?> <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . ($place->id - 1));?>" ><?=JText::_('PREVIOUS');?></a>
+	    <a title="<?=JText::_('SKIP TO DIVISION');?> Previous" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . ($place->id - 1));?>" ><?=JText::_('PREVIOUS');?></a>
     </div>
 <?php
 endif;
-if ($this->neighbors->next):
+if (($place->id + 1)):
 ?>
     <div class="right">
-      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . ($place->id + 1));?>" ><?=JText::_('NEXT');?></a>
+      <a title="Skip to division: Next" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . ($place->id + 1));?>" ><?=JText::_('NEXT');?></a>
     </div>
 <?php
 endif;
@@ -152,16 +152,16 @@ if (!$this->isNew):
           <input class="button validate" name="save_only" type="submit" value="<?=JText::_('UPDATE');?>" />
           <input type="hidden" name="task" value="update" />
 <?php
-if ($this->neighbors->previous):
+if (($place->id - 1)):
 ?>
           <input class="button validate" name="save_and_previous" type="submit" value="<?=JText::_('SAVE AND PREVIOUS');?>" />
-          <input type="hidden" name="next" value="<?=$this->neighbors->previous->id;?>" />
+          <input type="hidden" name="next" value="<?=($place->id - 1);?>" />
 <?php
 endif;
-if ($this->neighbors->next):
+if (($place->id + 1)):
 ?>
           <input class="button validate" name="save_and_next" type="submit" value="<?=JText::_('SAVE AND NEXT');?>" />
-          <input type="hidden" name="next" value="<?=$this->neighbors->next->id;?>" />
+          <input type="hidden" name="next" value="<?=($place->id + 1);?>" />
 <?php
 endif;
 else:
