@@ -1,2 +1,3 @@
-DROP TABLE 
-`#__pollingplaces`;
+DROP TABLE IF EXISTS
+`#__pv_pollingplaces`,
+`#__pv_pollingplace_divisions`;
