@@ -66,7 +66,7 @@ class PvpollingplacesModelPlaces extends JModel
      * Returns the query
      * @return string The query to be used to retrieve the rows from the database
      */
-    public function _buildQuery()
+    public function _p_buildQuery()
     {
         $where      = '';
         $tmp        = array();
@@ -100,6 +100,17 @@ class PvpollingplacesModelPlaces extends JModel
             $where .= '   AND `d`.`id`=`pd`.`division_id` ';
             $where .= '   AND `p`.`id`=`pd`.`pollingplace_id` ';
         }
+
+        return $query . $where;
+    }
+
+    /**
+     * Returns the query
+     * @return string The query to be used to retrieve the rows from the database
+     */
+    public function _buildQuery()
+    {
+        $query = ' SELECT * FROM `#__pv_pollingplaces` ';
 
         return $query . $where;
     }
