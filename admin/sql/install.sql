@@ -34,4 +34,16 @@ INSERT INTO `#__pv_pollingplaces`
   (`pin_address`, `location`, `published`, `created`) 
 SELECT DISTINCT `pin_address`, `location`, 1, @tnl FROM `#__pollingplaces`;
  
-UPDATE `#__pv_pollingplaces` as `p` SET `p`.`display_address`=(SELECT `display_address` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1);
+UPDATE `#__pv_pollingplaces` as `p` 
+SET 
+  `p`.`display_address`=(SELECT `display_address` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
+  `p`.`zip_code`=(SELECT `zip_code` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
+  `p`.`display_location`=(SELECT `display_location` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
+  `p`.`building`=(SELECT `building` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
+  `p`.`parking`=(SELECT `parking` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
+  `p`.`lat`=(SELECT max(`lng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`),
+  `p`.`lng`=(SELECT min(`lng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`),
+  `p`.`elat`=(SELECT min(`elng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`),
+  `p`.`elng`=(SELECT max(`elng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`),
+  `p`.`alat`=(SELECT min(`alng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`),
+  `p`.`alng`=(SELECT max(`alng`) FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`);
