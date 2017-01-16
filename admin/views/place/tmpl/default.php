@@ -21,11 +21,11 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
     <div id="map"></div>
     <p>Click to set:
       <ul class="markers">
-        <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> <?=JText::_('BUILDING')?></li>
-        <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" /><?=JText::_('MAIN ENTRANCE')?></li>
-        <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" /><?=JText::_('ACCESSIBLE ENTRANCE')?></li>
-        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" /><?=JText::_('STOP PLACING MARKERS')?></li>
-        <li class="marker-clear"><?=JText::_('CLEAR MARKERS')?></li>
+        <li class="marker" data-marker="building"><img src="/components/com_voterapp/polling.png" /> <?=JText::_('BUILDING');?></li>
+        <li class="marker" data-marker="entrance"><img src="components/com_pvpollingplaces/assets/images/e.png" /><?=JText::_('MAIN ENTRANCE');?></li>
+        <li class="marker" data-marker="accessible"><img src="components/com_pvpollingplaces/assets/images/h.png" /><?=JText::_('ACCESSIBLE ENTRANCE');?></li>
+        <li class="marker-cancel"><img src="components/com_pvpollingplaces/assets/images/x.png" /><?=JText::_('STOP PLACING MARKERS');?></li>
+        <li class="marker-clear"><?=JText::_('CLEAR MARKERS');?></li>
       </ul>
     </p>
   </div>
@@ -34,14 +34,14 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
 if ($this->neighbors->previous):
 ?>
     <div class="left">
-	    <a title="<?=JText::_('SKIP TO DIVISION')?> <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->previous->id);?>" ><?=JText::_('PREVIOUS')?></a>
+	    <a title="<?=JText::_('SKIP TO DIVISION');?> <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->previous->id);?>" ><?=JText::_('PREVIOUS');?></a>
     </div>
 <?php
 endif;
 if ($this->neighbors->next):
 ?>
     <div class="right">
-      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->next->id);?>" ><?=JText::_('NEXT')?></a>
+      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->next->id);?>" ><?=JText::_('NEXT');?></a>
     </div>
 <?php
 endif;
@@ -56,22 +56,6 @@ endif;
         <td>
           <input type="checkbox" id="published" name="published" value="published" <?=($place->published ? "checked" : "");?> />
           <label id="idmsg" class="right" for="id">ID: <?=($place->id ? $place->id : "");?></label>
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="wardmsg" for="ward"><?=JText::_("WARD");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="ward" name="ward" size="60" value="<?=($place->ward ? $place->ward : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("WARD PLACEHOLDER");?>" disabled />
-        </td>
-      </tr>
-      <tr>
-        <td height="40">
-          <label id="divisionmsg" for="division"><?=JText::_("DIVISION");?>:</label>
-        </td>
-        <td>
-          <input type="text" id="division" name="division" size="60" value="<?=($place->division ? $place->division : "");?>" class="inputbox required" maxlength="60" placeholder="<?=JText::_("DIVISION PLACEHOLDER");?>" disabled />
         </td>
       </tr>
       <tr>
@@ -138,15 +122,15 @@ endif;
           <table>
             <tbody>
               <tr>
-                <td><?=JText::_('Building')?></td>
+                <td><?=JText::_('Building');?></td>
                 <td id="display-building"></td>
               </tr>
               <tr>
-                <td><?=JText::_('Main Entrance')?></td>
+                <td><?=JText::_('Main Entrance');?></td>
                 <td id="display-entrance"></td>
               </tr>
               <tr>
-                <td><?=JText::_('Accessible Entrance')?></td>
+                <td><?=JText::_('Accessible Entrance');?></td>
                 <td id="display-accessible"></td>
               </tr>
             </tbody>
