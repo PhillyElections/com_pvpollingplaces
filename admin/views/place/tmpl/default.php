@@ -34,14 +34,14 @@ $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/p
 if ($this->neighbors->previous):
 ?>
     <div class="left">
-	    <a title="<?=JText::_('SKIP TO DIVISION');?> <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->previous->id);?>" ><?=JText::_('PREVIOUS');?></a>
+	    <a title="<?=JText::_('SKIP TO DIVISION');?> <?=$this->neighbors->previous->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $place->id - 1);?>" ><?=JText::_('PREVIOUS');?></a>
     </div>
 <?php
 endif;
 if ($this->neighbors->next):
 ?>
     <div class="right">
-      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $this->neighbors->next->id);?>" ><?=JText::_('NEXT');?></a>
+      <a title="Skip to division: <?=$this->neighbors->next->wd;?>" class="btn" href="<?=JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $place->id + 1);?>" ><?=JText::_('NEXT');?></a>
     </div>
 <?php
 endif;
