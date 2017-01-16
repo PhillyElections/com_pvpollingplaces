@@ -14,16 +14,17 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css')
     <div id="editcell">
         <table class="adminlist">
         <thead>
-<?php/*
+<?php php; /*
 if (count($this->items) or JRequest::getVar('ward')):
-?>
-            <tr>
-                <th colspan="14" id="selectcontrol" data-filter="Filter by Wards">
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');?></th>
-            </tr>
-<?php
+
+<tr>
+<th colspan="14" id="selectcontrol" data-filter="Filter by Wards">
+HTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'ward'), 'ward[]', 'multiple', 'idx', 'value', (JRequest::getVar('ward') ? JRequest::getVar('ward') : ''), 'ward');
+</th>
+</tr>
+
 endif;
-*/?>
+ */?>
             <tr>
                 <th width="5px">
                     <?=JText::_('ID');?>
