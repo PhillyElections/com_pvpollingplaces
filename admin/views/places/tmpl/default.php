@@ -14,7 +14,7 @@ $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css')
     <div id="editcell">
         <table class="adminlist">
         <thead>
-<?php/*
+<?php
 if (count($this->items) or JRequest::getVar('ward')):
 ?>
             <tr>
@@ -23,7 +23,7 @@ if (count($this->items) or JRequest::getVar('ward')):
             </tr>
 <?php
 endif;
-*/?>
+?>
             <tr>
                 <th width="5px">
                     <?=JText::_('ID');?>
@@ -34,6 +34,8 @@ endif;
                 <th width="5px">
                     P
                 </th>
+                <th><?=JText::_('WARD');?></th>
+                <th><?=JText::_('DIVISION');?></th>
                 <th><?=JText::_('PIN');?></th>
                 <th><?=JText::_('DISPLAY');?></th>
                 <th><?=JText::_('NAME');?></th>
@@ -52,20 +54,13 @@ for ($i = 0, $n = count($this->items); $i < $n; ++$i) {
     $row  = &$this->items[$i];
     $link = JRoute::_('index.php?option=com_pvpollingplaces&controller=place&task=edit&cid[]=' . $row->id);
     ?>
-                        <tr class="<?="row$k";
+            <tr class="<?="row$k";
     ?>">
-                <td>
-                    <?=$row->id;
-    ?>
-                </td>
-                        <td>
-                <?=JHTML::_('grid.id', $i, $row->id);
-    ?>
-                        </td>
-                        <td>
-                <?=JHTML::_('grid.published', $row, $i);
-    ?>
-                        </td>
+                <td><?=$row->id;?></td>
+                <td><?=JHTML::_('grid.id', $i, $row->id);?></td>
+                <td><?=JHTML::_('grid.published', $row, $i);?></td>
+                <td><?=$row->ward;?></td>
+                <td><?=$row->division;?></td>
                 <td><?=$row->pin_address;?></td>
                 <td><?=$row->display_address;?></td>
                 <td><a href="<?=$link;?>"><?=$row->location;?></a></td>
@@ -80,12 +75,12 @@ for ($i = 0, $n = count($this->items); $i < $n; ++$i) {
 $k = 1 - $k;
 }
 ?>
-            </tbody>
-            <tfoot>
+        </tbody>
+        <tfoot>
             <tr>
                 <td colspan="14"><?php echo $this->pagination->getListFooter(); ?></td>
             </tr>
-            </tfoot>
+        </tfoot>
         </table>
     </div>
     <?=JHTML::_('form.token');?>
