@@ -34,4 +34,4 @@ INSERT INTO `#__pv_pollingplaces`
   (`pin_address`, `location`, `published`, `created`) 
 SELECT DISTINCT `pin_address`, `location`, 1, @tnl FROM `#__pollingplaces`;
  
-UPDATE `#__pv_pollingplaces` as `p` SET `p`.`display_address`=(SELECT `display_address` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address`);
+UPDATE `#__pv_pollingplaces` as `p` SET `p`.`display_address`=(SELECT `display_address` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1);
