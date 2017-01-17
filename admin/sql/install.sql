@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_pollingplace_divisions` (
 
 INSERT INTO `#__pv_pollingplaces` 
   (`pin_address`, `location`, `published`, `created`) 
-SELECT DISTINCT `pin_address`, `location`, 1, @tnow FROM `#__pollingplaces` ORDER BY `lat`;
+SELECT DISTINCT `pin_address`, `location`, 1, @tnow FROM `#__pollingplaces` ORDER BY `location`;
 
 UPDATE `#__pv_pollingplaces` as `p` 
 SET 
