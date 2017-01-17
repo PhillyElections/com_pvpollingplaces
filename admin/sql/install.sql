@@ -43,12 +43,11 @@ CREATE TABLE IF NOT EXISTS `#__pv_pollingplace_divisions` (
 ) ENGINE=ARIA DEFAULT CHARSET=utf8 ;
 
 INSERT INTO `#__pv_pollingplaces` 
-  (`pin_address`, `published`, `created`) 
-SELECT DISTINCT `pin_address`, 1, @tnow FROM `#__pollingplaces`;
+  (`pin_address`, `location`, `published`, `created`) 
+SELECT DISTINCT `pin_address`, `location`, 1, @tnow FROM `#__pollingplaces` ORDER BY `zip_code`, `pin_address`;
 
 UPDATE `#__pv_pollingplaces` as `p` 
 SET 
-  `p`.`location`=(SELECT `location` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
   `p`.`display_address`=(SELECT `display_address` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
   `p`.`zip_code`=(SELECT `zip_code` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
   `p`.`display_location`=(SELECT `display_location` FROM `#__pollingplaces` where `pin_address`=`p`.`pin_address` limit 1),
