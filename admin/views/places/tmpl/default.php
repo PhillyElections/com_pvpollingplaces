@@ -26,19 +26,13 @@ HTML::_('select.genericlist', PVCombo::getsFromObject($this->wards, 'ward', 'war
 endif;
  */;?>
             <tr>
-                <th width="5px">
-                    <?=JText::_('ID');?>
-                </th>
-                <th width="5px">
-                    <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($this->items);?>);" />
-                </th>
-                <th width="5px">
-                    P
-                </th>
-                <th><?=JText::_('PIN');?></th>
-                <th><?=JText::_('DISPLAY');?></th>
+                <th width="5px"><?=JText::_('ID');?></th>
+                <th width="5px"><input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($this->items);?>);" /></th>
+                <th width="5px">P</th>
+                <th><?=JHTML::_('grid.sort', 'PIN', 'pin_address', $this->pagination->order_Dir, $this->pagination->order); ?></th>
+                <th><?=JText::_('DISPLAY ADDRESS');?></th>
                 <th><?=JText::_('NAME');?></th>
-                <th><?=JText::_('LOCATION');?></th>
+                <th><?=JText::_('BUILDING');?></th>
                 <th><?=JText::_('ENTRANCE');?></th>
                 <th><?=JText::_('ACCESSIBILITY');?></th>
                 <th><?=JText::_('PUBLISHED');?></th>
