@@ -13,21 +13,11 @@ defined('_JEXEC') or die('Restricted access');
  * @package Philadelphia.Votes
  */
 
-class TablePlace extends JTable
+class TablePlacedivision extends JTable
 {
     public $id;
-    public $pin_address;
-    public $display_address;
-    public $zip_code;
-    public $location;
-    public $building;
-    public $parking;
-    public $lat;
-    public $lng;
-    public $elat;
-    public $elng;
-    public $alat;
-    public $alng;
+    public $pollingplace_id;
+    public $division_id;
     public $published;
     public $checked_out;
     public $checked_out_time;
@@ -36,7 +26,7 @@ class TablePlace extends JTable
 
     public function __construct(&$_db)
     {
-        parent::__construct('#__pv_pollingplaces', 'id', $_db);
+        parent::__construct('#__pv_pollingplace_divisions', 'id', $_db);
     }
 
     /**
