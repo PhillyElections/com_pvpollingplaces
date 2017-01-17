@@ -9,7 +9,7 @@ $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jque
 $document->addCustomTag('<script src="/media/multi-column-select/Multi-Column-Select/Multi-Column-Select.js"></script>');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/filter.js"></script>');
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css');
-
+d($pagination, $this->items);
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
