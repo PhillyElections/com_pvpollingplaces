@@ -1,6 +1,5 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
-        JHTML::_('behavior.tooltip');
 
 jimport('pvcombo.PVCombo');
 
@@ -9,7 +8,7 @@ $document->addCustomTag('<script src="https://ajax.googleapis.com/ajax/libs/jque
 $document->addCustomTag('<script src="/media/multi-column-select/Multi-Column-Select/Multi-Column-Select.js"></script>');
 $document->addCustomTag('<script src="components/com_pvpollingplaces/assets/js/filter.js"></script>');
 $document->addStyleSheet('components/com_pvpollingplaces/assets/css/filter.css');
-d($pagination, $this->items);
+
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvpollingplaces');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
@@ -30,8 +29,8 @@ endif;
                 <th width="5px"><?=JText::_('ID');?></th>
                 <th width="5px"><input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($this->items);?>);" /></th>
                 <th width="5px">P</th>
-                <th><?=JHTML::_('grid.sort', 'PIN', 'pin_address', $this->pagination->order_Dir, $this->pagination->order); ?></th>
-                <th><?=JText::_('DISPLAY ADDRESS');?></th>
+                <th><?=JText::_('PIN');?></th>
+                <th><?=JText::_('DISPLAY');?></th>
                 <th><?=JText::_('NAME');?></th>
                 <th><?=JText::_('BUILDING');?></th>
                 <th><?=JText::_('ENTRANCE');?></th>
