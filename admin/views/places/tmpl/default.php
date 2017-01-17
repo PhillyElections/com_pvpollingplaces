@@ -1,5 +1,6 @@
 <?php defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
+        JHTML::_('behavior.tooltip');
 
 jimport('pvcombo.PVCombo');
 
