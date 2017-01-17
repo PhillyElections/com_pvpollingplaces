@@ -62,5 +62,5 @@ SET
 
 INSERT INTO `#__pv_pollingplace_divisions`
   (`pollingplace_id`, `division_id`, `published`, `created`) 
-SELECT `p`.`id`, `p`.`division_id`, 1, @tnow FROM `#__pollingplaces` as `p`;
+SELECT `pvp`.`id`, `p`.`division_id`, 1, @tnow FROM `#__pollingplaces` as `p`, `#__pv_pollingplaces` AS `pvp` where  `p`.`pin_address`=`pvp`.`pin_address` and `p`.`location`=`pvp`.`location` ;
     
