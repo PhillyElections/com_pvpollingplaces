@@ -1,4 +1,5 @@
-<?php defined('_JEXEC') or die('Restricted access');
+<?php
+defined('_JEXEC') or die('Restricted access');
 $pagination = &$this->pagination;
 
 jimport('pvcombo.PVCombo');
@@ -62,7 +63,7 @@ for ($i = 0, $n = count($this->items); $i < $n; ++$i) {
                 <td><?=$row->created;?></td>
                 <td><?=$row->updated;?></td>
             </tr>
-            <?php
+<?php
 $k = 1 - $k;
 }
 ?>
